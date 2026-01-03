@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwyg6gqy55b0k"]
+
+[ext_resource type="Script" uid="uid://6t7wll5yamb" path="res://backend/debug/character_editor/character_animation.gd" id="1_bvr3l"]
+
+[node name="CharacterAnimation" type="PanelContainer"]
+offset_right = 203.0
+offset_bottom = 31.0
+script = ExtResource("1_bvr3l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnimName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="AnimNameInput" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "singLEFT"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnimPrefix" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Prefix"
+
+[node name="AnimPrefixInput" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Left instance 1"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Offset" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Offset"
+
+[node name="OffsetX" type="SpinBox" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+allow_greater = true
+allow_lesser = true
+
+[node name="OffsetY" type="SpinBox" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+allow_greater = true
+allow_lesser = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Loop" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Loop"
+
+[node name="LoopInput" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Play"
+
+[node name="Ghost" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Set Ghost"
+
+[node name="Delete" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Delete"
+
+[connection signal="text_submitted" from="MarginContainer/VBoxContainer/HBoxContainer/AnimNameInput" to="." method="_on_anim_name_submitted"]
+[connection signal="text_submitted" from="MarginContainer/VBoxContainer/HBoxContainer5/AnimPrefixInput" to="." method="_on_anim_prefix_submitted"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetX" to="." method="_on_offset_x_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetY" to="." method="_on_offset_y_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer3/LoopInput" to="." method="_on_loop_toggled"]
