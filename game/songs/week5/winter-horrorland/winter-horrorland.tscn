@@ -1,0 +1,56 @@
+[gd_scene load_steps=13 format=3 uid="uid://csdnon0qw6pfs"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_t2nho"]
+[ext_resource type="AudioStream" uid="uid://b834vrir83rd5" path="res://game/songs/week5/winter-horrorland/Inst.ogg" id="2_x750f"]
+[ext_resource type="JSON" path="res://game/songs/week5/winter-horrorland/winter-horrorland-chart.json" id="3_a4uby"]
+[ext_resource type="JSON" path="res://game/songs/week5/winter-horrorland/winter-horrorland-metadata.json" id="4_j4e3f"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_08h1s"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_korbh"]
+[ext_resource type="AudioStream" uid="uid://dgch68brwaqpc" path="res://game/songs/week5/winter-horrorland/Voices-bf.ogg" id="7_hrjud"]
+[ext_resource type="AudioStream" uid="uid://ch1jaxlg8m8xg" path="res://game/songs/week5/winter-horrorland/Voices-monster.ogg" id="8_al1om"]
+[ext_resource type="PackedScene" path="res://game/stages/mall/evil/mall-evil.tscn" id="9_x750f"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_4l1ba"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_r7brg"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_evg0s"]
+
+[node name="Winter Horrorland" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_t2nho")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_x750f")
+chart = ExtResource("3_a4uby")
+metadata = ExtResource("4_j4e3f")
+camera = NodePath("Camera")
+stage = NodePath("Christmas Mall (Naughty)")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_08h1s")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_korbh")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_hrjud")
+characters = [NodePath("../../Christmas Mall (Naughty)/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_korbh")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_al1om")
+characters = [NodePath("../../Christmas Mall (Naughty)/Dad")]
+cpu = true
+
+[node name="Christmas Mall (Naughty)" parent="." instance=ExtResource("9_x750f")]
+
+[node name="Girlfriend" parent="Christmas Mall (Naughty)" instance=ExtResource("10_4l1ba")]
+z_index = 100
+position = Vector2(808.5, 854)
+
+[node name="Dad" parent="Christmas Mall (Naughty)" instance=ExtResource("11_r7brg")]
+z_index = 200
+position = Vector2(290.5, 869)
+
+[node name="Boyfriend" parent="Christmas Mall (Naughty)" instance=ExtResource("12_evg0s")]
+z_index = 300
+position = Vector2(1297.5, 871)

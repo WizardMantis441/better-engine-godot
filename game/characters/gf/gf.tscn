@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsb8hi3rcm1we"]
+
+[ext_resource type="Script" uid="uid://bwlqvq7f3v18s" path="res://backend/objects/character.gd" id="1_vyabb"]
+[ext_resource type="SpriteFrames" uid="uid://b1msl51ux5nkd" path="res://game/characters/gf/GF_assets.res" id="2_bss1m"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="3_1n6qd"]
+[ext_resource type="Script" uid="uid://bqnqs6vqftn7m" path="res://backend/objects/funkin_sprite_anim.gd" id="4_2255d"]
+
+[sub_resource type="Resource" id="Resource_bss1m"]
+script = ExtResource("4_2255d")
+animation_name = "danceLeft"
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_b6ke7"]
+script = ExtResource("4_2255d")
+animation_name = "BF NOTE DOWN"
+offset = Vector2(10, 50)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_vfy7h"]
+script = ExtResource("4_2255d")
+animation_name = "BF NOTE LEFT"
+offset = Vector2(-12, 6)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_ta3d8"]
+script = ExtResource("4_2255d")
+animation_name = "BF NOTE RIGHT"
+offset = Vector2(38, 7)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_sfwou"]
+script = ExtResource("4_2255d")
+animation_name = "BF NOTE UP"
+offset = Vector2(29, -27)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[node name="Girlfriend" type="Node2D"]
+script = ExtResource("1_vyabb")
+bop_interval = 4
+metadata/_custom_type_script = "uid://bwlqvq7f3v18s"
+
+[node name="FunkinSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -320)
+sprite_frames = ExtResource("2_bss1m")
+animation = &"danceLeft"
+script = ExtResource("3_1n6qd")
+animations = Dictionary[String, ExtResource("4_2255d")]({
+"danceLeft": SubResource("Resource_bss1m"),
+"singDOWN": SubResource("Resource_b6ke7"),
+"singLEFT": SubResource("Resource_vfy7h"),
+"singRIGHT": SubResource("Resource_ta3d8"),
+"singUP": SubResource("Resource_sfwou")
+})
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"

@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://1ghand11g74v"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_0ucum"]
+[ext_resource type="AudioStream" uid="uid://j54ce8a8s2ky" path="res://game/songs/weekend1/darnell/Inst.ogg" id="2_6sc7u"]
+[ext_resource type="JSON" path="res://game/songs/weekend1/darnell/darnell-chart.json" id="3_4q517"]
+[ext_resource type="JSON" path="res://game/songs/weekend1/darnell/darnell-metadata.json" id="4_6t0h0"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_rll1q"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_goo2f"]
+[ext_resource type="AudioStream" uid="uid://dm5jlht1bkbkb" path="res://game/songs/weekend1/darnell/Voices-pico.ogg" id="7_6sc7u"]
+[ext_resource type="AudioStream" uid="uid://ihucutrjd8u7" path="res://game/songs/weekend1/darnell/Voices-darnell.ogg" id="8_4q517"]
+[ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_j4rag"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_aw2ua"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_5c8ek"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_pg6xx"]
+
+[node name="Darnell" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_0ucum")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_6sc7u")
+chart = ExtResource("3_4q517")
+metadata = ExtResource("4_6t0h0")
+camera = NodePath("Camera")
+stage = NodePath("Stage")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_rll1q")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_goo2f")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_6sc7u")
+characters = [NodePath("../../Stage/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_goo2f")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_4q517")
+characters = [NodePath("../../Stage/Dad")]
+cpu = true
+
+[node name="Stage" parent="." instance=ExtResource("9_j4rag")]
+
+[node name="Girlfriend" parent="Stage" instance=ExtResource("10_aw2ua")]
+position = Vector2(751.5, 787)
+
+[node name="Dad" parent="Stage" instance=ExtResource("11_5c8ek")]
+position = Vector2(335, 885)
+
+[node name="Boyfriend" parent="Stage" instance=ExtResource("12_pg6xx")]
+position = Vector2(989.5, 885)

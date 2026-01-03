@@ -1,0 +1,19 @@
+[gd_scene load_steps=7 format=3 uid="uid://bifccksd5becs"]
+
+[ext_resource type="PackedScene" uid="uid://brwukhkcyefd6" path="res://game/songs/week4/satin-panties/satin-panties.tscn" id="1_4y8lr"]
+[ext_resource type="AudioStream" uid="uid://i4n18nf6v3c0" path="res://game/songs/week4/high/Inst.ogg" id="2_rvtxg"]
+[ext_resource type="JSON" path="res://game/songs/week4/high/high-chart.json" id="3_u8eab"]
+[ext_resource type="JSON" path="res://game/songs/week4/high/high-metadata.json" id="4_nmi0w"]
+[ext_resource type="AudioStream" uid="uid://2w661h1eenrl" path="res://game/songs/week4/high/Voices-bf.ogg" id="5_yggbb"]
+[ext_resource type="AudioStream" uid="uid://beo8o4ftwewam" path="res://game/songs/week4/high/Voices-mom.ogg" id="6_ns2i5"]
+
+[node name="High" instance=ExtResource("1_4y8lr")]
+instrumental = ExtResource("2_rvtxg")
+chart = ExtResource("3_u8eab")
+metadata = ExtResource("4_nmi0w")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_yggbb")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_ns2i5")

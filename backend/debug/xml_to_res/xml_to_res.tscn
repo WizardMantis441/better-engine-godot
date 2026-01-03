@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cisstehcmxpro"]
+
+[ext_resource type="Script" uid="uid://bplxca3xwrvrp" path="res://backend/debug/xml_to_res/xml_to_res.gd" id="1_e756d"]
+
+[node name="XmlToRes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e756d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 0
+offset_left = 967.0
+offset_right = 1280.0
+offset_bottom = 720.0
+alignment = 1

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://co6rc2c3ebgnb"]
+
+[ext_resource type="SpriteFrames" uid="uid://brirks5kipf75" path="res://game/hud/default/notes/notes.res" id="1_vhcst"]
+[ext_resource type="Script" uid="uid://cglqojbjmdfa2" path="res://backend/objects/gameplay/note.gd" id="2_s12kf"]
+
+[node name="Note" type="AnimatedSprite2D"]
+z_index = 1
+sprite_frames = ExtResource("1_vhcst")
+animation = &"left"
+autoplay = "left"
+script = ExtResource("2_s12kf")

@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0tu8jkbpffge"]
+
+[ext_resource type="Texture2D" uid="uid://cddycko0w7re3" path="res://game/characters/nene/abot/stereoBG.png" id="1_6edb1"]
+[ext_resource type="Script" uid="uid://cm2xbb6venqyx" path="res://game/characters/nene/nene.gd" id="1_emcxc"]
+[ext_resource type="Script" uid="uid://be3lj1tqbtn2v" path="res://addons/gdanimate/animate_symbol.gd" id="1_ugbqn"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="2_6edb1"]
+[ext_resource type="SpriteFrames" uid="uid://nsddojr5pbyo" path="res://game/characters/nene/Nene.res" id="3_6edb1"]
+[ext_resource type="SpriteFrames" uid="uid://bxedb8anqspfr" path="res://game/characters/nene/abot/aBotViz.xml" id="4_41qoi"]
+[ext_resource type="Script" uid="uid://dpwuit425qj2i" path="res://game/characters/nene/visualizer.gd" id="4_thsx2"]
+[ext_resource type="Script" uid="uid://bqnqs6vqftn7m" path="res://backend/objects/funkin_sprite_anim.gd" id="5_gwdoj"]
+
+[sub_resource type="Resource" id="Resource_emcxc"]
+script = ExtResource("5_gwdoj")
+animation_name = "danceLeft"
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_41qoi"]
+script = ExtResource("5_gwdoj")
+animation_name = "danceRight"
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[node name="Nene" type="Node2D"]
+script = ExtResource("1_emcxc")
+bop_interval = 4
+metadata/_custom_type_script = "uid://bwlqvq7f3v18s"
+
+[node name="ABOT" type="Node2D" parent="."]
+
+[node name="Eyes BG" type="ColorRect" parent="ABOT"]
+offset_left = -358.0
+offset_top = -83.0
+offset_right = -248.0
+offset_bottom = -50.0
+
+[node name="Eyes" type="Node2D" parent="ABOT"]
+position = Vector2(-350, -92)
+script = ExtResource("1_ugbqn")
+atlas = "res://game/characters/nene/abot/system-eyes"
+frame = 28
+playing = true
+metadata/_custom_type_script = "uid://be3lj1tqbtn2v"
+
+[node name="Background" type="Sprite2D" parent="ABOT"]
+position = Vector2(0, -158)
+texture = ExtResource("1_6edb1")
+
+[node name="Visualizer" type="Node2D" parent="ABOT"]
+position = Vector2(-407, -332)
+script = ExtResource("4_thsx2")
+
+[node name="1" type="AnimatedSprite2D" parent="ABOT/Visualizer"]
+position = Vector2(240, 174)
+sprite_frames = ExtResource("4_41qoi")
+animation = &"viz1"
+script = ExtResource("2_6edb1")
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="2" type="AnimatedSprite2D" parent="ABOT/Visualizer"]
+position = Vector2(292, 172)
+sprite_frames = ExtResource("4_41qoi")
+animation = &"viz2"
+script = ExtResource("2_6edb1")
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="3" type="AnimatedSprite2D" parent="ABOT/Visualizer"]
+position = Vector2(347, 171)
+sprite_frames = ExtResource("4_41qoi")
+animation = &"viz3"
+script = ExtResource("2_6edb1")
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="4" type="AnimatedSprite2D" parent="ABOT/Visualizer"]
+position = Vector2(414, 171)
+sprite_frames = ExtResource("4_41qoi")
+animation = &"viz4"
+script = ExtResource("2_6edb1")
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="5" type="AnimatedSprite2D" parent="ABOT/Visualizer"]
+position = Vector2(471, 170)
+sprite_frames = ExtResource("4_41qoi")
+animation = &"viz5"
+script = ExtResource("2_6edb1")
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="6" type="AnimatedSprite2D" parent="ABOT/Visualizer"]
+position = Vector2(527, 172)
+sprite_frames = ExtResource("4_41qoi")
+animation = &"viz6"
+script = ExtResource("2_6edb1")
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="7" type="AnimatedSprite2D" parent="ABOT/Visualizer"]
+position = Vector2(580, 174)
+sprite_frames = ExtResource("4_41qoi")
+animation = &"viz7"
+script = ExtResource("2_6edb1")
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="Body" type="Node2D" parent="ABOT"]
+position = Vector2(-407, -332)
+script = ExtResource("1_ugbqn")
+atlas = "res://game/characters/nene/abot/system"
+metadata/_custom_type_script = "uid://be3lj1tqbtn2v"
+
+[node name="FunkinSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-28, -411)
+sprite_frames = ExtResource("3_6edb1")
+animation = &"danceLeft"
+script = ExtResource("2_6edb1")
+animations = Dictionary[String, ExtResource("5_gwdoj")]({
+"danceLeft": SubResource("Resource_emcxc"),
+"danceRight": SubResource("Resource_41qoi")
+})
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"

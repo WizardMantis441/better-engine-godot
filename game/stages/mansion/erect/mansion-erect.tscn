@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwsj362sj278o"]
+
+[ext_resource type="Script" uid="uid://u5vd3xr2qa6k" path="res://backend/objects/stage.gd" id="1_nl6yl"]
+[ext_resource type="SpriteFrames" uid="uid://c6umvfa5xawfl" path="res://game/stages/mansion/erect/bgtrees.xml" id="2_bpknu"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="3_kgogv"]
+[ext_resource type="Texture2D" uid="uid://bvnwd2fttwkcd" path="res://game/stages/mansion/erect/bgDark.png" id="4_c1pat"]
+[ext_resource type="Texture2D" uid="uid://dyl850aioyo3q" path="res://game/stages/mansion/erect/bgLight.png" id="5_bqsoc"]
+[ext_resource type="Texture2D" uid="uid://bqomwkc2pxb7o" path="res://game/stages/mansion/erect/stairsDark.png" id="6_bmtil"]
+[ext_resource type="Texture2D" uid="uid://dxqlm40enowuw" path="res://game/stages/mansion/erect/stairsLight.png" id="7_0yj4q"]
+
+[node name="Spooky Mansion [Erect]" type="Node2D"]
+script = ExtResource("1_nl6yl")
+camera_zoom = 1.0
+opponent_position = Vector2(382, 865)
+player_position = Vector2(1250, 885)
+player_z_index = 200
+gf_position = Vector2(821.5, 800)
+
+[node name="solid" type="ColorRect" parent="."]
+z_index = -500
+offset_left = -300.0
+offset_top = -500.0
+offset_right = 2100.0
+offset_bottom = 1500.0
+color = Color(0.14117648, 0.13725491, 0.21176471, 1)
+
+[node name="bgTrees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="bgTrees" type="AnimatedSprite2D" parent="bgTrees"]
+z_index = -101
+position = Vector2(200, 50)
+sprite_frames = ExtResource("2_bpknu")
+animation = &"bgtrees"
+centered = false
+script = ExtResource("3_kgogv")
+dance_every = 0
+
+[node name="bgDark" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(-560, -220)
+texture = ExtResource("4_c1pat")
+centered = false
+
+[node name="bgLight" type="Sprite2D" parent="."]
+z_index = -99
+position = Vector2(-560, -220)
+texture = ExtResource("5_bqsoc")
+centered = false
+
+[node name="stairsDark" type="Sprite2D" parent="."]
+z_index = 400
+position = Vector2(966, -225)
+texture = ExtResource("6_bmtil")
+centered = false
+
+[node name="stairsLight" type="Sprite2D" parent="."]
+z_index = 401
+position = Vector2(966, -225)
+texture = ExtResource("7_0yj4q")
+centered = false

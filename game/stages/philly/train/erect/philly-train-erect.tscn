@@ -1,0 +1,126 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0nhhdvs1wvhi"]
+
+[ext_resource type="Script" uid="uid://u5vd3xr2qa6k" path="res://backend/objects/stage.gd" id="1_8gq5x"]
+[ext_resource type="Texture2D" uid="uid://1727tha65rug" path="res://game/stages/philly/train/erect/sky.png" id="2_8u632"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="2_lj21s"]
+[ext_resource type="Texture2D" uid="uid://buuc0r1stnq0r" path="res://game/stages/philly/train/erect/city.png" id="4_1ljs4"]
+[ext_resource type="Texture2D" uid="uid://rpiffa0skw0w" path="res://game/stages/philly/train/erect/win0.png" id="5_x4rp6"]
+[ext_resource type="Texture2D" uid="uid://l1itnk2lsngs" path="res://game/stages/philly/train/erect/win1.png" id="6_cvckq"]
+[ext_resource type="Texture2D" uid="uid://e215x8x6o7qs" path="res://game/stages/philly/train/erect/win2.png" id="7_gnebg"]
+[ext_resource type="Texture2D" uid="uid://b46rly7ewlibm" path="res://game/stages/philly/train/erect/win3.png" id="8_sid73"]
+[ext_resource type="Texture2D" uid="uid://cl2sy2oprs2mm" path="res://game/stages/philly/train/erect/win4.png" id="9_62tev"]
+[ext_resource type="Texture2D" uid="uid://ba2kqx005clwe" path="res://game/stages/philly/train/erect/behindTrain.png" id="10_k4vaq"]
+[ext_resource type="Texture2D" uid="uid://bej4gyrjlacj2" path="res://game/stages/philly/train/train.png" id="11_r5x4r"]
+
+[node name="Philly (Train) [Erect]" type="Node2D"]
+script = ExtResource("1_8gq5x")
+opponent_position = Vector2(468, 885)
+opponent_camera_offset = Vector2(200, -100)
+player_position = Vector2(1020.5, 885)
+player_camera_offset = Vector2(-200, -100)
+
+[node name="sky" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="sky" type="Sprite2D" parent="sky"]
+z_index = 10
+position = Vector2(-100, 0)
+texture = ExtResource("2_8u632")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="city" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="city" type="Sprite2D" parent="city"]
+z_index = 20
+position = Vector2(-255, 45)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1ljs4")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="lights0" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="lights0" type="Sprite2D" parent="lights0"]
+z_index = 30
+position = Vector2(-255, 45)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_x4rp6")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="lights1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="lights1" type="Sprite2D" parent="lights1"]
+z_index = 30
+position = Vector2(-255, 45)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_cvckq")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="lights2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="lights2" type="Sprite2D" parent="lights2"]
+z_index = 30
+position = Vector2(-255, 45)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("7_gnebg")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="lights3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="lights3" type="Sprite2D" parent="lights3"]
+z_index = 30
+position = Vector2(-255, 45)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_sid73")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="lights4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="lights4" type="Sprite2D" parent="lights4"]
+z_index = 30
+position = Vector2(-255, 45)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_62tev")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="behindTrain" type="Sprite2D" parent="."]
+z_index = 50
+position = Vector2(-299, 144)
+texture = ExtResource("10_k4vaq")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="train" type="Sprite2D" parent="."]
+z_index = 60
+position = Vector2(2000, 360)
+texture = ExtResource("11_r5x4r")
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0
+
+[node name="street" type="Sprite2D" parent="."]
+z_index = 70
+position = Vector2(-299, 144)
+centered = false
+script = ExtResource("2_lj21s")
+dance_every = 0

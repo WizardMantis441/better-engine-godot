@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://lyuw3kua1kwc"]
+
+[ext_resource type="Script" uid="uid://cdjdqjrjntu1f" path="res://backend/debug/xml_to_res_old/xml_converter.gd" id="1_ieiou"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yre5q"]
+bg_color = Color(0, 0, 0, 0.40784314)
+corner_detail = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yre5q"]
+
+[node name="XML to SpriteFrames" type="Node"]
+script = ExtResource("1_ieiou")
+optimize = true
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -319.5
+offset_top = 111.0
+offset_right = 319.5
+offset_bottom = 231.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sparrow To SpriteFrames converter"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="State" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "inactive"
+horizontal_alignment = 1
+
+[node name="Search" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Search for File"
+
+[node name="LoadTxt" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yre5q")
+text = "res://"
+
+[node name="Convert" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Convert"
+
+[node name="PreviewSpr" type="AnimatedSprite2D" parent="VBoxContainer"]
+position = Vector2(319.5, 273)
+sprite_frames = SubResource("SpriteFrames_yre5q")
+
+[node name="Success Sound" type="AudioStreamPlayer" parent="."]
+
+[node name="SaveDialog" type="FileDialog" parent="."]
+mode_overrides_title = false
+display_mode = 1
+root_subfolder = "res://assets/sprites"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+mode_overrides_title = false
+file_mode = 0
+display_mode = 1
+root_subfolder = "res://assets/sprites"
+filters = PackedStringArray("*.png", "*.xml")
+
+[connection signal="pressed" from="VBoxContainer/Search" to="FileDialog" method="popup_centered"]
+[connection signal="pressed" from="VBoxContainer/Convert" to="SaveDialog" method="popup_centered"]
+[connection signal="file_selected" from="SaveDialog" to="." method="_on_save_dialog_file_selected"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

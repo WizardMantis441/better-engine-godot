@@ -1,0 +1,19 @@
+[gd_scene load_steps=7 format=3 uid="uid://di6aemwty3lqu"]
+
+[ext_resource type="PackedScene" uid="uid://iy3mtw5bgbop" path="res://game/songs/week3/pico/erect/pico-erect.tscn" id="1_8ihab"]
+[ext_resource type="AudioStream" uid="uid://dphs71y44q614" path="res://game/songs/week3/philly-nice/erect/Inst-erect.ogg" id="2_kxr2c"]
+[ext_resource type="JSON" path="res://game/songs/week3/philly-nice/erect/philly-nice-chart-erect.json" id="3_3eot1"]
+[ext_resource type="JSON" path="res://game/songs/week3/philly-nice/erect/philly-nice-metadata-erect.json" id="4_y82mh"]
+[ext_resource type="AudioStream" uid="uid://d0rft85bdrle3" path="res://game/songs/week3/philly-nice/erect/Voices-bf-erect.ogg" id="5_uyird"]
+[ext_resource type="AudioStream" uid="uid://cul5cwdnf853p" path="res://game/songs/week3/philly-nice/erect/Voices-pico-erect.ogg" id="6_pn8gp"]
+
+[node name="Philly Nice [Erect]" instance=ExtResource("1_8ihab")]
+instrumental = ExtResource("2_kxr2c")
+chart = ExtResource("3_3eot1")
+metadata = ExtResource("4_y82mh")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_uyird")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_pn8gp")

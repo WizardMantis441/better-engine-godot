@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkt6836wrree6"]
+
+[ext_resource type="Texture2D" uid="uid://boc56aydnokn0" path="res://menus/menuBG.png" id="1_kpmgs"]
+[ext_resource type="Script" uid="uid://bsaa68um71mrp" path="res://menus/main/main-menu.gd" id="1_mhrdm"]
+[ext_resource type="Texture2D" uid="uid://xstcc2r6dsoi" path="res://menus/menuBGMagenta.png" id="2_dnjvc"]
+[ext_resource type="SpriteFrames" uid="uid://bbqtndhec6vj6" path="res://menus/main/storymode.res" id="3_tvwcu"]
+[ext_resource type="SpriteFrames" uid="uid://bxl4t4tcx283e" path="res://menus/main/freeplay.res" id="4_rh23a"]
+[ext_resource type="SpriteFrames" uid="uid://b3vw1t3j7abke" path="res://menus/main/merch.res" id="5_1hiax"]
+[ext_resource type="SpriteFrames" uid="uid://btbkcu2dcdwio" path="res://menus/main/options.res" id="6_g0rdk"]
+[ext_resource type="SpriteFrames" uid="uid://djtp5wtxkbb7n" path="res://menus/main/credits.res" id="7_oh5pw"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_mhrdm")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+position_smoothing_enabled = true
+
+[node name="Parallax" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.17, 0.17)
+scroll_offset = Vector2(640, 360)
+
+[node name="MenuBg" type="Sprite2D" parent="Parallax"]
+position = Vector2(2, 34)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_kpmgs")
+
+[node name="MenuMagenta" type="Sprite2D" parent="Parallax/MenuBg"]
+visible = false
+texture = ExtResource("2_dnjvc")
+
+[node name="Parallax2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.4)
+scroll_offset = Vector2(640, 360)
+
+[node name="Items" type="Node" parent="Parallax2"]
+
+[node name="StoryMode" type="AnimatedSprite2D" parent="Parallax2/Items"]
+sprite_frames = ExtResource("3_tvwcu")
+animation = &"selected"
+autoplay = "idle"
+
+[node name="Freeplay" type="AnimatedSprite2D" parent="Parallax2/Items"]
+sprite_frames = ExtResource("4_rh23a")
+animation = &"selected"
+autoplay = "idle"
+
+[node name="Merch" type="AnimatedSprite2D" parent="Parallax2/Items"]
+sprite_frames = ExtResource("5_1hiax")
+animation = &"selected"
+autoplay = "idle"
+
+[node name="Options" type="AnimatedSprite2D" parent="Parallax2/Items"]
+sprite_frames = ExtResource("6_g0rdk")
+animation = &"selected"
+autoplay = "idle"
+
+[node name="Credits" type="AnimatedSprite2D" parent="Parallax2/Items"]
+sprite_frames = ExtResource("7_oh5pw")
+animation = &"selected"
+autoplay = "idle"

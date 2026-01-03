@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckiojapdv34iu"]
+
+[ext_resource type="Script" uid="uid://bkyibme8djs2i" path="res://backend/objects/gameplay/splash.gd" id="1_ekdir"]
+[ext_resource type="SpriteFrames" uid="uid://b4oeu4fnskme0" path="res://game/hud/default/notes/noteSplashes.xml" id="1_mud8x"]
+
+[node name="Splash" type="AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+scale = Vector2(1.429, 1.429)
+sprite_frames = ExtResource("1_mud8x")
+animation = &"note impact 1  blue"
+script = ExtResource("1_ekdir")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

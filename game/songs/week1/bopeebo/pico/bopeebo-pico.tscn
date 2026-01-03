@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://4gbxajbfai2i"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_k3ptm"]
+[ext_resource type="AudioStream" uid="uid://bd1c010y5sn23" path="res://game/songs/week1/bopeebo/pico/Voices-pico-playable-pico.ogg" id="2_koryc"]
+[ext_resource type="AudioStream" uid="uid://dsngd71yqgm0u" path="res://game/songs/week1/bopeebo/pico/Inst-pico.ogg" id="2_ktynl"]
+[ext_resource type="AudioStream" uid="uid://djnn5nn4gjcja" path="res://game/songs/week1/bopeebo/pico/Voices-dad-pico.ogg" id="2_pswur"]
+[ext_resource type="JSON" path="res://game/songs/week1/bopeebo/pico/bopeebo-chart-pico.json" id="3_lu84q"]
+[ext_resource type="JSON" path="res://game/songs/week1/bopeebo/pico/bopeebo-metadata-pico.json" id="4_7hgrd"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_yxkl6"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_ls03d"]
+[ext_resource type="PackedScene" uid="uid://28myhn626d5o" path="res://game/stages/stage/erect/main-stage-erect.tscn" id="9_8fxnt"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="10_i843i"]
+[ext_resource type="PackedScene" uid="uid://c0tu8jkbpffge" path="res://game/characters/nene/nene.tscn" id="10_uth2j"]
+[ext_resource type="PackedScene" uid="uid://cvt55gl8uhsb" path="res://game/characters/pico/pico.tscn" id="11_68wxr"]
+
+[node name="Bopeebo [Pico Mix]" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_k3ptm")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_ktynl")
+chart = ExtResource("3_lu84q")
+metadata = ExtResource("4_7hgrd")
+camera = NodePath("Camera")
+stage = NodePath("Stage")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.85, 0.85)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_yxkl6")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_ls03d")]
+position = Vector2(960, 125)
+vocal = ExtResource("2_koryc")
+characters = [NodePath("../../Stage/Pico")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_ls03d")]
+position = Vector2(320, 125)
+vocal = ExtResource("2_pswur")
+characters = [NodePath("../../Stage/Dad")]
+cpu = true
+
+[node name="Stage" parent="." instance=ExtResource("9_8fxnt")]
+
+[node name="Nene" parent="Stage" instance=ExtResource("10_uth2j")]
+position = Vector2(501.5, 825)
+
+[node name="Dad" parent="Stage" instance=ExtResource("10_i843i")]
+position = Vector2(40, 850)
+
+[node name="Pico" parent="Stage" instance=ExtResource("11_68wxr")]
+position = Vector2(977.5, 865)

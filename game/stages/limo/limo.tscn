@@ -1,0 +1,143 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp71t26tq7ngn"]
+
+[ext_resource type="Script" uid="uid://u5vd3xr2qa6k" path="res://backend/objects/stage.gd" id="1_63bhl"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="2_dk1uy"]
+[ext_resource type="Texture2D" uid="uid://b4goyb84aym6y" path="res://game/stages/limo/limoSunset.png" id="2_r63mc"]
+[ext_resource type="SpriteFrames" uid="uid://bwutcump5w8ch" path="res://game/stages/limo/bgLimo.xml" id="3_12vbk"]
+[ext_resource type="SpriteFrames" uid="uid://bylgv3y2hye1o" path="res://game/stages/limo/limoDrive.xml" id="4_c1c4y"]
+[ext_resource type="SpriteFrames" uid="uid://waqs4ki6gquf" path="res://game/stages/limo/henchmen.xml" id="5_s7th7"]
+[ext_resource type="Texture2D" uid="uid://br2ffks7r0g7g" path="res://game/stages/limo/fastCarLol.png" id="6_8itxu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r63mc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r63mc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jv32h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8itxu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Limo Ride" type="Node2D"]
+script = ExtResource("1_63bhl")
+camera_zoom = 0.9
+opponent_position = Vector2(329.5, 913)
+opponent_camera_offset = Vector2(150, 0)
+player_position = Vector2(1217.5, 592)
+player_camera_offset = Vector2(-300, -100)
+gf_position = Vector2(787, 779)
+
+[node name="limoSunset" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="limoSunset" type="AnimatedSprite2D" parent="limoSunset"]
+z_index = 10
+position = Vector2(-120, -50)
+sprite_frames = SubResource("SpriteFrames_r63mc")
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 0
+
+[node name="bgLimo" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="bgLimo" type="AnimatedSprite2D" parent="bgLimo"]
+z_index = 20
+position = Vector2(-200, 480)
+sprite_frames = ExtResource("3_12vbk")
+animation = &"background limo pink"
+autoplay = "background limo pink"
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 0
+
+[node name="limo" type="AnimatedSprite2D" parent="."]
+z_index = 150
+position = Vector2(-120, 550)
+sprite_frames = ExtResource("4_c1c4y")
+animation = &"Limo stage"
+autoplay = "Limo stage"
+frame_progress = 0.5428593
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 0
+
+[node name="fastCar" type="AnimatedSprite2D" parent="."]
+z_index = 500
+position = Vector2(-12600, 160)
+sprite_frames = SubResource("SpriteFrames_jv32h")
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 0
+
+[node name="limoDancer1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="limoDancer1" type="AnimatedSprite2D" parent="limoDancer1"]
+z_index = 30
+position = Vector2(100, 100)
+sprite_frames = ExtResource("5_s7th7")
+animation = &"hench dancing"
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 4
+
+[node name="limoDancer2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="limoDancer2" type="AnimatedSprite2D" parent="limoDancer2"]
+z_index = 30
+position = Vector2(400, 100)
+sprite_frames = ExtResource("5_s7th7")
+animation = &"hench dancing"
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 4
+
+[node name="limoDancer3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="limoDancer3" type="AnimatedSprite2D" parent="limoDancer3"]
+z_index = 30
+position = Vector2(700, 100)
+sprite_frames = ExtResource("5_s7th7")
+animation = &"hench dancing"
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 4
+
+[node name="limoDancer4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="limoDancer4" type="AnimatedSprite2D" parent="limoDancer4"]
+z_index = 30
+position = Vector2(1000, 100)
+sprite_frames = ExtResource("5_s7th7")
+animation = &"hench dancing"
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 4
+
+[node name="limoDancer5" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="limoDancer5" type="AnimatedSprite2D" parent="limoDancer5"]
+z_index = 30
+position = Vector2(1300, 100)
+sprite_frames = ExtResource("5_s7th7")
+animation = &"hench dancing"
+centered = false
+script = ExtResource("2_dk1uy")
+dance_every = 4

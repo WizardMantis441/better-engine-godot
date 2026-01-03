@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://bo44btrmu12dn"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_j33e8"]
+[ext_resource type="AudioStream" uid="uid://8ihf65yrf0yo" path="res://game/songs/week7/stress/Inst.ogg" id="2_lsh77"]
+[ext_resource type="JSON" path="res://game/songs/week7/stress/stress-chart.json" id="3_ldf0e"]
+[ext_resource type="JSON" path="res://game/songs/week7/stress/stress-metadata.json" id="4_x1r4b"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_ssyp1"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_aqn3j"]
+[ext_resource type="AudioStream" uid="uid://vx7h4hmypg8a" path="res://game/songs/week7/stress/Voices-bf.ogg" id="7_4n508"]
+[ext_resource type="AudioStream" uid="uid://buamr1447kbnp" path="res://game/songs/week7/stress/Voices-tankman.ogg" id="8_1p4ue"]
+[ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_d0p54"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_hba86"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_85imr"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_bje2l"]
+
+[node name="Stress" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_j33e8")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_lsh77")
+chart = ExtResource("3_ldf0e")
+metadata = ExtResource("4_x1r4b")
+camera = NodePath("Camera")
+stage = NodePath("Stage")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_ssyp1")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_aqn3j")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_4n508")
+characters = [NodePath("../../Stage/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_aqn3j")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_1p4ue")
+characters = [NodePath("../../Stage/Dad")]
+cpu = true
+
+[node name="Stage" parent="." instance=ExtResource("9_d0p54")]
+
+[node name="Girlfriend" parent="Stage" instance=ExtResource("10_hba86")]
+position = Vector2(751.5, 787)
+
+[node name="Dad" parent="Stage" instance=ExtResource("11_85imr")]
+position = Vector2(335, 885)
+
+[node name="Boyfriend" parent="Stage" instance=ExtResource("12_bje2l")]
+position = Vector2(989.5, 885)

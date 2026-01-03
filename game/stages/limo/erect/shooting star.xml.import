@@ -1,0 +1,18 @@
+[remap]
+
+importer="com.what-is-a-git.godot-sparrow-importer"
+type="SpriteFrames"
+uid="uid://dti13pwr1msl3"
+path="res://.godot/imported/shooting star.xml-b35e585107d64a200018c2c25b3eea37.res"
+
+[deps]
+
+source_file="res://game/stages/limo/erect/shooting star.xml"
+dest_files=["res://.godot/imported/shooting star.xml-b35e585107d64a200018c2c25b3eea37.res"]
+
+[params]
+
+use_offsets=true
+animation_framerate=24
+animations_looped=false
+store_external_spriteframes=false

@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvt55gl8uhsb"]
+
+[ext_resource type="Script" uid="uid://bwlqvq7f3v18s" path="res://backend/objects/character.gd" id="1_ng5mc"]
+[ext_resource type="SpriteFrames" uid="uid://cf6aw8b53llw" path="res://game/characters/pico/Pico_Basic.xml" id="2_mekdi"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="3_h6w4q"]
+[ext_resource type="Script" uid="uid://bqnqs6vqftn7m" path="res://backend/objects/funkin_sprite_anim.gd" id="4_l7h7a"]
+
+[sub_resource type="Resource" id="Resource_rrxfg"]
+script = ExtResource("4_l7h7a")
+animation_name = "Pico Idle Dance"
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_b6ke7"]
+script = ExtResource("4_l7h7a")
+animation_name = "Pico Down Note"
+offset = Vector2(-37, 82)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_vfy7h"]
+script = ExtResource("4_l7h7a")
+animation_name = "Pico NOTE LEFT"
+offset = Vector2(-86, 10)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_ta3d8"]
+script = ExtResource("4_l7h7a")
+animation_name = "Pico Note Right"
+offset = Vector2(61, -2)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_sfwou"]
+script = ExtResource("4_l7h7a")
+animation_name = "pico Up note"
+offset = Vector2(-32, -28)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[node name="Pico" type="Node2D"]
+script = ExtResource("1_ng5mc")
+metadata/_custom_type_script = "uid://bwlqvq7f3v18s"
+
+[node name="FunkinSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -186)
+sprite_frames = ExtResource("2_mekdi")
+animation = &"Pico Idle Dance"
+script = ExtResource("3_h6w4q")
+animations = Dictionary[String, ExtResource("4_l7h7a")]({
+"idle": SubResource("Resource_rrxfg"),
+"singDOWN": SubResource("Resource_b6ke7"),
+"singLEFT": SubResource("Resource_vfy7h"),
+"singRIGHT": SubResource("Resource_ta3d8"),
+"singUP": SubResource("Resource_sfwou")
+})
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"

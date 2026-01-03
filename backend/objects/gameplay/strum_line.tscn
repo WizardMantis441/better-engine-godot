@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://by7lsxsk376qe"]
+
+[ext_resource type="Script" uid="uid://okqc1or5xlvq" path="res://backend/objects/gameplay/strum_line.gd" id="1_vh5um"]
+[ext_resource type="PackedScene" uid="uid://yeurq7a1utid" path="res://backend/objects/gameplay/strum.tscn" id="2_ulryu"]
+
+[node name="StrumLine" type="Node2D"]
+script = ExtResource("1_vh5um")
+
+[node name="Left" parent="." instance=ExtResource("2_ulryu")]
+position = Vector2(-168, 0)
+id = 0
+
+[node name="Down" parent="." instance=ExtResource("2_ulryu")]
+position = Vector2(-56, 0)
+animation = &"staticDown"
+id = 1
+
+[node name="Up" parent="." instance=ExtResource("2_ulryu")]
+position = Vector2(56, 0)
+animation = &"staticUp"
+id = 2
+
+[node name="Right" parent="." instance=ExtResource("2_ulryu")]
+position = Vector2(168, 0)
+animation = &"staticRight"
+id = 3
+
+[connection signal="animation_finished" from="Left" to="Left" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Down" to="Down" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Up" to="Up" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Right" to="Right" method="_on_animation_finished"]

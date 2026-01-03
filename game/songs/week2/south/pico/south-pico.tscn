@@ -1,0 +1,19 @@
+[gd_scene load_steps=7 format=3 uid="uid://b61dvvd88dli8"]
+
+[ext_resource type="PackedScene" uid="uid://crptgo241gpw4" path="res://game/songs/week2/spookeez/pico/spookeez-pico.tscn" id="1_k7p02"]
+[ext_resource type="AudioStream" uid="uid://cfwp8etsskhx3" path="res://game/songs/week2/south/pico/Inst-pico.ogg" id="2_ssyub"]
+[ext_resource type="JSON" path="res://game/songs/week2/south/pico/south-chart-pico.json" id="3_updjj"]
+[ext_resource type="JSON" path="res://game/songs/week2/south/pico/south-metadata-pico.json" id="4_vr8rq"]
+[ext_resource type="AudioStream" uid="uid://cse1fce6ith0j" path="res://game/songs/week2/south/pico/Voices-pico-pico.ogg" id="5_vr8rq"]
+[ext_resource type="AudioStream" uid="uid://xwbn3plcvrvg" path="res://game/songs/week2/south/pico/Voices-spooky-pico.ogg" id="6_ruwaa"]
+
+[node name="South [Pico Mix]" instance=ExtResource("1_k7p02")]
+instrumental = ExtResource("2_ssyub")
+chart = ExtResource("3_updjj")
+metadata = ExtResource("4_vr8rq")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_vr8rq")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_ruwaa")

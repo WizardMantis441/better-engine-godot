@@ -1,0 +1,19 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5i4ky7u5n2y3"]
+
+[ext_resource type="PackedScene" uid="uid://ccqy4emggvusc" path="res://game/songs/week2/spookeez/spookeez.tscn" id="1_bmiuv"]
+[ext_resource type="AudioStream" uid="uid://3pmt6m0jdbln" path="res://game/songs/week2/south/Inst.ogg" id="2_713j5"]
+[ext_resource type="JSON" path="res://game/songs/week2/south/south-chart.json" id="3_uooqe"]
+[ext_resource type="JSON" path="res://game/songs/week2/south/south-metadata.json" id="4_qpyd3"]
+[ext_resource type="AudioStream" uid="uid://cx0aiup2bat7r" path="res://game/songs/week2/south/Voices-bf.ogg" id="5_5y6xv"]
+[ext_resource type="AudioStream" uid="uid://dr1ja3aqbw3qk" path="res://game/songs/week2/south/Voices-spooky.ogg" id="6_y66ua"]
+
+[node name="South" instance=ExtResource("1_bmiuv")]
+instrumental = ExtResource("2_713j5")
+chart = ExtResource("3_uooqe")
+metadata = ExtResource("4_qpyd3")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_5y6xv")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_y66ua")

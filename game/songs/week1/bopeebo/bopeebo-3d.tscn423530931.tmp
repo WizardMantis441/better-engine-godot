@@ -1,0 +1,31 @@
+[gd_scene load_steps=9 format=3 uid="uid://1switq1ylmu6"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_ql71f"]
+[ext_resource type="AudioStream" uid="uid://b16uhuufiy0t0" path="res://game/songs/week1/bopeebo/Inst.ogg" id="2_f8go0"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="2_w4m8l"]
+[ext_resource type="JSON" path="res://game/songs/week1/bopeebo/bopeebo-chart.json" id="3_68plr"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="3_ekb3e"]
+[ext_resource type="AudioStream" uid="uid://mrfdp6rt2826" path="res://game/songs/week1/bopeebo/Voices-bf.ogg" id="4_f8go0"]
+[ext_resource type="JSON" path="res://game/songs/week1/bopeebo/bopeebo-metadata.json" id="4_rsfy6"]
+[ext_resource type="AudioStream" uid="uid://b5338alwqox0l" path="res://game/songs/week1/bopeebo/Voices-dad.ogg" id="5_68plr"]
+
+[node name="Bopeebo3d" type="Node3D" node_paths=PackedStringArray("hud", "strum_lines")]
+script = ExtResource("1_ql71f")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Opponent Strumline"), NodePath("HUD/Player Strumline")]
+instrumental = ExtResource("2_f8go0")
+chart = ExtResource("3_68plr")
+metadata = ExtResource("4_rsfy6")
+
+[node name="HUD" parent="." instance=ExtResource("2_w4m8l")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("3_ekb3e")]
+position = Vector2(960, 125)
+vocal = ExtResource("4_f8go0")
+characters = [NodePath(""), null]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("3_ekb3e")]
+position = Vector2(320, 125)
+vocal = ExtResource("5_68plr")
+characters = [NodePath("")]
+cpu = true
