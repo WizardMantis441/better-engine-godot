@@ -4,7 +4,6 @@ var character:Character
 var character_ghost:Character
 
 func _ready() -> void:
-	await ready
 	_on_new_character_pressed()
 
 func _process(delta: float) -> void:
@@ -14,12 +13,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_right"): %Viewport.get_camera_2d().position.x += delta * 200
 
 func load_character(path:String):
-	if character: character.queue_free()
 	if character_ghost: character_ghost.queue_free()
+	if character: character.queue_free()
 
 	var char_scene = load(path)
 	character = char_scene.instantiate()
 	character_ghost = char_scene.instantiate()
+	character_ghost.modulate.a = 0.5
 	character_ghost.visible = false
 	
 	%NameInput.text = character.name
@@ -28,8 +28,11 @@ func load_character(path:String):
 	%SwapLeftRightAnimsInput.button_pressed = character.swap_left_right_anims
 	%IdleAnimsInput.text = ", ".join(character.idle_anims)
 	
-	%Viewport.add_child(character)
 	%Viewport.add_child(character_ghost)
+	%Viewport.add_child(character)
+	
+	for anim in %AnimationsList.get_children():
+		anim.queue_free()
 	
 	var anim_scene = load("res://backend/debug/character_editor/character_animation.tscn")
 	for anim in character.sprite.animations.keys():
@@ -68,6 +71,7 @@ func _on_name_text_submitted(new_text: String) -> void:
 
 func _on_sprite_selected(path: String) -> void:
 	character.sprite.sprite_frames = load(path)
+	character_ghost.sprite.sprite_frames = load(path)
 	# load anims again probably
 
 func _on_cam_offset_x_value_changed(value: float) -> void:
