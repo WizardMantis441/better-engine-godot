@@ -37,9 +37,20 @@ func load_character(path:String):
 		new_anim.set_data(anim, character.sprite.animations.get(anim))
 		%AnimationsList.add_child(new_anim)
 		
+		new_anim.update_anim.connect(_on_anim_update.bind(new_anim))
 		new_anim.play.pressed.connect(_on_anim_play_pressed.bind(new_anim))
 		new_anim.show_ghost.pressed.connect(_on_anim_show_ghost_pressed.bind(new_anim))
 		new_anim.delete.pressed.connect(_on_anim_delete_pressed.bind(new_anim))
+
+func update_character_anims():
+	var list:Dictionary[String, FunkinAnim] = {}
+	for anim in %AnimationsList.get_children():
+		list.set(anim.anim_name, anim.anim_data)
+	
+	for _char in [character, character_ghost]:
+		_char.sprite.animations = list
+		if _char.sprite.animations.has(_char.sprite.current_anim):
+			_char.sprite.play_animation(_char.sprite.current_anim, 1, false, true)
 
 func _on_new_character_pressed() -> void:
 	load_character("res://game/characters/bf/bf.tscn")
@@ -48,8 +59,9 @@ func _on_load_character(path: String) -> void:
 	load_character(path)
 
 func _on_save_character(path: String) -> void:
-	var saved_freaking_character_bro = PackedScene.new().pack(character)
-	ResourceSaver.save(saved_freaking_character_bro, path)
+	var saved = PackedScene.new()
+	saved.pack(character)
+	ResourceSaver.save(saved, path)
 
 func _on_name_text_submitted(new_text: String) -> void:
 	character.name = new_text
@@ -76,22 +88,29 @@ func _on_new_anim_pressed() -> void:
 	var new_anim = load("res://backend/debug/character_editor/character_animation.tscn").instantiate()
 	%AnimationsList.add_child(new_anim)
 
+	new_anim.update_anim.connect(_on_anim_update.bind(new_anim))
+	new_anim.play.pressed.connect(_on_anim_play_pressed.bind(new_anim))
 	new_anim.show_ghost.pressed.connect(_on_anim_show_ghost_pressed.bind(new_anim))
 	new_anim.delete.pressed.connect(_on_anim_delete_pressed.bind(new_anim))
+	update_character_anims()
 
 func _on_hide_ghost_pressed() -> void:
 	character_ghost.visible = false
 	%HideGhostButton.visible = false
 
 func _on_anim_play_pressed(anim:CharacterAnimation) -> void:
-	character.sprite.play_animation(anim.anim_name)
+	character.sprite.play_animation(anim.anim_name, 1, false, true)
 	character.sprite.offset = anim.anim_data.offset
 
 func _on_anim_show_ghost_pressed(anim:CharacterAnimation) -> void:
 	character_ghost.visible = true
 	%HideGhostButton.visible = true
-	character_ghost.sprite.play_animation(anim.anim_name)
+	character_ghost.sprite.play_animation(anim.anim_name, 1, false, true)
 	character_ghost.sprite.offset = anim.anim_data.offset
 
+func _on_anim_update(_anim:CharacterAnimation) -> void:
+	update_character_anims()
+
 func _on_anim_delete_pressed(anim:CharacterAnimation) -> void:
-	pass
+	%AnimationsList.remove_child(anim)
+	update_character_anims()

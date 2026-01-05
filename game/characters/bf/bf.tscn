@@ -23,6 +23,12 @@ animation_name = "BF NOTE LEFT"
 offset = Vector2(-20, 4)
 metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
 
+[sub_resource type="Resource" id="Resource_6dgxc"]
+script = ExtResource("3_p7ayw")
+animation_name = "BF NOTE LEFT MISS"
+offset = Vector2(-20.5, -9)
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
 [sub_resource type="Resource" id="Resource_ta3d8"]
 script = ExtResource("3_p7ayw")
 animation_name = "BF NOTE RIGHT"
@@ -33,12 +39,6 @@ metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
 script = ExtResource("3_p7ayw")
 animation_name = "BF NOTE UP"
 offset = Vector2(25, -15)
-metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
-
-[sub_resource type="Resource" id="Resource_6dgxc"]
-script = ExtResource("3_p7ayw")
-animation_name = "BF NOTE LEFT MISS"
-offset = Vector2(-20.5, -9)
 metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
 
 [node name="Boyfriend" type="Node2D"]

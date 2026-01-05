@@ -9,7 +9,7 @@ func _ready():
 	animation_finished.connect(on_anim_finish)
 
 var current_anim:String = ""
-func play_animation(anim_name:String = "", custom_speed:float = 1, from_end:bool = false):
+func play_animation(anim_name:String = "", custom_speed:float = 1, from_end:bool = false, force:bool = false):
 	current_anim = anim_name
 	
 	var real_name:String = anim_name
@@ -18,6 +18,9 @@ func play_animation(anim_name:String = "", custom_speed:float = 1, from_end:bool
 		offset = animations[anim_name].offset
 	
 	play(real_name, custom_speed, from_end)
+	
+	if force:
+		set_frame_and_progress(0, 0.0) # TODO: does this work with from end?
 
 func step_hit(step:int):
 	if step % dance_every == 0:
