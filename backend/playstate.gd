@@ -17,9 +17,6 @@ class_name PlayState
 var stream_player:AudioStreamPlayer
 
 var default_camera_zoom:Vector2 = Vector2(1, 1)
-var default_camera_zoom_weight:float = 0.04
-var default_hud_zoom:Vector2 = Vector2(1, 1)
-var default_hud_zoom_weight:float = 0.04
 
 var bop_rate:int = 16
 var bop_offset:int = 0
@@ -32,8 +29,19 @@ var scroll_speed:float = 1:
 
 var events:Array = []
 
+var score:int = 0:
+	set(v):
+		score = v
+		hud.score = v
+
+var health:float = 50:
+	set(v):
+		health = v
+		hud.health = v
+
+var combo:int = 0
+
 func _ready() -> void:
-	# TODO: funkin_camera.gd that adds a default zoom and basic easing stuff
 	default_camera_zoom = get_viewport().get_camera_2d().zoom
 
 	var diffs:Array = ["easy", "normal", "hard", "erect", "nightmare"]
@@ -56,11 +64,11 @@ func load_song(difficulty:String = "hard"):
 		if sl.vocal:
 			audio_stream_sync.stream_count += 1
 			audio_stream_sync.set_sync_stream(i + 1, sl.vocal)
+			sl.vocal_sync_index = i + 1
 	
 	stream_player = AudioStreamPlayer.new()
 	stream_player.stream = audio_stream_sync
 	add_child(stream_player)
-	#stream_player.play()
 	
 	assert(chart != null, "No chart!")
 	assert(metadata != null, "No metadata!")
@@ -71,15 +79,16 @@ func load_song(difficulty:String = "hard"):
 	Conductor.measure_hit.connect(measure_hit)
 	Conductor.song_position = -5 * Conductor.crochet
 	
-	for beat in [-1, -2, -3, -4]:
-		events.append({"name": "CountdownEvent", "value": beat, "time": beat * Conductor.crochet * 1000.0})
-	
 	for event in chart.data.events:
 		events.append({"name": event.e, "value": event.v, "time": event.t})
 	
-	events.sort_custom(func(a, b): return a["time"] < b["time"])
-	
+
 	# TODO: all focus camera events are forced if t <= 0
+
+	for beat in [-1, -2, -3, -4]:
+		events.append({"name": "CountdownEvent", "value": beat, "time": beat * Conductor.crochet * 1000.0})
+
+	events.sort_custom(func(a, b): return a["time"] < b["time"])
 	
 	for note in chart.data.notes[difficulty]:
 		var s_line_index = int(note.d / 4)
@@ -106,8 +115,7 @@ func _process(delta: float) -> void:
 		var e = events.pop_front()
 		trigger_event(e.name, e.value, e.time)
 	
-	camera.zoom = lerp(camera.zoom, default_camera_zoom, default_camera_zoom_weight)
-	hud.scale = lerp(hud.scale, default_hud_zoom, default_camera_zoom_weight)
+	# TODO: funkin_hud.gd by default should handle it's own lerping
 
 func step_hit(step:int):
 	if (step + bop_offset) % bop_rate == 0:
@@ -129,6 +137,11 @@ func trigger_event(event_name:String, value, time:float):
 		
 		"FocusCamera": # TODO: move to funkin_camera function
 			var pos:Vector2 = Vector2.ZERO
+			var current_camera = get_viewport().get_camera_2d()
+			
+			#if camera is not FunkinCamera:
+				#print("ayo")
+				#Vector
 			
 			if value is not Dictionary: # classic
 				var sum:Vector2 = Vector2.ZERO
@@ -144,7 +157,7 @@ func trigger_event(event_name:String, value, time:float):
 					if value <= stage_offsets.size():
 						stage_offs = stage_offsets[value]
 				
-				get_viewport().get_camera_2d().position = pos + stage_offs
+				current_camera.position = pos + stage_offs
 			else:
 				var x:float = float(value.x) if value.has("x") else 0.0
 				var y:float = float(value.y) if value.has("y") else 0.0
@@ -154,7 +167,7 @@ func trigger_event(event_name:String, value, time:float):
 				
 				if tween_ease == "CLASSIC":
 					trigger_event("FocusCamera", character, time)
-					get_viewport().get_camera_2d().position += Vector2(x, y)
+					current_camera.position += Vector2(x, y)
 					return
 				else:
 					pass # TODO: this
@@ -170,11 +183,12 @@ func trigger_event(event_name:String, value, time:float):
 			var zoom = Vector2(value.zoom, value.zoom) if value.has("zoom") else Vector2(1.0, 1.0)
 			var duration = (value.duration if value.has("duration") else 4.0) * Conductor.crochet / 4.0
 			var mode = value.mode if value.has("mode") else "stage"
-			#var ease = value.ease # default is "linear"
+			var zoom_ease:String = value.ease # default is "linear"
 			
 			camera_zoom_tween.set_parallel(true)
-			camera_zoom_tween.set_trans(Tween.TRANS_ELASTIC)
-			camera_zoom_tween.set_ease(Tween.EASE_IN_OUT)
+			#camera_zoom_tween.set_trans(Tween.TRANS_ELASTIC)
+			#camera_zoom_tween.set_ease(Tween.EASE_IN_OUT)
+			set_tween_trans_and_ease(camera_zoom_tween, zoom_ease)
 			camera_zoom_tween.tween_property(self, "default_camera_zoom", zoom * (Vector2(stage.camera_zoom, stage.camera_zoom) if mode == "stage" else Vector2(1.0, 1.0)), duration)
 			camera_zoom_tween.tween_property(get_viewport().get_camera_2d(), "zoom", zoom * (Vector2(stage.camera_zoom, stage.camera_zoom) if mode == "stage" else Vector2(1.0, 1.0)), duration)
 			camera_zoom_tween.play()
@@ -216,12 +230,22 @@ func set_tween_trans_and_ease(tween:Tween, str:String):
 		"Out": Tween.EASE_OUT
 	}
 	
+	var found_type:bool = false
 	for type in trans.keys():
 		if str.begins_with(type):
+			found_type = true
 			tween.set_trans(trans.get(type))
 			break
+	
+	if !found_type:
+		tween.set_trans(Tween.TRANS_LINEAR)
 
+	found_type = false
 	for type in eases.keys():
 		if str.ends_with(type):
+			found_type = true
 			tween.set_ease(eases.get(type))
 			break
+
+	if !found_type:
+		tween.set_ease(Tween.EASE_OUT)

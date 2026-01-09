@@ -7,10 +7,18 @@ func _ready() -> void:
 	_on_new_character_pressed()
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_left"): %Viewport.get_camera_2d().position.x -= delta * 200
-	if Input.is_action_pressed("ui_down"): %Viewport.get_camera_2d().position.y += delta * 200
-	if Input.is_action_pressed("ui_up"): %Viewport.get_camera_2d().position.y -= delta * 200
-	if Input.is_action_pressed("ui_right"): %Viewport.get_camera_2d().position.x += delta * 200
+	if Input.is_key_pressed(KEY_SHIFT):
+		if character.sprite != null:
+			if Input.is_action_pressed("ui_left"): character.sprite.position.x -= delta * 200
+			if Input.is_action_pressed("ui_down"): character.sprite.position.y += delta * 200
+			if Input.is_action_pressed("ui_up"): character.sprite.position.y -= delta * 200
+			if Input.is_action_pressed("ui_right"): character.sprite.position.x += delta * 200	
+		character_ghost.sprite.position = character.sprite.position
+	else:
+		if Input.is_action_pressed("ui_left"): %Viewport.get_camera_2d().position.x -= delta * 200
+		if Input.is_action_pressed("ui_down"): %Viewport.get_camera_2d().position.y += delta * 200
+		if Input.is_action_pressed("ui_up"): %Viewport.get_camera_2d().position.y -= delta * 200
+		if Input.is_action_pressed("ui_right"): %Viewport.get_camera_2d().position.x += delta * 200
 
 func load_character(path:String):
 	if character_ghost: character_ghost.queue_free()

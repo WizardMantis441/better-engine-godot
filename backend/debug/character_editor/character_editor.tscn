@@ -54,6 +54,7 @@ title = "Open a File"
 position = Vector2i(0, 36)
 file_mode = 0
 display_mode = 1
+root_subfolder = "res://game/characters/"
 filters = PackedStringArray("*.tscn")
 show_hidden_files = true
 
@@ -66,6 +67,7 @@ text = "Save"
 oversampling_override = 1.0
 position = Vector2i(0, 36)
 display_mode = 1
+root_subfolder = "res://game/characters/"
 filters = PackedStringArray("*.tscn")
 show_hidden_files = true
 
@@ -103,6 +105,7 @@ title = "Open a File"
 position = Vector2i(0, 36)
 file_mode = 0
 display_mode = 1
+root_subfolder = "res://game/characters/"
 filters = PackedStringArray("*.xml", "*.res")
 show_hidden_files = true
 

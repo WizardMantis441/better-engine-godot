@@ -1,12 +1,13 @@
-extends Node2D
-
 class_name StrumLine
+extends Node2D
 
 var animations = ["Left", "Down", "Up", "Right"]
 
 @onready var hud:Hud = self.get_parent()
 
 @export var vocal:AudioStream
+var vocal_sync_index:int
+
 @export var characters:Array[Character]
 
 @onready var strums = [$Left, $Down, $Up, $Right]
@@ -48,12 +49,18 @@ func _process(_delta:float) -> void:
 				notes.erase(note)
 				note.hit()
 	else:
+		var hitzone = 160
+		
+		var missed_notes = notes.filter(func(n): return Conductor.song_position * 1000.0 - hitzone > n.time)
+		for note in missed_notes:
+			notes.erase(note)
+			note.miss()
+		
 		var inputs = [Input.is_action_just_pressed("left"), Input.is_action_just_pressed("down"), Input.is_action_just_pressed("up"), Input.is_action_just_pressed("right")]
 		var releases = [Input.is_action_just_released("left"), Input.is_action_just_released("down"), Input.is_action_just_released("up"), Input.is_action_just_released("right")]
 		
 		for i in range(inputs.size()):
 			if inputs[i]:
-				var hitzone = 160
 				var possible_notes = notes.filter(func(n): return abs(Conductor.song_position * 1000.0 - n.time) < hitzone and n.id == i)
 				
 				if possible_notes.size() == 0:

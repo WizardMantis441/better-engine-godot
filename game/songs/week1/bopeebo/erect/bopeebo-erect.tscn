@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://crb55em3jj2fe"]
+[gd_scene load_steps=14 format=3 uid="uid://crb55em3jj2fe"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_8u4ta"]
 [ext_resource type="AudioStream" uid="uid://brpirhiwjsdei" path="res://game/songs/week1/bopeebo/erect/Inst-erect.ogg" id="2_74j6c"]
 [ext_resource type="JSON" path="res://game/songs/week1/bopeebo/erect/bopeebo-chart-erect.json" id="3_2xvor"]
 [ext_resource type="JSON" path="res://game/songs/week1/bopeebo/erect/bopeebo-metadata-erect.json" id="4_gwxh8"]
 [ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_an2d4"]
+[ext_resource type="Script" uid="uid://dhj71furw851k" path="res://backend/objects/funkin_camera.gd" id="5_mj1qs"]
 [ext_resource type="AudioStream" uid="uid://cwyjih33ny058" path="res://game/songs/week1/bopeebo/erect/Voices-bf-erect.ogg" id="5_olgvp"]
 [ext_resource type="AudioStream" uid="uid://dsgh7pkhrqhhi" path="res://game/songs/week1/bopeebo/erect/Voices-dad-erect.ogg" id="6_5n16c"]
 [ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_awkom"]
@@ -20,13 +21,15 @@ strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumlin
 instrumental = ExtResource("2_74j6c")
 chart = ExtResource("3_2xvor")
 metadata = ExtResource("4_gwxh8")
-camera = NodePath("Camera")
+camera = NodePath("")
 stage = NodePath("Stage")
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(0.85, 0.85)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
+script = ExtResource("5_mj1qs")
+metadata/_custom_type_script = "uid://dhj71furw851k"
 
 [node name="HUD" parent="." instance=ExtResource("5_an2d4")]
 

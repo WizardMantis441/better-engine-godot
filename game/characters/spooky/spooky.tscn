@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://backend/objects/character.gd" id="1_a62an"]
+[ext_resource type="SpriteFrames" path="res://game/characters/spooky/SpookyKids.xml" id="2_ffeur"]
+[ext_resource type="Script" path="res://backend/objects/funkin_sprite.gd" id="3_mauo6"]
+[ext_resource type="Script" path="res://backend/objects/funkin_sprite_anim.gd" id="4_fpsry"]
+
+[sub_resource type="Resource" id="Resource_ple56"]
+script = ExtResource("4_fpsry")
+animation_name = "Idle"
+loop = true
+
+[sub_resource type="Resource" id="Resource_n422a"]
+script = ExtResource("4_fpsry")
+animation_name = "SingLEFT"
+offset = Vector2(-101, 7)
+
+[sub_resource type="Resource" id="Resource_qncll"]
+script = ExtResource("4_fpsry")
+animation_name = "SingDOWN"
+offset = Vector2(22, 77)
+
+[sub_resource type="Resource" id="Resource_n6np5"]
+script = ExtResource("4_fpsry")
+animation_name = "SingUP"
+offset = Vector2(-20, -11)
+
+[sub_resource type="Resource" id="Resource_6amqe"]
+script = ExtResource("4_fpsry")
+animation_name = "SingRIGHT"
+offset = Vector2(100, 6)
+
+[sub_resource type="Resource" id="Resource_b27vw"]
+script = ExtResource("4_fpsry")
+animation_name = "Cheer"
+offset = Vector2(19, -10)
+
+[node name="Spooky Kids" type="Node2D"]
+script = ExtResource("1_a62an")
+metadata/_custom_type_script = "uid://bwlqvq7f3v18s"
+
+[node name="FunkinSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-51.66407, -256.66403)
+sprite_frames = ExtResource("2_ffeur")
+animation = &"Cheer"
+frame = 19
+frame_progress = 1.0
+offset = Vector2(19, -10)
+script = ExtResource("3_mauo6")
+animations = Dictionary[String, ExtResource("4_fpsry")]({
+"cheer": SubResource("Resource_b27vw"),
+"idle": SubResource("Resource_ple56"),
+"singDOWN": SubResource("Resource_qncll"),
+"singLEFT": SubResource("Resource_n422a"),
+"singRIGHT": SubResource("Resource_6amqe"),
+"singUP": SubResource("Resource_n6np5")
+})
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"

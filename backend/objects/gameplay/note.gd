@@ -3,6 +3,8 @@ extends AnimatedSprite2D
 
 @onready var strum:Strum = self.get_parent()
 @onready var strum_line:StrumLine = strum.get_parent()
+@onready var hud:Hud = strum_line.get_parent()
+@onready var game:PlayState = hud.get_parent() # (Dunno if i like this)
 
 var id:int = 0:
 	set(value):
@@ -28,7 +30,7 @@ func hit():
 	
 	var ms_offset:int = int(Conductor.song_position * 1000.0 - time)
 	var rating:String = judge(ms_offset)
-	var score:int = score(ms_offset)
+	var new_score:int = score(ms_offset)
 	
 	var health_change:float = 0.0
 	var is_combo_break:bool = false
@@ -52,14 +54,36 @@ func hit():
 		self.queue_free()
 	
 	strum.press(true)
-	strum_line.hud.display_rating(rating)
-	# game.combo ++;
-	# game.score += score;
-	# game.health += health_change;
-	# game.popUpScore(rating);
+	game.combo = 0 if is_combo_break else game.combo + 1
+	game.score += new_score;
+	game.health += health_change;
+	hud.display_rating(rating)
+	if game.combo >= 10:
+		hud.display_combo(game.combo)
+	
+	if strum_line.vocal && strum_line.vocal_sync_index:
+		game.stream_player.stream.set_sync_stream_volume(strum_line.vocal_sync_index, 0.0)
 
 func miss():
-	pass
+	# apply score
+	
+	# play sound
+	
+	game.health -= 4
+	game.score -= 100
+	if game.combo >= 10:
+		hud.display_combo(0)
+	game.combo = 0
+	
+	if strum_line.vocal && strum_line.vocal_sync_index:
+		game.stream_player.stream.set_sync_stream_volume(strum_line.vocal_sync_index, -100.0)
+		#strum_line.vocal.volume_db = -100.0
+	
+	for character in strum_line.characters:
+		character.play_animation(["singLEFTmiss", "singDOWNmiss", "singUPmiss", "singRIGHTmiss"][id % 4])
+
+	await get_tree().create_timer(1).timeout
+	self.queue_free()
 
 func score(ms:int):
 	var abs_ms = abs(ms)

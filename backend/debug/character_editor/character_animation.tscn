@@ -98,8 +98,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Delete"
 
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer/AnimNameInput" to="." method="_on_anim_name_submitted"]
 [connection signal="text_submitted" from="MarginContainer/VBoxContainer/HBoxContainer/AnimNameInput" to="." method="_on_anim_name_submitted"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer5/AnimPrefixInput" to="." method="_on_anim_prefix_submitted"]
 [connection signal="text_submitted" from="MarginContainer/VBoxContainer/HBoxContainer5/AnimPrefixInput" to="." method="_on_anim_prefix_submitted"]
+[connection signal="changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetX" to="." method="_on_offset_x_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetX" to="." method="_on_offset_x_changed"]
+[connection signal="changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetY" to="." method="_on_offset_y_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetY" to="." method="_on_offset_y_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer3/LoopInput" to="." method="_on_loop_toggled"]

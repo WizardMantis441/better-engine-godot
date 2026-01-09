@@ -12,8 +12,8 @@ instrumental = ExtResource("2_knk17")
 chart = ExtResource("3_0b01q")
 metadata = ExtResource("4_7o1hv")
 
-[node name="Player Strumline" parent="HUD" index="2"]
+[node name="Player Strumline" parent="HUD" index="5"]
 vocal = ExtResource("5_ietxo")
 
-[node name="Opponent Strumline" parent="HUD" index="3"]
+[node name="Opponent Strumline" parent="HUD" index="6"]
 vocal = ExtResource("6_6akvc")
