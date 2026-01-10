@@ -65,9 +65,7 @@ func hit():
 		game.stream_player.stream.set_sync_stream_volume(strum_line.vocal_sync_index, 0.0)
 
 func miss():
-	# apply score
-	
-	# play sound
+	# TODO: play sound
 	
 	game.health -= 4
 	game.score -= 100
@@ -77,7 +75,6 @@ func miss():
 	
 	if strum_line.vocal && strum_line.vocal_sync_index:
 		game.stream_player.stream.set_sync_stream_volume(strum_line.vocal_sync_index, -100.0)
-		#strum_line.vocal.volume_db = -100.0
 	
 	for character in strum_line.characters:
 		character.play_animation(["singLEFTmiss", "singDOWNmiss", "singUPmiss", "singRIGHTmiss"][id % 4])
