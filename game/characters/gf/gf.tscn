@@ -36,7 +36,6 @@ metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
 
 [node name="Girlfriend" type="Node2D"]
 script = ExtResource("1_vyabb")
-bop_interval = 4
 metadata/_custom_type_script = "uid://bwlqvq7f3v18s"
 
 [node name="FunkinSprite" type="AnimatedSprite2D" parent="."]

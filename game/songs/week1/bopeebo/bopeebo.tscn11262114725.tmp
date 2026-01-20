@@ -1,0 +1,56 @@
+[gd_scene load_steps=14 format=3 uid="uid://dxyx7tq2s4pas"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_ak1r7"]
+[ext_resource type="AudioStream" uid="uid://b16uhuufiy0t0" path="res://game/songs/week1/bopeebo/Inst.ogg" id="2_gypdv"]
+[ext_resource type="JSON" path="res://game/songs/week1/bopeebo/bopeebo-chart.json" id="3_gh2lh"]
+[ext_resource type="JSON" path="res://game/songs/week1/bopeebo/bopeebo-metadata.json" id="4_cgfbf"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_nnmx0"]
+[ext_resource type="Script" uid="uid://dhj71furw851k" path="res://backend/objects/funkin_camera.gd" id="5_pqct3"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="7_cgfbf"]
+[ext_resource type="AudioStream" uid="uid://b5338alwqox0l" path="res://game/songs/week1/bopeebo/Voices-dad.ogg" id="7_nnmx0"]
+[ext_resource type="AudioStream" uid="uid://mrfdp6rt2826" path="res://game/songs/week1/bopeebo/Voices-bf.ogg" id="8_wcf3n"]
+[ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_wcf3n"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_vun3i"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="10_wcf3n"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="11_mq5rn"]
+
+[node name="Bopeebo" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_ak1r7")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_gypdv")
+chart = ExtResource("3_gh2lh")
+metadata = ExtResource("4_cgfbf")
+camera = NodePath("Camera")
+stage = NodePath("Stage")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(1.1, 1.1)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("5_pqct3")
+metadata/_custom_type_script = "uid://dhj71furw851k"
+
+[node name="HUD" parent="." instance=ExtResource("5_nnmx0")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("7_cgfbf")]
+position = Vector2(910, 105)
+vocal = ExtResource("8_wcf3n")
+characters = [NodePath("../../Stage/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("7_cgfbf")]
+position = Vector2(270, 105)
+vocal = ExtResource("7_nnmx0")
+characters = [NodePath("../../Stage/Dad")]
+cpu = true
+
+[node name="Stage" parent="." instance=ExtResource("9_wcf3n")]
+
+[node name="Girlfriend" parent="Stage" instance=ExtResource("10_vun3i")]
+position = Vector2(751.5, 787)
+
+[node name="Dad" parent="Stage" instance=ExtResource("10_wcf3n")]
+position = Vector2(335, 885)
+
+[node name="Boyfriend" parent="Stage" instance=ExtResource("11_mq5rn")]
+position = Vector2(989.5, 885)

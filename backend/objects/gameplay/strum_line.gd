@@ -30,17 +30,6 @@ func _ready() -> void:
 	for strum in strums:
 		strum.cpu = cpu
 
-func add_note(note):
-	var new_note = preload("res://backend/objects/gameplay/note.tscn").instantiate()
-	strums[int(note.d) % strums.size()].add_child(new_note)
-	
-	new_note.id = int(note.d) % strums.size()
-	new_note.time = note.t
-	if note.has("l"):
-		new_note.length = note.l
-		
-	notes.append(new_note)
-
 func _process(_delta:float) -> void:
 	if cpu:
 		for note in notes:
@@ -76,3 +65,24 @@ func _process(_delta:float) -> void:
 			
 			if releases[i] and !strums[i].animation.begins_with("static"):
 				strums[i].play("static" + animations[i])
+
+func add_note(note):
+	var new_note = preload("res://backend/objects/gameplay/note.tscn").instantiate()
+	strums[int(note.d) % strums.size()].add_child(new_note)
+	
+	new_note.id = int(note.d) % strums.size()
+	new_note.time = note.t
+	if note.has("l"):
+		new_note.length = note.l
+		
+	notes.append(new_note)
+
+func get_camera_position() -> Vector2:
+	var sum = Vector2.ZERO
+	if characters.is_empty(): return sum
+	
+	for character in characters:
+		sum += character.get_camera_position()
+	
+	sum /= characters.size()
+	return sum

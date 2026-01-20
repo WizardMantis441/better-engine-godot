@@ -43,7 +43,7 @@ var combo:int = 0
 
 func _ready() -> void:
 	default_camera_zoom = get_viewport().get_camera_2d().zoom
-
+	
 	var diffs:Array = ["easy", "normal", "hard", "erect", "nightmare"]
 	var cur_diff:int = diffs.size() - 1
 	while cur_diff > 0 and !chart.data.notes.has(diffs[cur_diff]):
@@ -53,6 +53,13 @@ func _ready() -> void:
 		load_song(diffs[cur_diff])
 	else:
 		print("couldnt find a chart difficulty")
+
+	if !strum_lines.is_empty():
+		var pos_smoothing = camera.position_smoothing_enabled
+		camera.position_smoothing_enabled = false
+		trigger_event("FocusCamera", 1, 0.0)
+		await get_tree().process_frame
+		camera.position_smoothing_enabled = pos_smoothing
 
 func load_song(difficulty:String = "hard"):
 	var audio_stream_sync = AudioStreamSynchronized.new()
@@ -81,9 +88,6 @@ func load_song(difficulty:String = "hard"):
 	
 	for event in chart.data.events:
 		events.append({"name": event.e, "value": event.v, "time": event.t})
-	
-
-	# TODO: all focus camera events are forced if t <= 0
 
 	for beat in [-1, -2, -3, -4]:
 		events.append({"name": "CountdownEvent", "value": beat, "time": beat * Conductor.crochet * 1000.0})
@@ -114,8 +118,6 @@ func _process(delta: float) -> void:
 	if !events.is_empty() and events[0].time <= Conductor.song_position * 1000.0:
 		var e = events.pop_front()
 		trigger_event(e.name, e.value, e.time)
-	
-	# TODO: funkin_hud.gd by default should handle it's own lerping
 
 func step_hit(step:int):
 	if (step + bop_offset) % bop_rate == 0:
@@ -139,17 +141,11 @@ func trigger_event(event_name:String, value, time:float):
 			var pos:Vector2 = Vector2.ZERO
 			var current_camera = get_viewport().get_camera_2d()
 			
-			#if camera is not FunkinCamera:
-				#print("ayo")
-				#Vector
-			
 			if value is not Dictionary: # classic
-				var sum:Vector2 = Vector2.ZERO
-				if strum_lines[value].characters.size() > 0:
-					for character in strum_lines[value].characters:
-						sum += (character.sprite.global_position + character.camera_offset)
-					sum /= strum_lines[value].characters.size()
-					pos += sum
+				if strum_lines.size() < value:
+					return
+				
+				pos = strum_lines[value].get_camera_position()
 				
 				var stage_offs = Vector2.ZERO
 				if stage:

@@ -43,3 +43,6 @@ func step_hit(step:int):
 	
 func on_anim_finish():
 	can_idle = true
+
+func get_camera_position() -> Vector2:
+	return sprite.global_position + camera_offset

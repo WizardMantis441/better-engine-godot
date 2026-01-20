@@ -2,7 +2,7 @@ class_name FunkinSprite
 extends AnimatedSprite2D
 
 @export var animations:Dictionary[String, FunkinAnim]
-@export var dance_every:int = 8
+@export var dance_every:int = 4
 
 func _ready():
 	Conductor.step_hit.connect(step_hit)

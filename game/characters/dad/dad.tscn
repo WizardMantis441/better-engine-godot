@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://dce1gi35xadwb"]
 
-[ext_resource type="Script" path="res://backend/objects/character.gd" id="1_br683"]
-[ext_resource type="Script" path="res://backend/objects/funkin_sprite.gd" id="2_evl7w"]
-[ext_resource type="SpriteFrames" path="res://game/characters/dad/daddyDearest.xml" id="2_qcu0i"]
-[ext_resource type="Script" path="res://backend/objects/funkin_sprite_anim.gd" id="4_qcu0i"]
+[ext_resource type="Script" uid="uid://bwlqvq7f3v18s" path="res://backend/objects/character.gd" id="1_br683"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="2_evl7w"]
+[ext_resource type="SpriteFrames" uid="uid://bu6bgjaxau3bq" path="res://game/characters/dad/daddyDearest.xml" id="2_qcu0i"]
+[ext_resource type="Script" uid="uid://bqnqs6vqftn7m" path="res://backend/objects/funkin_sprite_anim.gd" id="4_qcu0i"]
 
 [sub_resource type="Resource" id="Resource_xifjf"]
 script = ExtResource("4_qcu0i")
@@ -34,15 +34,15 @@ animation_name = "singUP"
 offset = Vector2(-5, -26)
 metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
 
-[node name="@Node2D@822" type="Node2D"]
+[node name="Dad" type="Node2D"]
 script = ExtResource("1_br683")
 
 [node name="FunkinSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(47, -360)
+position = Vector2(50, -342)
 sprite_frames = ExtResource("2_qcu0i")
-animation = &"singUP"
+animation = &"idle"
 autoplay = "idle"
-frame = 15
+frame = 13
 frame_progress = 1.0
 offset = Vector2(-5, -26)
 script = ExtResource("2_evl7w")

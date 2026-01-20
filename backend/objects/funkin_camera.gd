@@ -10,9 +10,10 @@ func tween_to_point(position:Vector2, time:float, tween_str:String):
 
 func snap_to_point(new_pos:Vector2):
 	position = new_pos
+	var old = position_smoothing_enabled
 	position_smoothing_enabled = false
 	await get_tree().create_timer(0.0001).timeout
-	position_smoothing_enabled = false
+	position_smoothing_enabled = old
 
 func _process(delta: float) -> void:
 	if lerp_to_target_zoom:
