@@ -1,6 +1,10 @@
 class_name Note
 extends AnimatedSprite2D
 
+@onready var sustain:ColorRect = $Sustain
+@onready var sustain_trail: TextureRect = $Sustain/Trail
+@onready var sustain_end: TextureRect = $Sustain/End
+
 @onready var strum:Strum = self.get_parent()
 @onready var strum_line:StrumLine = strum.get_parent()
 @onready var hud:Hud = strum_line.get_parent()
@@ -9,7 +13,11 @@ extends AnimatedSprite2D
 var id:int = 0:
 	set(value):
 		id = value
-		self.play(["left", "down", "up", "right"][id])
+		
+		var dir:String = ["left", "down", "up", "right"][id]
+		self.play(dir)
+		sustain_trail.texture = load("res://game/hud/default/notes/holds/" + dir + ".png")
+		sustain_end.texture = load("res://game/hud/default/notes/holds/" + dir + "-end.png")
 
 var time:float = 0
 var length:float = 0
@@ -25,7 +33,10 @@ func hit():
 	
 	if strum.cpu:
 		strum.press(true)
-		self.queue_free()
+		if self.length > 0:
+			strum.hold(self)
+		else:
+			self.queue_free()
 		return
 	
 	var ms_offset:int = int(Conductor.song_position * 1000.0 - time)
@@ -51,7 +62,10 @@ func hit():
 		can_hit = false
 		self.modulate.a *= 0.5
 	else:
-		self.queue_free()
+		if self.length > 0:
+			strum.hold(self)
+		else:
+			self.queue_free()
 	
 	strum.press(true)
 	game.combo = 0 if is_combo_break else game.combo + 1
@@ -103,5 +117,11 @@ func judge(ms:int):
 	if t < 160: return "shit"
 	return "miss"
 
-func _process(_delta: float) -> void:
-	self.position.y = (time - Conductor.song_position * 1000.0) * 0.45 * scroll_speed
+func _process(delta: float) -> void:
+	if self == strum.held_note:
+		self.position.y = 0
+	else:
+		self.position.y = (time - Conductor.song_position * 1000.0) * 0.45 * scroll_speed
+	
+	sustain.size.y = 0.45 * scroll_speed * self.length
+	sustain_trail.size.y = sustain.size.y - sustain_end.size.y

@@ -3,7 +3,9 @@ class_name PlayState
 
 @export_subgroup("HUD")
 @export var hud:CanvasLayer
-@export var strum_lines:Array[StrumLine]
+#@export var strum_lines:Array[StrumLine]
+@export var opponent_strumline:StrumLine
+@export var player_strumline:StrumLine
 
 @export_subgroup("Song Data")
 @export var instrumental:AudioStream
@@ -24,8 +26,9 @@ var bop_offset:int = 0
 var scroll_speed:float = 1:
 	set(v):
 		scroll_speed = v
-		for sl in strum_lines:
-			sl.scroll_speed = v
+		for sl in [opponent_strumline, player_strumline]:
+			if sl:
+				sl.scroll_speed = v
 
 var events:Array = []
 
@@ -54,10 +57,13 @@ func _ready() -> void:
 	else:
 		print("couldnt find a chart difficulty")
 
-	if !strum_lines.is_empty():
+	var focus:int
+	if opponent_strumline: focus = 1
+	elif player_strumline: focus = 0
+	if focus:
 		var pos_smoothing = camera.position_smoothing_enabled
 		camera.position_smoothing_enabled = false
-		trigger_event("FocusCamera", 1, 0.0)
+		trigger_event("FocusCamera", focus, 0.0)
 		await get_tree().process_frame
 		camera.position_smoothing_enabled = pos_smoothing
 
@@ -66,12 +72,12 @@ func load_song(difficulty:String = "hard"):
 	audio_stream_sync.stream_count = 1
 	audio_stream_sync.set_sync_stream(0, instrumental)
 	
-	for i in range(strum_lines.size()):
-		var sl = strum_lines[i]
-		if sl.vocal:
+	var i:int = 1
+	for sl in [opponent_strumline, player_strumline]:
+		if sl and sl.vocal:
 			audio_stream_sync.stream_count += 1
-			audio_stream_sync.set_sync_stream(i + 1, sl.vocal)
-			sl.vocal_sync_index = i + 1
+			audio_stream_sync.set_sync_stream(i, sl.vocal)
+			i += 1
 	
 	stream_player = AudioStreamPlayer.new()
 	stream_player.stream = audio_stream_sync
@@ -95,12 +101,12 @@ func load_song(difficulty:String = "hard"):
 	events.sort_custom(func(a, b): return a["time"] < b["time"])
 	
 	for note in chart.data.notes[difficulty]:
-		var s_line_index = int(note.d / 4)
-		if s_line_index > strum_lines.size():
-			print("oh nah.")
-		else:
-			var s_line = strum_lines[s_line_index]
-			s_line.add_note(note)
+		var sl_i = int(note.d / 4)
+		var sl:StrumLine
+		if sl_i == 0: sl = player_strumline
+		elif sl_i == 1: sl = opponent_strumline
+		if sl:
+			sl.add_note(note)
 	
 	if chart.data.has("scrollSpeed"):
 		scroll_speed = chart.data.scrollSpeed[difficulty]
@@ -142,10 +148,12 @@ func trigger_event(event_name:String, value, time:float):
 			var current_camera = get_viewport().get_camera_2d()
 			
 			if value is not Dictionary: # classic
-				if strum_lines.size() < value:
-					return
+				var sl:StrumLine
+				if value == 0: sl = player_strumline
+				elif value == 1: sl = opponent_strumline
+				else: return
 				
-				pos = strum_lines[value].get_camera_position()
+				pos = sl.get_camera_position()
 				
 				var stage_offs = Vector2.ZERO
 				if stage:
@@ -193,15 +201,17 @@ func trigger_event(event_name:String, value, time:float):
 		"PlayAnimation":
 			var target = value.target
 			var anim = value.anim
-			# var force = value.force
+			var force = value.force
 			
-			var sl_index = 2
-			if target in ["bf", "boyfriend", "player"]: sl_index = 0
-			elif target in ["dad", "opponent"]: sl_index = 1
+			var sl:StrumLine
+			if target in ["bf", "boyfriend", "player"]: sl = player_strumline
+			elif target in ["dad", "opponent"]: sl = opponent_strumline
 			
-			if strum_lines.size() <= sl_index:
-				for character in strum_lines[sl_index].characters:
-					character.play_animation(anim) # TODO: force?
+			if sl:
+				for character in sl.characters:
+					print("bruh")
+					if character:
+						character.play_animation(anim, 1, false, force)
 
 func set_tween_trans_and_ease(tween:Tween, str:String):
 	var trans = {

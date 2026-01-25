@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://co6rc2c3ebgnb"]
+[gd_scene load_steps=5 format=3 uid="uid://co6rc2c3ebgnb"]
 
 [ext_resource type="SpriteFrames" uid="uid://brirks5kipf75" path="res://game/hud/default/notes/notes.res" id="1_vhcst"]
 [ext_resource type="Script" uid="uid://cglqojbjmdfa2" path="res://backend/objects/gameplay/note.gd" id="2_s12kf"]
+[ext_resource type="Texture2D" uid="uid://bo2lisknsnqxs" path="res://game/hud/default/notes/holds/left.png" id="3_r7lp0"]
+[ext_resource type="Texture2D" uid="uid://1t46kclvcwbu" path="res://game/hud/default/notes/holds/left-end.png" id="4_500yy"]
 
 [node name="Note" type="AnimatedSprite2D"]
 z_index = 1
@@ -9,3 +11,40 @@ sprite_frames = ExtResource("1_vhcst")
 animation = &"left"
 autoplay = "left"
 script = ExtResource("2_s12kf")
+
+[node name="Sustain" type="ColorRect" parent="."]
+clip_children = 1
+z_index = -1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.0
+offset_right = -51.0
+offset_bottom = 166.0
+grow_horizontal = 2
+
+[node name="Trail" type="TextureRect" parent="Sustain"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(26, 0)
+texture = ExtResource("3_r7lp0")
+stretch_mode = 1
+
+[node name="End" type="TextureRect" parent="Sustain"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -64.0
+offset_right = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_500yy")
+stretch_mode = 2

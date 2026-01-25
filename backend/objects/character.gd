@@ -15,14 +15,14 @@ func _ready():
 
 	sprite.animation_finished.connect(on_anim_finish)
 
-func play_animation(anim_name:String = "", custom_speed:float = 1, from_end:bool = false) -> void:
+func play_animation(anim_name:String = "", custom_speed:float = 1, from_end:bool = false, force:bool = false) -> void:
 	if swap_left_right_anims:
 		if anim_name.find("LEFT") != -1:
 			anim_name.replace("LEFT", "RIGHT")
 		elif anim_name.find("RIGHT") != -1:
 			anim_name.replace("RIGHT", "LEFT")
 	
-	sprite.play_animation(anim_name, custom_speed, from_end)
+	sprite.play_animation(anim_name, custom_speed, from_end, force)
 	
 	if anim_name.to_lower().find("sing") != -1:
 		can_idle = false

@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://yeurq7a1utid"]
+[gd_scene load_steps=4 format=3 uid="uid://yeurq7a1utid"]
 
 [ext_resource type="Script" uid="uid://cnu4c6xynorjv" path="res://backend/objects/gameplay/strum.gd" id="1_1kua8"]
 [ext_resource type="SpriteFrames" uid="uid://b0bpe6iewq3ux" path="res://game/hud/default/notes/noteStrumline.res" id="1_7d0g0"]
+[ext_resource type="SpriteFrames" uid="uid://c3xecvpr72y5j" path="res://game/hud/default/notes/hold-covers/left.res" id="3_vkrer"]
 
 [node name="Strum" type="AnimatedSprite2D"]
 scale = Vector2(0.7, 0.7)
 sprite_frames = ExtResource("1_7d0g0")
 animation = &"staticLeft"
 script = ExtResource("1_1kua8")
-id = null
+
+[node name="HoldCover" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-160, -152)
+sprite_frames = ExtResource("3_vkrer")
+animation = &"splash"
+autoplay = "loop"
+centered = false

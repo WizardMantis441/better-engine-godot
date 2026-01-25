@@ -14,10 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="10_wcf3n"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="11_mq5rn"]
 
-[node name="Bopeebo" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+[node name="Bopeebo" type="Node2D" node_paths=PackedStringArray("hud", "opponent_strumline", "player_strumline", "camera", "stage")]
 script = ExtResource("1_ak1r7")
 hud = NodePath("HUD")
-strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+opponent_strumline = NodePath("HUD/Opponent Strumline")
+player_strumline = NodePath("HUD/Player Strumline")
 instrumental = ExtResource("2_gypdv")
 chart = ExtResource("3_gh2lh")
 metadata = ExtResource("4_cgfbf")
