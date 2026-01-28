@@ -1,26 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://by7lsxsk376qe"]
+[gd_scene format=3 uid="uid://by7lsxsk376qe"]
 
 [ext_resource type="Script" uid="uid://okqc1or5xlvq" path="res://backend/objects/gameplay/strum_line.gd" id="1_vh5um"]
 [ext_resource type="PackedScene" uid="uid://yeurq7a1utid" path="res://backend/objects/gameplay/strum.tscn" id="2_ulryu"]
 
-[node name="StrumLine" type="Node2D"]
+[node name="StrumLine" type="Node2D" unique_id=1540979689]
 script = ExtResource("1_vh5um")
 
-[node name="Left" parent="." instance=ExtResource("2_ulryu")]
+[node name="Left" parent="." unique_id=1331985907 instance=ExtResource("2_ulryu")]
 position = Vector2(-168, 0)
-id = 0
 
-[node name="Down" parent="." instance=ExtResource("2_ulryu")]
+[node name="Down" parent="." unique_id=427906078 instance=ExtResource("2_ulryu")]
 position = Vector2(-56, 0)
 animation = &"staticDown"
 id = 1
 
-[node name="Up" parent="." instance=ExtResource("2_ulryu")]
+[node name="Up" parent="." unique_id=16249462 instance=ExtResource("2_ulryu")]
 position = Vector2(56, 0)
 animation = &"staticUp"
 id = 2
 
-[node name="Right" parent="." instance=ExtResource("2_ulryu")]
+[node name="Right" parent="." unique_id=459418511 instance=ExtResource("2_ulryu")]
 position = Vector2(168, 0)
 animation = &"staticRight"
 id = 3

@@ -61,10 +61,22 @@ func _process(_delta:float) -> void:
 					var notes_to_clear = possible_notes.filter(func(n): return abs(possible_notes[0].time - n.time) < 2) # stacked notes
 					for n in notes_to_clear:
 						notes.erase(n)
-						n.queue_free()
+						if n != possible_notes[0]:
+							n.queue_free()
 			
-			if releases[i] and !strums[i].animation.begins_with("static"):
-				strums[i].play("static" + animations[i])
+			if releases[i]:
+				if strums[i].held_note != null:
+					# the min amt of the hold note in ms before the player
+					# gets penalized for letting go of it early
+					if strums[i].held_note.length < 160:
+						strums[i].unhold()
+						print("ok :]")
+					else:
+						strums[i].held_note.miss()
+						print("MISSED!!!!!!!")
+					
+				if !strums[i].animation.begins_with("static"):
+					strums[i].play("static" + animations[i])
 
 func add_note(note):
 	var new_note = preload("res://backend/objects/gameplay/note.tscn").instantiate()

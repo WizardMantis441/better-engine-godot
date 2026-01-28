@@ -81,20 +81,29 @@ func hit():
 func miss():
 	# TODO: play sound
 	
-	game.health -= 4
-	game.score -= 100
-	if game.combo >= 10:
-		hud.display_combo(0)
-	game.combo = 0
+	if self == strum.held_note:
+		# game.health -= min(10, self.length / 1000.0 * 1.25)
+		# NOTE: in the code i see a pretty cool penalty system for holds but none of that ever happens
+		strum.unhold()
+		if game.combo >= 10:
+			hud.display_combo(0)
+		game.combo = 0
+		self.queue_free()
+	else:
+		game.health -= 4
+		game.score -= 100
+		if game.combo >= 10:
+			hud.display_combo(0)
+		game.combo = 0
 	
-	if strum_line.vocal && strum_line.vocal_sync_index:
-		game.stream_player.stream.set_sync_stream_volume(strum_line.vocal_sync_index, -100.0)
+		if strum_line.vocal && strum_line.vocal_sync_index:
+			game.stream_player.stream.set_sync_stream_volume(strum_line.vocal_sync_index, -100.0)
 	
-	for character in strum_line.characters:
-		character.play_animation(["singLEFTmiss", "singDOWNmiss", "singUPmiss", "singRIGHTmiss"][id % 4])
+		for character in strum_line.characters:
+			character.play_animation(["singLEFTmiss", "singDOWNmiss", "singUPmiss", "singRIGHTmiss"][id % 4])
 
-	await get_tree().create_timer(1).timeout
-	self.queue_free()
+		await get_tree().create_timer(1).timeout
+		self.queue_free()
 
 func score(ms:int):
 	var abs_ms = abs(ms)

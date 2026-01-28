@@ -27,6 +27,9 @@ func hold(note:Note):
 	hold_cover.visible = true
 	hold_cover.play("loop")
 
+func unhold():
+	hold_cover.visible = false
+
 func splash():
 	var new_splash = preload("res://backend/objects/gameplay/splash.tscn").instantiate()
 	new_splash.id = self.id
@@ -40,12 +43,10 @@ func _on_animation_finished() -> void:
 
 func _process(delta: float) -> void:
 	if held_note:
-		if !cpu:
-			print(held_note.length)
 		held_note.length -= delta * 1000.0
 		if !cpu:
-			print("HELLO")
 			game.score += int(250.0 * delta) # TODO: check if score is stored as a float
+			game.health += 6.0 * delta
 		if held_note.length <= 0:
 			print("die")
 			held_note.queue_free()
