@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byo56j55yvhkn"
-path="res://.godot/imported/alphabet.png-810bfa95965f43edc00b1a15b40c1732.ctex"
+path="res://.godot/imported/alphabet.png-cfe5682c60332fa8b3b039d21a9b9eb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/alphabet.png"
-dest_files=["res://.godot/imported/alphabet.png-810bfa95965f43edc00b1a15b40c1732.ctex"]
+source_file="res://backend/objects/alphabet/alphabet.png"
+dest_files=["res://.godot/imported/alphabet.png-cfe5682c60332fa8b3b039d21a9b9eb0.ctex"]
 
 [params]
 

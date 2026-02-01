@@ -3,12 +3,12 @@
 importer="com.what-is-a-git.godot-sparrow-importer"
 type="SpriteFrames"
 uid="uid://lm3m16i25fu6"
-path="res://.godot/imported/alphabet.xml-70ae53c1d250508b2e87feaf7c11f216.res"
+path="res://.godot/imported/alphabet.xml-851c174894c90805e181eced63231e90.res"
 
 [deps]
 
-source_file="res://menus/alphabet.xml"
-dest_files=["res://.godot/imported/alphabet.xml-70ae53c1d250508b2e87feaf7c11f216.res"]
+source_file="res://backend/objects/alphabet/alphabet.xml"
+dest_files=["res://.godot/imported/alphabet.xml-851c174894c90805e181eced63231e90.res"]
 
 [params]
 
