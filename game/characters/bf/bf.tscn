@@ -1,9 +1,14 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene format=3 uid="uid://b5dhcukcytfuy"]
 
-[ext_resource type="Script" path="res://backend/objects/character.gd" id="1_bx584"]
-[ext_resource type="SpriteFrames" path="res://game/characters/bf/BOYFRIEND.res" id="2_p7ayw"]
-[ext_resource type="Script" path="res://backend/objects/funkin_sprite_anim.gd" id="3_p7ayw"]
-[ext_resource type="Script" path="res://backend/objects/funkin_sprite.gd" id="4_rrxfg"]
+[ext_resource type="Script" uid="uid://bwlqvq7f3v18s" path="res://backend/objects/character.gd" id="1_bx584"]
+[ext_resource type="SpriteFrames" uid="uid://cuc52ket2l6c6" path="res://game/characters/bf/BOYFRIEND.res" id="2_p7ayw"]
+[ext_resource type="Script" uid="uid://bqnqs6vqftn7m" path="res://backend/objects/funkin_sprite_anim.gd" id="3_p7ayw"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="4_rrxfg"]
+
+[sub_resource type="Resource" id="Resource_gtlht"]
+script = ExtResource("3_p7ayw")
+animation_name = "BF HEY!!"
+offset = Vector2(5, -1)
 
 [sub_resource type="Resource" id="Resource_rrxfg"]
 script = ExtResource("3_p7ayw")
@@ -41,16 +46,11 @@ animation_name = "BF NOTE UP"
 offset = Vector2(25, -15)
 metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
 
-[sub_resource type="Resource" id="Resource_gtlht"]
-script = ExtResource("3_p7ayw")
-animation_name = "BF HEY!!"
-offset = Vector2(5, -1)
-
-[node name="Boyfriend2" type="Node2D"]
+[node name="Boyfriend" type="Node2D" unique_id=1615409970]
 script = ExtResource("1_bx584")
 metadata/_custom_type_script = "uid://bwlqvq7f3v18s"
 
-[node name="FunkinSprite" type="AnimatedSprite2D" parent="."]
+[node name="FunkinSprite" type="AnimatedSprite2D" parent="." unique_id=1774444347]
 position = Vector2(0, -165)
 sprite_frames = ExtResource("2_p7ayw")
 animation = &"BF HEY!!"

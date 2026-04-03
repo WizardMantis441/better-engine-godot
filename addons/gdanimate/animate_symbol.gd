@@ -1,238 +1,253 @@
 @tool
-@icon('animate_symbol.svg')
-class_name AnimateSymbol extends Node2D
-## Node that lets you play Adobe Animate Texture Atlases
-## in Godot.
+@icon("symbol.svg")
+extends Node2D
+class_name AnimateSymbol
 
 
-## The folder path to the atlas that is loaded.
-## [br][br][b]Note[/b]: This automatically reloads the atlas when
-## changed.
-@export_dir var atlas: String:
-	set(v):
-		atlas = v
-		load_atlas(atlas)
-
-
-@export_tool_button('Reload Atlas', 'Reload') var reload_atlas := _reload_atlas
-@export_tool_button('Cache Atlas', 'Save') var cache_atlas := _cache_atlas
-
-@export_group('Animation')
-
-## The current symbol used by the animation. Empty uses the timeline symbol.
-## [br][br][b]Note[/b]: This automatically sets [member frame] to 0 when
-## changed. (Resetting the current animation)
-@export var symbol: String = '':
-	set(v):
-		if symbol != v:
+@export_placeholder("Name or Prefix") var symbol: String = "":
+	set(value):
+		if symbol != value:
 			queue_redraw()
-		symbol = v
-		symbol_changed.emit(v)
-		frame = 0
-		_timer = 0.0
+		symbol = value
 
-## The current frame of the animation.
-## [br][br][b]Note[/b]: This automatically redraws the entire
-## atlas when changed.
 @export var frame: int = 0:
-	set(v):
-		if frame != v:
+	set(value):
+		if atlases.is_empty():
 			queue_redraw()
-		frame = v
+			frame = value
+			return
+		
+		var length: int = get_animation_length()
+		value = validate_frame(value, length)
+		if frame != value:
+			queue_redraw()
+			frame = value
 
-## Defines what happens when the end of the animation is reached.
-## [br][br]Loop loops the animation forever and Play Once just stops.
-@export_enum('Loop', 'Play Once') var loop_mode: String = 'Loop'
+@export_range(0.0, 10.0, 0.01, "or_greater") var speed_scale: float = 1.0
 
-@export_range(0.0, 10.0, 0.01, 'or_greater') var speed: float = 1.0
+@export var autoplay: bool = false
+@export var playing: bool = false
+@export var loop: bool = false
+
+@export_group("Offset")
+
+## Tries to center the current sprite based on the size of the frame.
+## This may not work on certain formats like texture atlases for now
+## due to them not providing any bounding box.
+@export var centered: bool = true:
+	set(value):
+		if centered != value:
+			queue_redraw()
+
+		centered = value
 
 @export var offset: Vector2 = Vector2.ZERO:
-	set(v):
-		if offset != v:
+	set(value):
+		if offset != value:
 			queue_redraw()
-		offset = v
+		
+		offset = value
 
-## Keeps track of whether or not the sprite is being animated automatically.
-@export var playing: bool = false
+@export_group("Atlas")
+@export var atlases: Array[AnimateAtlas] = []
+@export var atlas_index: int = 0:
+	set(value):
+		if value < 0:
+			value = absi(value)
+		if not atlases.is_empty():
+			value %= atlases.size()
 
-var _timeline:
-	get:
-		if not is_instance_valid(_animation):
-			return null
-		return _animation.symbol_dictionary.get(symbol, _animation.timeline)
+		if atlas_index != value:
+			notify_property_list_changed()
+			queue_redraw()
+		atlas_index = value
 
-var _collections: Array[SpriteCollection]
-var _animation: AtlasAnimation
-var _timer: float = 0.0
-var _current_transform: Transform2D = Transform2D.IDENTITY
+@export_tool_button("Cache Current", "Save") var atlas_cache: Callable = cache_current
+@export_tool_button("Reparse Current", "Reload") var atlas_reload: Callable = reparse_current
 
-signal finished
-signal symbol_changed(symbol: String)
+var frame_timer: float = 0.0
+var internal_canvas_items: Array[RID] = []
+var last_atlases_size: int = 0
+var adobe_atlas_material: ShaderMaterial = null
+
+
+func _enter_tree() -> void:
+	if autoplay and not Engine.is_editor_hint():
+		playing = true
+
+
+func _validate_property(property: Dictionary) -> void:
+	if property.name == "symbol":
+		property.hint = PROPERTY_HINT_PLACEHOLDER_TEXT
+		property.hint_string = "Name or Prefix"
+		
+		if atlases.is_empty():
+			return
+		var atlas: AnimateAtlas = atlases[atlas_index]
+		if not is_instance_valid(atlas):
+			return
+		if atlas is AdobeAtlas:
+			property.hint = PROPERTY_HINT_ENUM
+			property.hint_string = atlas.get_symbols()
+		elif atlas is SparrowAtlas:
+			if atlas.symbols.is_empty():
+				return
+			
+			property.hint = PROPERTY_HINT_ENUM
+			property.hint_string = atlas.get_symbols()
+
+	if property.name == "atlas_index":
+		property.hint = PROPERTY_HINT_ENUM
+		property.hint_string = ""
+		
+		for i: int in atlases.size():
+			var atlas: AnimateAtlas = atlases[i]
+			if not is_instance_valid(atlas):
+				property.hint_string += "#%d - null" % [i]
+				continue
+			
+			property.hint_string += "#%d - %s" % [i, atlas.get_filename()]
+			
+			if i != atlases.size() - 1:
+				property.hint_string += ","
 
 
 func _process(delta: float) -> void:
-	if not is_instance_valid(_animation):
+	if atlases.size() != last_atlases_size:
+		last_atlases_size = atlases.size()
+		notify_property_list_changed()
+	
+	if atlases.is_empty():
 		frame = 0
 		return
-
+	if atlas_index > atlases.size() - 1:
+		atlas_index = atlases.size() - 1
+	var atlas: AnimateAtlas = atlases[atlas_index]
+	if not is_instance_valid(atlas):
+		return
+	if atlas.wants_redraw():
+		frame = frame
+		queue_redraw()
+	if atlas.wants_reload_list():
+		notify_property_list_changed()
+	
 	if not playing:
 		return
 
-	_timer += delta * speed
-	while _timer >= 1.0 / _animation.framerate:
-		frame += 1
-		_timer -= 1.0 / _animation.framerate
-		if frame > _timeline.length - 1:
-			match loop_mode:
-				'Loop':
-					frame = 0
-				_:
-					if playing:
-						playing = false
-						finished.emit()
-					frame = _timeline.length - 1
-
-
-
-func _reload_atlas() -> void:
-	var atlas_directory := atlas
-	if not atlas_directory.get_extension().is_empty():
-		atlas_directory = atlas_directory.get_base_dir()
-	load_atlas(atlas_directory)
-
-
-func _cache_atlas() -> void:
-	var parsed := ParsedAtlas.new()
-	parsed.collections = _collections
-	parsed.animation = _animation
-
-	var atlas_directory := atlas
-	if not atlas_directory.get_extension().is_empty():
-		atlas_directory = atlas_directory.get_base_dir()
-
-	var err := ResourceSaver.save(parsed, \
-			'%s/Animation.res' % [atlas_directory], ResourceSaver.FLAG_COMPRESS)
-	if err != OK:
-		printerr(err)
-
-
-## Loads a new atlas from the specified [param path].
-func load_atlas(path: String) -> void:
-	_collections.clear()
-	_animation = null
-
-	var atlas_directory := path
-	if not atlas_directory.get_extension().is_empty():
-		atlas_directory = atlas_directory.get_base_dir()
-
-	var parsed_path := '%s/Animation.res' % atlas_directory
-	if ResourceLoader.exists(parsed_path):
-		var parsed: ParsedAtlas = load(parsed_path)
-		_animation = parsed.animation
-		_collections = parsed.collections
-		frame = 0
-		return
-
-	var files := ResourceLoader.list_directory(atlas_directory)
-	for file in files:
-		if file.begins_with('spritemap') and file.ends_with('.json'):
-			var spritemap_string := FileAccess.get_file_as_string('%s/%s' % [atlas_directory, file])
-			var spritemap_json: Variant = JSON.parse_string(spritemap_string)
-			if spritemap_json == null:
-				printerr('Failed to parse %s' % file)
-				return
-			var sprite_collection := SpriteCollection.load_from_json(
-				spritemap_json,
-				load('%s/%s.png' % [atlas_directory, file.get_basename()])
-			)
-			_collections.push_back(sprite_collection)
-
-	var animation_string := FileAccess.get_file_as_string('%s/Animation.json' % [atlas_directory])
-	if animation_string.is_empty():
-		return
-
-	var animation_json: Variant = JSON.parse_string(animation_string)
-	if animation_json == null:
-		return
-	_animation = AtlasAnimation.load_from_json(animation_json)
-	frame = 0
-
-
-func _draw_symbol(element: Element) -> void:
-	if not _animation.symbol_dictionary.has(element.name):
-		printerr('Tried to draw invalid symbol "%s"' % [element.name])
-		return
-
-	_draw_timeline(_animation.symbol_dictionary.get(element.name), element.frame, element.loop_mode == SymbolElement.SymbolLoopMode.LOOP)
-
-
-func _draw_sprite(element: Element) -> void:
-	draw_set_transform_matrix(_current_transform)
-	for collection: SpriteCollection in _collections:
-		if not collection.map.has(element.name):
-			continue
-		var sprite: CollectedSprite = collection.map.get(element.name)
-		if is_instance_valid(sprite.custom_texture):
-			RenderingServer.canvas_item_add_texture_rect(
-				get_canvas_item(),
-				Rect2(
-					Vector2.ZERO,
-					Vector2(sprite.rect.size.y, sprite.rect.size.x)
-				),
-				sprite.custom_texture,
-				false
-			)
-		else:
-			RenderingServer.canvas_item_add_texture_rect_region(
-				get_canvas_item(),
-				Rect2(Vector2.ZERO, Vector2(sprite.rect.size)),
-				collection.texture,
-				Rect2(sprite.rect)
-			)
-		return
-	printerr('Tried to draw invalid sprite "%s"' % [element.name])
-
-
-func _draw_timeline(timeline: Timeline, target_frame: int, loop: bool = false) -> void:
-	var layers: Array[Layer] = timeline.layers
-	if layers.is_empty():
-		return
-
-	var og_frame: int = target_frame
-	var layer_transform: Transform2D = _current_transform
-	var i: int = layers.size() - 1
-	while i >= 0:
-		var layer: Layer = layers[i]
-		if layer.length <= 0:
-			i -= 1
-			continue
-		if loop:
-			target_frame = og_frame % layer.length
-		for layer_frame in layer.frames:
-			if target_frame < layer_frame.index:
-				continue
-			if target_frame > layer_frame.index + layer_frame.duration - 1:
-				continue
-			for element in layer_frame.elements:
-				_current_transform = layer_transform
-				_current_transform *= element.transform
-				match element.type:
-					Element.ElementType.SYMBOL:
-						_draw_symbol(element)
-					Element.ElementType.SPRITE:
-						_draw_sprite(element)
-			break
-
-		i -= 1
+	var fps: float = atlas.get_framerate()
+	frame_timer += delta * speed_scale
+	if frame_timer >= 1.0 / fps:
+		frame += floori(frame_timer * fps)
+		frame_timer = wrapf(frame_timer, 0.0, 1.0 / fps)
 
 
 func _draw() -> void:
 	RenderingServer.canvas_item_clear(get_canvas_item())
+	for rid: RID in internal_canvas_items:
+		RenderingServer.canvas_item_clear(rid)
+		RenderingServer.free_rid(rid)
+	internal_canvas_items.clear()
+	
+	if atlases.is_empty():
+		return
+	if atlas_index > atlases.size() - 1:
+		atlas_index = 0
 
-	if not is_instance_valid(_timeline):
+	var atlas: AnimateAtlas = atlases[atlas_index]
+	if not is_instance_valid(atlas):
+		return
+	
+	var draw_info: AnimateDrawInfo = AnimateDrawInfo.new(
+		symbol,
+		frame,
+		offset,
+		get_transform(),
+		internal_canvas_items
+	)
+	
+	match atlas.format:
+		"sparrow":
+			_draw_sparrow(atlas as SparrowAtlas, draw_info)
+		"adobe":
+			_draw_adobe(atlas as AdobeAtlas, draw_info)
+		_:
+			pass
+
+
+func _draw_sparrow(atlas: SparrowAtlas, draw_info: AnimateDrawInfo) -> void:
+	if not is_instance_valid(atlas.texture):
+		return
+	if get_animation_length() == 0:
 		return
 
-	_current_transform = Transform2D.IDENTITY
-	if offset != Vector2.ZERO:
-		_current_transform = _current_transform.translated(offset)
-	_draw_timeline(_timeline, frame)
+	var sparrow_frame: SparrowFrame = atlas.get_frame_filtered(frame, symbol)
+	if not is_instance_valid(sparrow_frame):
+		return
+	
+	if centered:
+		if sparrow_frame.offset.size != Vector2i.ZERO:
+			draw_info.offset -= sparrow_frame.offset.size / 2.0
+		else:
+			draw_info.offset -= sparrow_frame.region.size / 2.0
+	atlas.draw_on(get_canvas_item(), draw_info)
+
+
+func _draw_adobe(atlas: AdobeAtlas, draw_info: AnimateDrawInfo) -> void:
+	if not is_instance_valid(adobe_atlas_material):
+		adobe_atlas_material = load("uid://bxdjijj35wput")
+	
+	draw_info.material = adobe_atlas_material
+	atlas.draw_on(get_canvas_item(), draw_info)
+
+
+func get_animation_length() -> int:
+	if atlases.is_empty():
+		return 0
+	if atlas_index > atlases.size() - 1:
+		atlas_index = 0
+
+	var atlas: AnimateAtlas = atlases[atlas_index]
+	if not is_instance_valid(atlas):
+		return 0
+
+	match atlas.format:
+		"sparrow":
+			return (atlas as SparrowAtlas).get_count_filtered(symbol)
+		"adobe":
+			return (atlas as AdobeAtlas).get_length_of(StringName(symbol))
+		_:
+			pass
+
+	return 0
+
+
+func validate_frame(value: int, length: int = -1) -> int:
+	if length == -1:
+		length = get_animation_length()
+
+	if value < 0:
+		value = 0
+	if value > length - 1:
+		if loop:
+			value = wrapi(value, 0, length)
+		else:
+			value = clampi(value, 0, length - 1)
+	if length == 0:
+		value = 0
+
+	return value
+
+
+func cache_current() -> void:
+	if not atlases.is_empty():
+		var atlas: AnimateAtlas = atlases[atlas_index]
+		if is_instance_valid(atlas):
+			atlas.cache()
+
+
+func reparse_current() -> void:
+	if not atlases.is_empty():
+		var atlas: AnimateAtlas = atlases[atlas_index]
+		if is_instance_valid(atlas):
+			atlas.parse()
+			queue_redraw()

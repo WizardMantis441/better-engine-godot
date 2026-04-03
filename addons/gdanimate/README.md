@@ -1,18 +1,12 @@
-# <img src="assets/icon.png" alt="AnimateSymbol Node Icon" title="AnimateSymbol Node Icon" width=32 height=32> gdanimate
+# gdanimate-rewrite
 
-A godot addon that adds a new AnimateSymbol node that lets you use and play
-Adobe Animate Texture Atlases.
+WIP rewrite of the [gdanimate](https://github.com/cherrythecool/gdanimate) repo!!! will be merged into the main repo once 1.0 is finished but until then this repo is public for testing, issues, feedback, pull requests, whatever!
 
-## Features
+## current state
 
-The current version of this project is unfinished and thus certain features of
-texture atlases aren't supported at this time.
+we got most basic stuff working, sparrow atlases work mostly fine (needs a small rework)
 
-This includes:
+adobe atlases (the main feature) are working but while adding mask layer support there's some more bugs i need to fix! so yea
 
-* Filters
-* Blend Modes
-* Certain loop modes may not work as intended
+BetterTextureAtlas support will be added after regular animate atlases are finished but are not implemented yet at all
 
-Generally 100% playback compatibility is not guaranteed but any reports of atlases
-that don't work and even help to get them working is very appreciated!
