@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cf48jh0jwgjig"]
+
+[ext_resource type="Script" uid="uid://cwu0sot633j8g" path="res://backend/objects/alphabet/alphabet.gd" id="1_nxx0a"]
+
+[node name="Alphabet" type="Node2D" unique_id=231234777]
+script = ExtResource("1_nxx0a")
