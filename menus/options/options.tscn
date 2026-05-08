@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cproqg1xtt2l1"]
+
+[ext_resource type="Script" uid="uid://dae1ttcdndx1w" path="res://menus/options/options.gd" id="1_8tymh"]
+[ext_resource type="Texture2D" uid="uid://xstcc2r6dsoi" path="res://menus/menuBGMagenta.png" id="1_g8vb3"]
+
+[node name="Options" type="Node2D" unique_id=951519708]
+script = ExtResource("1_8tymh")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=439852959]
+position = Vector2(640, 360)
+texture = ExtResource("1_g8vb3")
+
+[node name="Options" type="VBoxContainer" parent="Background" unique_id=748818688]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -643.0
+offset_top = -365.0
+offset_right = -643.0
+offset_bottom = -365.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Preferences" type="Label" parent="Background/Options" unique_id=1059955349]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 72
+text = "PREFERENCES"
+horizontal_alignment = 1
+
+[node name="Controls" type="Label" parent="Background/Options" unique_id=857148129]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 72
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="Lag Adjustment" type="Label" parent="Background/Options" unique_id=283799414]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 72
+text = "LAG ADJUSTMENT"
+horizontal_alignment = 1
+
+[node name="Login to NG" type="Label" parent="Background/Options" unique_id=910849968]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 72
+text = "LOGIN TO NG"
+horizontal_alignment = 1
+
+[node name="Clear Save Data" type="Label" parent="Background/Options" unique_id=2009985992]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 72
+text = "CLEAR SAVE DATA"
+horizontal_alignment = 1
+
+[node name="Exit" type="Label" parent="Background/Options" unique_id=1025289777]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 72
+text = "EXIT"
+horizontal_alignment = 1

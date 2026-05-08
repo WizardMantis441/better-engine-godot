@@ -1,61 +1,77 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkt6836wrree6"]
+[gd_scene format=3 uid="uid://dkt6836wrree6"]
 
 [ext_resource type="Texture2D" uid="uid://boc56aydnokn0" path="res://menus/menuBG.png" id="1_kpmgs"]
 [ext_resource type="Script" uid="uid://bsaa68um71mrp" path="res://menus/main/main-menu.gd" id="1_mhrdm"]
 [ext_resource type="Texture2D" uid="uid://xstcc2r6dsoi" path="res://menus/menuBGMagenta.png" id="2_dnjvc"]
-[ext_resource type="SpriteFrames" uid="uid://bbqtndhec6vj6" path="res://menus/main/storymode.res" id="3_tvwcu"]
-[ext_resource type="SpriteFrames" uid="uid://bxl4t4tcx283e" path="res://menus/main/freeplay.res" id="4_rh23a"]
-[ext_resource type="SpriteFrames" uid="uid://b3vw1t3j7abke" path="res://menus/main/merch.res" id="5_1hiax"]
-[ext_resource type="SpriteFrames" uid="uid://btbkcu2dcdwio" path="res://menus/main/options.res" id="6_g0rdk"]
-[ext_resource type="SpriteFrames" uid="uid://djtp5wtxkbb7n" path="res://menus/main/credits.res" id="7_oh5pw"]
+[ext_resource type="SpriteFrames" uid="uid://chirbe11molnu" path="res://menus/main/storymode.res" id="3_tvwcu"]
+[ext_resource type="SpriteFrames" uid="uid://ddhbq61rore05" path="res://menus/main/freeplay.res" id="4_rh23a"]
+[ext_resource type="SpriteFrames" uid="uid://cq0nwpgoir1et" path="res://menus/main/merch.res" id="5_1hiax"]
+[ext_resource type="SpriteFrames" uid="uid://b70vorj8iqobk" path="res://menus/main/options.res" id="6_g0rdk"]
+[ext_resource type="SpriteFrames" uid="uid://e5jfnqlcvspt" path="res://menus/main/credits.res" id="7_oh5pw"]
+[ext_resource type="FontFile" uid="uid://b82c3o8gdei1q" path="res://backend/objects/fonts/vcr.ttf" id="9_i1v4m"]
 
-[node name="MainMenu" type="Node2D"]
+[sub_resource type="FontVariation" id="FontVariation_54iq6"]
+base_font = ExtResource("9_i1v4m")
+
+[node name="MainMenu" type="Node2D" unique_id=1272278024]
 script = ExtResource("1_mhrdm")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=1343003944]
 position = Vector2(640, 360)
 position_smoothing_enabled = true
 
-[node name="Parallax" type="Parallax2D" parent="."]
+[node name="Parallax" type="Parallax2D" parent="." unique_id=1919540855]
 scroll_scale = Vector2(0.17, 0.17)
 scroll_offset = Vector2(640, 360)
 
-[node name="MenuBg" type="Sprite2D" parent="Parallax"]
+[node name="MenuBg" type="Sprite2D" parent="Parallax" unique_id=525720843]
 position = Vector2(2, 34)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_kpmgs")
 
-[node name="MenuMagenta" type="Sprite2D" parent="Parallax/MenuBg"]
+[node name="MenuMagenta" type="Sprite2D" parent="Parallax/MenuBg" unique_id=1554488271]
 visible = false
 texture = ExtResource("2_dnjvc")
 
-[node name="Parallax2" type="Parallax2D" parent="."]
+[node name="Parallax2" type="Parallax2D" parent="." unique_id=1131394159]
 scroll_scale = Vector2(0.4, 0.4)
 scroll_offset = Vector2(640, 360)
 
-[node name="Items" type="Node" parent="Parallax2"]
+[node name="Items" type="Node" parent="Parallax2" unique_id=1550562012]
 
-[node name="StoryMode" type="AnimatedSprite2D" parent="Parallax2/Items"]
+[node name="StoryMode" type="AnimatedSprite2D" parent="Parallax2/Items" unique_id=1958009599]
 sprite_frames = ExtResource("3_tvwcu")
 animation = &"selected"
 autoplay = "idle"
 
-[node name="Freeplay" type="AnimatedSprite2D" parent="Parallax2/Items"]
+[node name="Freeplay" type="AnimatedSprite2D" parent="Parallax2/Items" unique_id=1279200757]
 sprite_frames = ExtResource("4_rh23a")
 animation = &"selected"
 autoplay = "idle"
 
-[node name="Merch" type="AnimatedSprite2D" parent="Parallax2/Items"]
+[node name="Merch" type="AnimatedSprite2D" parent="Parallax2/Items" unique_id=509108427]
 sprite_frames = ExtResource("5_1hiax")
 animation = &"selected"
 autoplay = "idle"
 
-[node name="Options" type="AnimatedSprite2D" parent="Parallax2/Items"]
+[node name="Options" type="AnimatedSprite2D" parent="Parallax2/Items" unique_id=106203764]
 sprite_frames = ExtResource("6_g0rdk")
 animation = &"selected"
 autoplay = "idle"
 
-[node name="Credits" type="AnimatedSprite2D" parent="Parallax2/Items"]
+[node name="Credits" type="AnimatedSprite2D" parent="Parallax2/Items" unique_id=2133314291]
 sprite_frames = ExtResource("7_oh5pw")
 animation = &"selected"
 autoplay = "idle"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1286906289]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=28611114]
+z_index = 4096
+offset_left = 1.0
+offset_top = 704.0
+offset_right = 626.0
+offset_bottom = 720.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = SubResource("FontVariation_54iq6")
+text = "v0.0.0.0.1 - Data5 Engine (todo put dis on global)"

@@ -5,7 +5,6 @@
 [ext_resource type="SpriteFrames" uid="uid://bu6bgjaxau3bq" path="res://game/characters/dad/daddyDearest.xml" id="2_qcu0i"]
 [ext_resource type="Script" uid="uid://bqnqs6vqftn7m" path="res://backend/objects/funkin_sprite_anim.gd" id="4_qcu0i"]
 [ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate/animate_symbol.gd" id="5_8570o"]
-[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate/animate_atlas.gd" id="6_6ucsu"]
 
 [sub_resource type="Resource" id="Resource_xifjf"]
 script = ExtResource("4_qcu0i")
@@ -58,6 +57,7 @@ animations = Dictionary[String, ExtResource("4_qcu0i")]({
 metadata/_custom_type_script = "uid://cq8cndjj4htcm"
 
 [node name="AnimateSymbol" type="Node2D" parent="." unique_id=588538501]
+visible = false
 script = ExtResource("5_8570o")
-atlases = Array[ExtResource("6_6ucsu")]([null])
+symbol = "idle"
 metadata/_custom_type_script = "uid://c5ju3u657fyae"

@@ -39,7 +39,10 @@ enabled=PackedStringArray("res://addons/gdanimate/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray"
+"res://addons/": "gray",
+"res://backend/": "purple",
+"res://game/": "blue",
+"res://menus/": "yellow"
 }
 
 [input]
