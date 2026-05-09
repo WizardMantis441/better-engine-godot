@@ -5,7 +5,8 @@ extends AnimatedSprite2D
 @export var dance_every:int = 4
 
 func _ready():
-	Conductor.step_hit.connect(step_hit)
+	if !Engine.is_editor_hint(): # so tools don't connect
+		Conductor.step_hit.connect(step_hit)
 	animation_finished.connect(on_anim_finish)
 
 var current_anim:String = ""

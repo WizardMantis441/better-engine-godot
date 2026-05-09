@@ -7,7 +7,7 @@ var idle_anim_index:int = 0
 @onready var sprite:FunkinSprite = $FunkinSprite
 @export var camera_offset:Vector2 = Vector2.ZERO
 @export var swap_left_right_anims:bool = false
-@export var idle_anims:Array[String] = []
+@export var idle_anims:Array[String] = ["idle"]
 
 func _ready():
 	Conductor.step_hit.disconnect(sprite.step_hit)
