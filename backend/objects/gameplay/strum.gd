@@ -3,8 +3,8 @@ extends AnimatedSprite2D
 class_name Strum
 
 @onready var strum_line = self.get_parent()
-@onready var hud:Hud = strum_line.get_parent()
-@onready var game:PlayState = hud.get_parent()
+@onready var hud:Hud = strum_line.hud
+@onready var game:PlayState
 
 var animations = ["Left", "Down", "Up", "Right"]
 

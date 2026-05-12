@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bkubwq03rox5n"]
+
+[ext_resource type="Theme" uid="uid://bb6yawq153arh" path="res://backend/debug/editor_theme.tres" id="1_4rxmh"]
+[ext_resource type="Script" uid="uid://n304nkh7uaix" path="res://backend/debug/chart_editor/chart_editor.gd" id="2_5ie8w"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="2_bs4b4"]
+
+[node name="ChartEditor" type="Control" unique_id=623151442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4rxmh")
+script = ExtResource("2_5ie8w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=281611499]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=465845684]
+layout_mode = 2
+
+[node name="Header" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=1806080333]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="Left" type="HBoxContainer" parent="VBoxContainer/PanelContainer/Header" unique_id=704333837]
+layout_mode = 2
+
+[node name="File" type="MenuButton" parent="VBoxContainer/PanelContainer/Header/Left" unique_id=1368816529]
+layout_mode = 2
+text = "File"
+item_count = 3
+popup/item_0/text = "New Scene"
+popup/item_0/id = 0
+popup/item_1/id = 1
+popup/item_1/separator = true
+popup/item_2/text = "Open Chart"
+popup/item_2/id = 2
+
+[node name="Edit" type="MenuButton" parent="VBoxContainer/PanelContainer/Header/Left" unique_id=1645852447]
+layout_mode = 2
+text = "Edit"
+
+[node name="View" type="MenuButton" parent="VBoxContainer/PanelContainer/Header/Left" unique_id=1711356135]
+layout_mode = 2
+text = "View"
+
+[node name="Audio" type="MenuButton" parent="VBoxContainer/PanelContainer/Header/Left" unique_id=2102825967]
+layout_mode = 2
+text = "Audio"
+
+[node name="Test" type="MenuButton" parent="VBoxContainer/PanelContainer/Header/Left" unique_id=1099511375]
+layout_mode = 2
+text = "Test"
+
+[node name="Window" type="MenuButton" parent="VBoxContainer/PanelContainer/Header/Left" unique_id=1723449753]
+layout_mode = 2
+text = "Window"
+
+[node name="Help" type="MenuButton" parent="VBoxContainer/PanelContainer/Header/Left" unique_id=1064314504]
+layout_mode = 2
+text = "Help"
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/Header" unique_id=681020440]
+layout_direction = 3
+layout_mode = 2
+text = "Better Engine Chart Editor"
+
+[node name="Editor" type="SubViewportContainer" parent="VBoxContainer" unique_id=1639119184]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/Editor" unique_id=1399905893]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(1280, 646)
+render_target_update_mode = 4
+
+[node name="OpponentStrumline" parent="VBoxContainer/Editor/SubViewport" unique_id=1540979689 instance=ExtResource("2_bs4b4")]
+unique_name_in_owner = true
+position = Vector2(416, 100)
+cpu = true
+cpu_ignore_notes = true
+
+[node name="PlayerStrumline" parent="VBoxContainer/Editor/SubViewport" unique_id=775203829 instance=ExtResource("2_bs4b4")]
+unique_name_in_owner = true
+position = Vector2(864, 100)
+cpu = true
+cpu_ignore_notes = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer" unique_id=805755875]
+layout_mode = 2
+
+[node name="Footer" type="MarginContainer" parent="VBoxContainer/PanelContainer2" unique_id=1919623594]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="LeftLabel" type="Label" parent="VBoxContainer/PanelContainer2/Footer" unique_id=556262436]
+layout_mode = 2
+text = "00:00.00 - 00:00.00"
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer/PanelContainer2/Footer" unique_id=1496821161]
+layout_mode = 2
+alignment = 1
+
+[node name="SkipToStart" type="Button" parent="VBoxContainer/PanelContainer2/Footer/Buttons" unique_id=1794964519]
+layout_mode = 2
+text = "|<"
+
+[node name="SectionBack" type="Button" parent="VBoxContainer/PanelContainer2/Footer/Buttons" unique_id=1108107682]
+layout_mode = 2
+text = "<<"
+
+[node name="PlayPause" type="Button" parent="VBoxContainer/PanelContainer2/Footer/Buttons" unique_id=249305308]
+layout_mode = 2
+text = ">"
+
+[node name="SectionForward" type="Button" parent="VBoxContainer/PanelContainer2/Footer/Buttons" unique_id=1948183867]
+layout_mode = 2
+text = ">>"
+
+[node name="SkipToEnd" type="Button" parent="VBoxContainer/PanelContainer2/Footer/Buttons" unique_id=497112305]
+layout_mode = 2
+text = ">|"
+
+[node name="RightLabel" type="Label" parent="VBoxContainer/PanelContainer2/Footer" unique_id=1901237349]
+layout_direction = 3
+layout_mode = 2
+text = "BPM: 182 | 1/16"

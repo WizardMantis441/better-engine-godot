@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://bb6yawq153arh"]
+
+[ext_resource type="FontFile" uid="uid://b82c3o8gdei1q" path="res://backend/objects/fonts/vcr.ttf" id="1_8j1rp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2h21m"]
+bg_color = Color(0, 0, 0, 0.2627451)
+
+[resource]
+default_font = ExtResource("1_8j1rp")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_2h21m")

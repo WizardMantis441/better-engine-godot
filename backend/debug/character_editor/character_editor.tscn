@@ -1,15 +1,8 @@
 [gd_scene format=3 uid="uid://bk7hh6juhc248"]
 
-[ext_resource type="FontFile" uid="uid://b82c3o8gdei1q" path="res://backend/objects/fonts/vcr.ttf" id="1_2h21m"]
+[ext_resource type="Theme" uid="uid://bb6yawq153arh" path="res://backend/debug/editor_theme.tres" id="1_2h21m"]
 [ext_resource type="Script" uid="uid://djvvgilbxr4pe" path="res://backend/debug/character_editor/character_editor.gd" id="1_7ou5f"]
 [ext_resource type="PackedScene" uid="uid://dwyg6gqy55b0k" path="res://backend/debug/character_editor/character_animation.tscn" id="1_ekgqx"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2h21m"]
-bg_color = Color(0, 0, 0, 0.2627451)
-
-[sub_resource type="Theme" id="Theme_aoghr"]
-default_font = ExtResource("1_2h21m")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_2h21m")
 
 [node name="CharacterEditor" type="HSplitContainer" unique_id=1503264795]
 anchors_preset = 15
@@ -19,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_aoghr")
+theme = ExtResource("1_2h21m")
 script = ExtResource("1_7ou5f")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=441703533]

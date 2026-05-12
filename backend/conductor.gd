@@ -6,6 +6,8 @@ signal measure_hit(measure:int)
 
 var bpm:float = 100.0
 var bpm_changes:Array = [] # { "time": float, "step": int, "new_bpm": float }
+var cur_bpm_change:int = 0
+
 var time_signature:Array[int] = [4, 4] # [beats per measure, measures per phrase]
 var crochet:float:
 	get: return (60.0 / bpm)
@@ -23,7 +25,7 @@ var cur_measure_float:float = 0.0
 func update_time():
 	var old_step:int = cur_step
 
-	var cur_bpm_change:int = 0
+	cur_bpm_change = 0
 	if bpm_changes.size() > 1:
 		while cur_bpm_change < bpm_changes.size() - 1 and song_position + song_offset >= bpm_changes[cur_bpm_change + 1]["time"]:
 			cur_bpm_change += 1

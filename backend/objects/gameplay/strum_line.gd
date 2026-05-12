@@ -3,7 +3,7 @@ extends Node2D
 
 var animations = ["Left", "Down", "Up", "Right"]
 
-@onready var hud:Hud = self.get_parent()
+@onready var hud:Hud
 
 @export var vocal:AudioStream
 var vocal_sync_index:int
@@ -18,6 +18,9 @@ var vocal_sync_index:int
 			for strum in strums:
 				strum.cpu = v
 
+## Typically used for the chart editor! (will eventually be used for when pico blows his shit smooth off.)
+@export var cpu_ignore_notes = false
+
 var notes:Array[Note] = []
 
 var scroll_speed:float = 1:
@@ -27,16 +30,21 @@ var scroll_speed:float = 1:
 			note.scroll_speed = v
 
 func _ready() -> void:
+	if self.get_parent() is Hud:
+		hud = self.get_parent()
+	
 	for strum in strums:
-		strum.cpu = cpu
+		if strum:
+			strum.cpu = cpu
 
 func _process(_delta:float) -> void:
 	if cpu:
-		for note in notes:
-			if Conductor.song_position * 1000.0 >= note.time:
-				strums[note.id].press(true)
-				notes.erase(note)
-				note.hit()
+		if not cpu_ignore_notes:
+			for note in notes:
+				if Conductor.song_position * 1000.0 >= note.time:
+					strums[note.id].press(true)
+					notes.erase(note)
+					note.hit()
 	else:
 		var hitzone = 160
 		

@@ -7,8 +7,8 @@ extends AnimatedSprite2D
 
 @onready var strum:Strum = self.get_parent()
 @onready var strum_line:StrumLine = strum.get_parent()
-@onready var hud:Hud = strum_line.get_parent()
-@onready var game:PlayState = hud.get_parent() # (Dunno if i like this)
+@onready var hud:Hud
+@onready var game:PlayState
 
 var id:int = 0:
 	set(value):
@@ -26,6 +26,10 @@ var kind:String = ""
 var scroll_speed:float = 1.0
 
 var can_hit:bool = true
+
+func _ready():
+	if strum_line.hud is Hud:
+		hud = strum_line.hud
 
 func hit():
 	for character in strum_line.characters:
