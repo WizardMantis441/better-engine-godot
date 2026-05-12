@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk7hh6juhc248"]
+[gd_scene format=3 uid="uid://bk7hh6juhc248"]
 
 [ext_resource type="FontFile" uid="uid://b82c3o8gdei1q" path="res://backend/objects/fonts/vcr.ttf" id="1_2h21m"]
 [ext_resource type="Script" uid="uid://djvvgilbxr4pe" path="res://backend/debug/character_editor/character_editor.gd" id="1_7ou5f"]
@@ -11,7 +11,7 @@ bg_color = Color(0, 0, 0, 0.2627451)
 default_font = ExtResource("1_2h21m")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_2h21m")
 
-[node name="CharacterEditor" type="HSplitContainer"]
+[node name="CharacterEditor" type="HSplitContainer" unique_id=1503264795]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,33 +22,33 @@ size_flags_vertical = 3
 theme = SubResource("Theme_aoghr")
 script = ExtResource("1_7ou5f")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=441703533]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=372220801]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=2134571290]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1658583368]
 layout_mode = 2
 
-[node name="NewCharacter" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="NewCharacter" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=926037289]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "New"
 
-[node name="LoadCharacter" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="LoadCharacter" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1448372884]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Load"
 
-[node name="FileDialog" type="FileDialog" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/LoadCharacter"]
+[node name="FileDialog" type="FileDialog" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/LoadCharacter" unique_id=118005409]
 oversampling_override = 1.0
 title = "Open a File"
 position = Vector2i(0, 36)
@@ -58,12 +58,12 @@ root_subfolder = "res://game/characters/"
 filters = PackedStringArray("*.tscn")
 show_hidden_files = true
 
-[node name="SaveCharacter" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="SaveCharacter" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=845087239]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Save"
 
-[node name="FileDialog" type="FileDialog" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SaveCharacter"]
+[node name="FileDialog" type="FileDialog" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SaveCharacter" unique_id=1065960405]
 oversampling_override = 1.0
 position = Vector2i(0, 36)
 display_mode = 1
@@ -71,35 +71,35 @@ root_subfolder = "res://game/characters/"
 filters = PackedStringArray("*.tscn")
 show_hidden_files = true
 
-[node name="VSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=200940123]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2130671945]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1320874390]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Name"
 
-[node name="NameInput" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="NameInput" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1238858085]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=874654866]
 layout_mode = 2
 
-[node name="Sprite" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+[node name="Sprite" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=486500272]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Sprite"
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=287821921]
 layout_mode = 2
 text = "Choose Sprite"
 
-[node name="FileDialog" type="FileDialog" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6/Button"]
+[node name="FileDialog" type="FileDialog" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6/Button" unique_id=1145294018]
 oversampling_override = 1.0
 title = "Open a File"
 position = Vector2i(0, 36)
@@ -109,122 +109,122 @@ root_subfolder = "res://game/characters/"
 filters = PackedStringArray("*.xml", "*.res")
 show_hidden_files = true
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1898409130]
 layout_mode = 2
 
-[node name="CameraOffset" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="CameraOffset" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1832599614]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cam Offset"
 
-[node name="CameraOffsetX" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="CameraOffsetX" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1999853629]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="CameraOffsetY" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="CameraOffsetY" type="SpinBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=274667727]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=541999906]
 layout_mode = 2
 
-[node name="SwapLeftRightAnims" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="SwapLeftRightAnims" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1543084796]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Swap \"Left\" and \"Right\" anims"
 
-[node name="SwapLeftRightAnimsInput" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="SwapLeftRightAnimsInput" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1386634073]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=880043515]
 layout_mode = 2
 
-[node name="IdleAnims" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="IdleAnims" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1945724973]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Idle Anims"
 
-[node name="IdleAnimsInput" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="IdleAnimsInput" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1499977611]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "idle, danceLeft, etc."
 
-[node name="VSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=464484810]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1927060685]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1388664267]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=819198078]
 layout_mode = 2
 
-[node name="AnimationsLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="AnimationsLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1894483811]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Animations"
 horizontal_alignment = 1
 
-[node name="NewAnim" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="NewAnim" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1430378678]
 layout_mode = 2
 text = "+ New Anim"
 
-[node name="HideGhostButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HideGhostButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=772281603]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Hide Ghost"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=2073042782]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="AnimationsList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="AnimationsList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1285486110]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CharacterAnimation" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/AnimationsList" instance=ExtResource("1_ekgqx")]
+[node name="CharacterAnimation" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/AnimationsList" unique_id=444112359 instance=ExtResource("1_ekgqx")]
 visible = false
 layout_mode = 2
 
-[node name="CharacterAnimation2" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/AnimationsList" instance=ExtResource("1_ekgqx")]
+[node name="CharacterAnimation2" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/AnimationsList" unique_id=1154196793 instance=ExtResource("1_ekgqx")]
 visible = false
 layout_mode = 2
 
-[node name="CharacterAnimation3" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/AnimationsList" instance=ExtResource("1_ekgqx")]
+[node name="CharacterAnimation3" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/AnimationsList" unique_id=2113668989 instance=ExtResource("1_ekgqx")]
 visible = false
 layout_mode = 2
 
-[node name="CharacterAnimation4" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/AnimationsList" instance=ExtResource("1_ekgqx")]
+[node name="CharacterAnimation4" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/AnimationsList" unique_id=1356813571 instance=ExtResource("1_ekgqx")]
 visible = false
 layout_mode = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2120448220]
 layout_mode = 2
 stretch = true
 
-[node name="Viewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="Viewport" type="SubViewport" parent="SubViewportContainer" unique_id=393286402]
 unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(928, 720)
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/Viewport"]
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/Viewport" unique_id=337575090]
 
-[node name="LineX" type="Line2D" parent="SubViewportContainer/Viewport"]
+[node name="LineX" type="Line2D" parent="SubViewportContainer/Viewport" unique_id=824825552]
 points = PackedVector2Array(-67000, 0, 67000, 0)
 width = 2.0
 default_color = Color(1, 0, 0, 1)
 
-[node name="LineY" type="Line2D" parent="SubViewportContainer/Viewport"]
+[node name="LineY" type="Line2D" parent="SubViewportContainer/Viewport" unique_id=999342963]
 points = PackedVector2Array(0, -67000, 0, 67000)
 width = 2.0
 default_color = Color(0, 1, 0, 1)

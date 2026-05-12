@@ -1,8 +1,8 @@
 class_name CharacterAnimation extends PanelContainer
 
-@onready var play: Button = $MarginContainer/VBoxContainer/HBoxContainer4/Play
-@onready var show_ghost: Button = $MarginContainer/VBoxContainer/HBoxContainer4/Ghost
-@onready var delete: Button = $MarginContainer/VBoxContainer/HBoxContainer4/Delete
+@onready var play: Button = $FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer4/Play
+@onready var show_ghost: Button = $FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer4/Ghost
+@onready var delete: Button = $FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer4/Delete
 
 signal update_anim(anim:CharacterAnimation)
 
@@ -18,14 +18,20 @@ func set_data(the_name:String, the_anim_data:FunkinAnim):
 	%OffsetX.value = anim_data.offset.x
 	%OffsetY.value = anim_data.offset.y
 	%LoopInput.button_pressed = anim_data.loop
+	
+	%FoldableContainer.title = anim_name + " (" + anim_data.animation_name + ")"
 
 func _on_anim_name_submitted(new_text: String) -> void:
 	anim_name = new_text
 	update_anim.emit()
+	
+	%FoldableContainer.title = anim_name + " (" + anim_data.animation_name + ")"
 
 func _on_anim_prefix_submitted(new_text: String) -> void:
 	anim_data.animation_name = new_text
 	update_anim.emit()
+	
+	%FoldableContainer.title = anim_name + " (" + anim_data.animation_name + ")"
 
 func _on_offset_x_changed(value: float) -> void:
 	anim_data.offset.x = value

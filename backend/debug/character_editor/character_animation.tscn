@@ -1,109 +1,115 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwyg6gqy55b0k"]
+[gd_scene format=3 uid="uid://dwyg6gqy55b0k"]
 
 [ext_resource type="Script" uid="uid://6t7wll5yamb" path="res://backend/debug/character_editor/character_animation.gd" id="1_bvr3l"]
 
-[node name="CharacterAnimation" type="PanelContainer"]
+[node name="CharacterAnimation" type="PanelContainer" unique_id=112064336]
 offset_right = 203.0
 offset_bottom = 31.0
 script = ExtResource("1_bvr3l")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1733950495]
+unique_name_in_owner = true
+layout_mode = 2
+folded = true
+
+[node name="MarginContainer" type="MarginContainer" parent="FoldableContainer" unique_id=293562863]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer/MarginContainer" unique_id=1796203308]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/MarginContainer/VBoxContainer" unique_id=1365260271]
 layout_mode = 2
 
-[node name="AnimName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="AnimName" type="Label" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=593838154]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Name"
 
-[node name="AnimNameInput" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="AnimNameInput" type="LineEdit" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2120713741]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "singLEFT"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="FoldableContainer/MarginContainer/VBoxContainer" unique_id=882275896]
 layout_mode = 2
 
-[node name="AnimPrefix" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="AnimPrefix" type="Label" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=223024114]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Prefix"
 
-[node name="AnimPrefixInput" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer5"]
+[node name="AnimPrefixInput" type="LineEdit" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=84868980]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Left instance 1"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="FoldableContainer/MarginContainer/VBoxContainer" unique_id=1455537678]
 layout_mode = 2
 
-[node name="Offset" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Offset" type="Label" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1922701185]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Offset"
 
-[node name="OffsetX" type="SpinBox" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="OffsetX" type="SpinBox" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1124293480]
 unique_name_in_owner = true
 layout_mode = 2
 allow_greater = true
 allow_lesser = true
 
-[node name="OffsetY" type="SpinBox" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="OffsetY" type="SpinBox" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=927691161]
 unique_name_in_owner = true
 layout_mode = 2
 allow_greater = true
 allow_lesser = true
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="FoldableContainer/MarginContainer/VBoxContainer" unique_id=111598401]
 layout_mode = 2
 
-[node name="Loop" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Loop" type="Label" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=215442688]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Loop"
 
-[node name="LoopInput" type="CheckButton" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="LoopInput" type="CheckButton" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=512281244]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="FoldableContainer/MarginContainer/VBoxContainer" unique_id=788607443]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="FoldableContainer/MarginContainer/VBoxContainer" unique_id=1766801724]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="Play" type="Button" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=158828137]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Play"
 
-[node name="Ghost" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="Ghost" type="Button" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1058303217]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Set Ghost"
 
-[node name="Delete" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="Delete" type="Button" parent="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1099479583]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Delete"
 
-[connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer/AnimNameInput" to="." method="_on_anim_name_submitted"]
-[connection signal="text_submitted" from="MarginContainer/VBoxContainer/HBoxContainer/AnimNameInput" to="." method="_on_anim_name_submitted"]
-[connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer5/AnimPrefixInput" to="." method="_on_anim_prefix_submitted"]
-[connection signal="text_submitted" from="MarginContainer/VBoxContainer/HBoxContainer5/AnimPrefixInput" to="." method="_on_anim_prefix_submitted"]
-[connection signal="changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetX" to="." method="_on_offset_x_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetX" to="." method="_on_offset_x_changed"]
-[connection signal="changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetY" to="." method="_on_offset_y_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/OffsetY" to="." method="_on_offset_y_changed"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer3/LoopInput" to="." method="_on_loop_toggled"]
+[connection signal="text_changed" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer/AnimNameInput" to="." method="_on_anim_name_submitted"]
+[connection signal="text_submitted" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer/AnimNameInput" to="." method="_on_anim_name_submitted"]
+[connection signal="text_changed" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer5/AnimPrefixInput" to="." method="_on_anim_prefix_submitted"]
+[connection signal="text_submitted" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer5/AnimPrefixInput" to="." method="_on_anim_prefix_submitted"]
+[connection signal="changed" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2/OffsetX" to="." method="_on_offset_x_changed"]
+[connection signal="value_changed" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2/OffsetX" to="." method="_on_offset_x_changed"]
+[connection signal="changed" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2/OffsetY" to="." method="_on_offset_y_changed"]
+[connection signal="value_changed" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer2/OffsetY" to="." method="_on_offset_y_changed"]
+[connection signal="toggled" from="FoldableContainer/MarginContainer/VBoxContainer/HBoxContainer3/LoopInput" to="." method="_on_loop_toggled"]
