@@ -12,6 +12,9 @@ var stream_player:AudioStreamPlayer
 var events:Array = []
 var difficulty:String = "hard"
 
+var snaps:Array[int] = [16]
+var snap:int = 16
+
 func _ready():
 	var dialogue = FileDialog.new()
 	dialogue.file_mode = FileDialog.FILE_MODE_OPEN_FILE
@@ -94,11 +97,11 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_up"):
 		if stream_player.playing: stream_player.stop()
-		set_time(Conductor.song_position - Conductor.crochet / 4.0) # TODO: SNAP TO NEAREST SNAPPING
+		set_time(Conductor.get_time_at_step(round((Conductor.cur_step_float - 1) * snap) / snap))
 		
 	if Input.is_action_just_pressed("ui_down"):
 		if stream_player.playing: stream_player.stop()
-		set_time(Conductor.song_position + Conductor.crochet / 4.0)
+		set_time(Conductor.get_time_at_step(round((Conductor.cur_step_float + 1) * snap) / snap))
 	
 	if stream_player.playing:
 		set_time(stream_player.get_playback_position())
@@ -111,9 +114,13 @@ func format_time(t: float) -> String:
 	return "%02d:%02d.%02d" % [minutes, seconds, milliseconds]
 
 func set_time(time:float):
+	time = clamp(time, 0, stream_player.stream.get_length())
+	
 	Conductor.song_position = time
 	Conductor.update_time()
 	
+	%GridLineParallax.scroll_offset.y = -Conductor.cur_step_float * 150 / 2
+	%GridLineParallax.repeat_size.y = 150 * 2
 	$VBoxContainer/PanelContainer2/Footer/LeftLabel.text = format_time(time) + " - " + format_time(stream_player.stream.get_length())
 
 func step_hit(_step:int):

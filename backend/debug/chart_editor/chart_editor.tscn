@@ -86,6 +86,21 @@ handle_input_locally = false
 size = Vector2i(1280, 646)
 render_target_update_mode = 4
 
+[node name="Camera2D" type="Camera2D" parent="VBoxContainer/Editor/SubViewport" unique_id=69336855]
+position = Vector2(640, 360)
+zoom = Vector2(0.75, 0.75)
+
+[node name="GridLineParallax" type="Parallax2D" parent="VBoxContainer/Editor/SubViewport" unique_id=198373332]
+unique_name_in_owner = true
+repeat_times = 10
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Editor/SubViewport/GridLineParallax" unique_id=1138271337]
+offset_left = 190.0
+offset_top = 97.5
+offset_right = 1090.0
+offset_bottom = 102.5
+color = Color(1, 1, 1, 0.39215687)
+
 [node name="OpponentStrumline" parent="VBoxContainer/Editor/SubViewport" unique_id=1540979689 instance=ExtResource("2_bs4b4")]
 unique_name_in_owner = true
 position = Vector2(416, 100)

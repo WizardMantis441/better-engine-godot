@@ -70,7 +70,8 @@ func load_bpm_changes(bpms:Array):
 		bpm_changes.append({
 			"time": bpm_change["t"],
 			"step": current_step,
-			"new_bpm": bpm_change["bpm"]
+			"new_bpm": bpm_change["bpm"],
+			"new_step_crochet": (60.0 / bpm_change["bpm"] / 4.0)
 		})
 
 		last_time = bpm_change["t"]
@@ -78,3 +79,29 @@ func load_bpm_changes(bpms:Array):
 	
 	bpm = bpm_changes[0]["new_bpm"]
 	time_signature = [4, 4] # haven't done that yet
+
+func get_bpm_change_at_time(time:float):
+	var cur_change = 0
+	if bpm_changes.size() > 1:
+		while cur_change < bpm_changes.size() - 1 and time >= bpm_changes[cur_change + 1]["time"]:
+			cur_change += 1
+			
+	return bpm_changes[cur_change]
+
+func get_time_at_step(step:int):
+	var change = get_bpm_change_at_time(song_position + song_offset)
+	return change.time + change.new_step_crochet * (step - change.step)
+
+func get_step_at_time(time:float):
+	var change = get_bpm_change_at_time(time)
+	return change.step + (time - change.time) / change.new_step_crochet
+
+#public function getStepAtTime(time:Float, ?latestTimingPoint:TimingPoint):Float {
+#latestTimingPoint ??= getTimingPointAtTime(time);
+#return latestTimingPoint.step + (time - latestTimingPoint.time) / latestTimingPoint.getStepLength();
+#}
+
+#public function getTimeAtStep(step:Float, ?latestTimingPoint:TimingPoint):Float {
+	#latestTimingPoint ??= getTimingPointAtStep(step);
+	#return latestTimingPoint.time + latestTimingPoint.getStepLength() * (step - latestTimingPoint.step);
+#}
