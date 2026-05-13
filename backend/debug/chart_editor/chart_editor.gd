@@ -106,6 +106,18 @@ func _process(_delta: float) -> void:
 	if stream_player.playing:
 		set_time(stream_player.get_playback_position())
 
+func _input(event):
+	if event is InputEventKey:
+		if event.pressed and (event as InputEventKey).keycode == KEY_1:
+			var noteArr = opponent_strumline.notes.filter(func(n): return n.id == 0 and is_equal_approx(n.time / 1000, Conductor.song_position))
+			print(noteArr)
+			if noteArr.is_empty():
+				opponent_strumline.add_note({"d": 4, "t": Conductor.song_position * 1000.0, "l": 0})
+			else:
+				var n = noteArr[0]
+				opponent_strumline.notes.erase(n)
+				n.queue_free()
+
 func format_time(t: float) -> String:
 	@warning_ignore("integer_division")
 	var minutes = int(t) / 60

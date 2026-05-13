@@ -30,6 +30,9 @@ var can_hit:bool = true
 func _ready():
 	if strum_line.hud is Hud:
 		hud = strum_line.hud
+	
+	if strum_line.scroll_speed:
+		scroll_speed = strum_line.scroll_speed
 
 func hit():
 	for character in strum_line.characters:
