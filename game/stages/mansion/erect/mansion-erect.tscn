@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwsj362sj278o"]
+[gd_scene format=3 uid="uid://bwsj362sj278o"]
 
 [ext_resource type="Script" uid="uid://u5vd3xr2qa6k" path="res://backend/objects/stage.gd" id="1_nl6yl"]
 [ext_resource type="SpriteFrames" uid="uid://c6umvfa5xawfl" path="res://game/stages/mansion/erect/bgtrees.xml" id="2_bpknu"]
-[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="3_kgogv"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="3_kgogv"]
 [ext_resource type="Texture2D" uid="uid://bvnwd2fttwkcd" path="res://game/stages/mansion/erect/bgDark.png" id="4_c1pat"]
 [ext_resource type="Texture2D" uid="uid://dyl850aioyo3q" path="res://game/stages/mansion/erect/bgLight.png" id="5_bqsoc"]
 [ext_resource type="Texture2D" uid="uid://bqomwkc2pxb7o" path="res://game/stages/mansion/erect/stairsDark.png" id="6_bmtil"]

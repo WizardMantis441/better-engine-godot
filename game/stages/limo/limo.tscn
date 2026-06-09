@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp71t26tq7ngn"]
+[gd_scene format=3 uid="uid://bp71t26tq7ngn"]
 
 [ext_resource type="Script" uid="uid://u5vd3xr2qa6k" path="res://backend/objects/stage.gd" id="1_63bhl"]
-[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="2_dk1uy"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="2_dk1uy"]
 [ext_resource type="Texture2D" uid="uid://b4goyb84aym6y" path="res://game/stages/limo/limoSunset.png" id="2_r63mc"]
 [ext_resource type="SpriteFrames" uid="uid://bwutcump5w8ch" path="res://game/stages/limo/bgLimo.xml" id="3_12vbk"]
 [ext_resource type="SpriteFrames" uid="uid://bylgv3y2hye1o" path="res://game/stages/limo/limoDrive.xml" id="4_c1c4y"]

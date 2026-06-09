@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0tu8jkbpffge"]
+[gd_scene format=3 uid="uid://c0tu8jkbpffge"]
 
 [ext_resource type="Texture2D" uid="uid://cddycko0w7re3" path="res://game/characters/nene/abot/stereoBG.png" id="1_6edb1"]
 [ext_resource type="Script" uid="uid://cm2xbb6venqyx" path="res://game/characters/nene/nene.gd" id="1_emcxc"]
-[ext_resource type="Script" uid="uid://be3lj1tqbtn2v" path="res://addons/gdanimate/animate_symbol.gd" id="1_ugbqn"]
-[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="2_6edb1"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate/animate_symbol.gd" id="1_ugbqn"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="2_6edb1"]
 [ext_resource type="SpriteFrames" uid="uid://nsddojr5pbyo" path="res://game/characters/nene/Nene.res" id="3_6edb1"]
 [ext_resource type="SpriteFrames" uid="uid://bxedb8anqspfr" path="res://game/characters/nene/abot/aBotViz.xml" id="4_41qoi"]
 [ext_resource type="Script" uid="uid://dpwuit425qj2i" path="res://game/characters/nene/visualizer.gd" id="4_thsx2"]

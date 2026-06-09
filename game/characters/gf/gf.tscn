@@ -2,12 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bwlqvq7f3v18s" path="res://backend/objects/character.gd" id="1_vyabb"]
 [ext_resource type="SpriteFrames" uid="uid://b1msl51ux5nkd" path="res://game/characters/gf/GF_assets.res" id="2_bss1m"]
-[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="3_1n6qd"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="3_1n6qd"]
 [ext_resource type="Script" uid="uid://bqnqs6vqftn7m" path="res://backend/objects/funkin_sprite_anim.gd" id="4_2255d"]
 
 [sub_resource type="Resource" id="Resource_bss1m"]
 script = ExtResource("4_2255d")
 animation_name = "danceLeft"
+metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
+
+[sub_resource type="Resource" id="Resource_fk7eu"]
+script = ExtResource("4_2255d")
+animation_name = "danceRight"
 metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
 
 [sub_resource type="Resource" id="Resource_b6ke7"]
@@ -34,11 +39,6 @@ animation_name = "BF NOTE UP"
 offset = Vector2(29, -27)
 metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
 
-[sub_resource type="Resource" id="Resource_fk7eu"]
-script = ExtResource("4_2255d")
-animation_name = "danceRight"
-metadata/_custom_type_script = "uid://bqnqs6vqftn7m"
-
 [node name="Girlfriend" type="Node2D" unique_id=1110362703]
 script = ExtResource("1_vyabb")
 idle_anims = Array[String](["danceLeft", "danceRight"])
@@ -48,6 +48,7 @@ metadata/_custom_type_script = "uid://bwlqvq7f3v18s"
 position = Vector2(0, -320)
 sprite_frames = ExtResource("2_bss1m")
 animation = &"danceLeft"
+autoplay = ""
 script = ExtResource("3_1n6qd")
 animations = Dictionary[String, ExtResource("4_2255d")]({
 "danceLeft": SubResource("Resource_bss1m"),
@@ -57,4 +58,12 @@ animations = Dictionary[String, ExtResource("4_2255d")]({
 "singRIGHT": SubResource("Resource_ta3d8"),
 "singUP": SubResource("Resource_sfwou")
 })
+dance_every = null
+dance_every_offset = null
+symbol = null
+autoplay = ""
+playing = null
+loop = null
+atlases = null
+atlas_index = null
 metadata/_custom_type_script = "uid://cq8cndjj4htcm"

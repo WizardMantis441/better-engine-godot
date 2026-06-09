@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0nhhdvs1wvhi"]
+[gd_scene format=3 uid="uid://c0nhhdvs1wvhi"]
 
 [ext_resource type="Script" uid="uid://u5vd3xr2qa6k" path="res://backend/objects/stage.gd" id="1_8gq5x"]
 [ext_resource type="Texture2D" uid="uid://1727tha65rug" path="res://game/stages/philly/train/erect/sky.png" id="2_8u632"]
-[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="2_lj21s"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="2_lj21s"]
 [ext_resource type="Texture2D" uid="uid://buuc0r1stnq0r" path="res://game/stages/philly/train/erect/city.png" id="4_1ljs4"]
 [ext_resource type="Texture2D" uid="uid://rpiffa0skw0w" path="res://game/stages/philly/train/erect/win0.png" id="5_x4rp6"]
 [ext_resource type="Texture2D" uid="uid://l1itnk2lsngs" path="res://game/stages/philly/train/erect/win1.png" id="6_cvckq"]

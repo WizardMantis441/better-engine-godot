@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bwlqvq7f3v18s" path="res://backend/objects/character.gd" id="1_bx584"]
 [ext_resource type="SpriteFrames" uid="uid://cuc52ket2l6c6" path="res://game/characters/bf/BOYFRIEND.res" id="2_p7ayw"]
 [ext_resource type="Script" uid="uid://bqnqs6vqftn7m" path="res://backend/objects/funkin_sprite_anim.gd" id="3_p7ayw"]
-[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="4_rrxfg"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="4_rrxfg"]
 
 [sub_resource type="Resource" id="Resource_gtlht"]
 script = ExtResource("3_p7ayw")

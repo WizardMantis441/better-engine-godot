@@ -42,7 +42,7 @@ characters = [NodePath("../../Stage/Boyfriend")]
 [node name="Opponent Strumline" parent="HUD" unique_id=76783612 node_paths=PackedStringArray("characters") instance=ExtResource("7_cgfbf")]
 position = Vector2(270, 105)
 vocal = ExtResource("7_nnmx0")
-characters = [NodePath("../../Stage/Dad")]
+characters = [null]
 cpu = true
 
 [node name="Stage" parent="." unique_id=1584997871 instance=ExtResource("9_wcf3n")]
@@ -51,7 +51,7 @@ cpu = true
 position = Vector2(751.5, 787)
 
 [node name="Dad" parent="Stage" unique_id=1646587772 instance=ExtResource("10_wcf3n")]
-position = Vector2(335, 885)
+position = Vector2(339, 493)
 
 [node name="Boyfriend" parent="Stage" unique_id=921153487 instance=ExtResource("11_mq5rn")]
 position = Vector2(989.5, 885)

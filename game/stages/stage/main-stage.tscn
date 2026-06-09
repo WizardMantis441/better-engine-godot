@@ -1,34 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5wf605gy68im"]
+[gd_scene format=3 uid="uid://b5wf605gy68im"]
 
 [ext_resource type="Script" uid="uid://u5vd3xr2qa6k" path="res://backend/objects/stage.gd" id="1_11iqt"]
 [ext_resource type="Texture2D" uid="uid://m4l2dv68g5eq" path="res://game/stages/stage/stageback.png" id="2_karwt"]
 [ext_resource type="Texture2D" uid="uid://bccufoconkyfq" path="res://game/stages/stage/stagefront.png" id="3_621fs"]
 [ext_resource type="Texture2D" uid="uid://bqlw8xyvsbfwp" path="res://game/stages/stage/stagecurtains.png" id="4_sjaoc"]
 
-[node name="Main Stage" type="Node2D"]
+[node name="Main Stage" type="Node2D" unique_id=1699855057]
 script = ExtResource("1_11iqt")
 
-[node name="0_9" type="Parallax2D" parent="."]
+[node name="Opponent Camera" type="Marker2D" parent="." unique_id=429244486]
+position = Vector2(300, 300)
+
+[node name="0_9" type="Parallax2D" parent="." unique_id=226650566]
 scroll_scale = Vector2(0.9, 0.9)
 scroll_offset = Vector2(640, 320)
 
-[node name="Back" type="Sprite2D" parent="0_9"]
+[node name="Back" type="Sprite2D" parent="0_9" unique_id=2034718527]
 position = Vector2(-1240, -520)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_karwt")
 centered = false
 
-[node name="Front" type="Sprite2D" parent="0_9"]
+[node name="Front" type="Sprite2D" parent="0_9" unique_id=1482818404]
 position = Vector2(-1290, 280)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("3_621fs")
 centered = false
 
-[node name="1_3" type="Parallax2D" parent="."]
+[node name="1_3" type="Parallax2D" parent="." unique_id=1493076191]
 scroll_scale = Vector2(1.3, 1.3)
 scroll_offset = Vector2(640, 320)
 
-[node name="Curtains" type="Sprite2D" parent="1_3"]
+[node name="Curtains" type="Sprite2D" parent="1_3" unique_id=1311051575]
 position = Vector2(-1140, -620)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_sjaoc")

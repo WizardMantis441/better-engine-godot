@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene format=3]
 
-[ext_resource type="Script" path="res://backend/objects/stage.gd" id="1_spovr"]
-[ext_resource type="Texture2D" path="res://game/stages/mall/erect/bgWalls.png" id="2_2jcuq"]
-[ext_resource type="SpriteFrames" path="res://game/stages/mall/erect/upperBop.xml" id="3_apwjh"]
-[ext_resource type="Script" path="res://backend/objects/funkin_sprite.gd" id="4_8qj31"]
-[ext_resource type="Texture2D" path="res://game/stages/mall/erect/bgEscalator.png" id="5_0xdjq"]
-[ext_resource type="Texture2D" path="res://game/stages/mall/erect/christmasTree.png" id="6_waujf"]
-[ext_resource type="SpriteFrames" path="res://game/stages/mall/erect/bottomBop.xml" id="7_2fbbs"]
-[ext_resource type="Texture2D" path="res://game/stages/mall/erect/white.png" id="8_0cddq"]
+[ext_resource type="Script" uid="uid://u5vd3xr2qa6k" path="res://backend/objects/stage.gd" id="1_spovr"]
+[ext_resource type="Texture2D" uid="uid://xsr0hi0hn0t" path="res://game/stages/mall/erect/bgWalls.png" id="2_2jcuq"]
+[ext_resource type="SpriteFrames" uid="uid://cqv0fqlj1scwk" path="res://game/stages/mall/erect/upperBop.xml" id="3_apwjh"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="4_8qj31"]
+[ext_resource type="Texture2D" uid="uid://bs1b2r735oljd" path="res://game/stages/mall/erect/bgEscalator.png" id="5_0xdjq"]
+[ext_resource type="Texture2D" uid="uid://d2ijq7na74ak" path="res://game/stages/mall/erect/christmasTree.png" id="6_waujf"]
+[ext_resource type="SpriteFrames" uid="uid://byto71c3k44ne" path="res://game/stages/mall/erect/bottomBop.xml" id="7_2fbbs"]
+[ext_resource type="Texture2D" uid="uid://bcrfg05o0f167" path="res://game/stages/mall/erect/white.png" id="8_0cddq"]
 
 [node name="Christmas Mall (Nice) [Erect]" type="Node2D"]
 script = ExtResource("1_spovr")

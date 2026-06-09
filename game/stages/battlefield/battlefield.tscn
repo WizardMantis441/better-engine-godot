@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2jmw81wl43fh"]
+[gd_scene format=3 uid="uid://d2jmw81wl43fh"]
 
 [ext_resource type="Script" uid="uid://mnix14rktstt" path="res://game/stages/battlefield/battlefield.gd" id="1_u45op"]
 [ext_resource type="Texture2D" uid="uid://cb2vgcmrhmtla" path="res://game/stages/battlefield/tankSky.png" id="2_uc0fd"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbg6t027a5vdq" path="res://game/stages/battlefield/tankBuildings.png" id="5_ebydl"]
 [ext_resource type="Texture2D" uid="uid://cyqefnk8ev2dx" path="res://game/stages/battlefield/cityruins2.png" id="6_y81hv"]
 [ext_resource type="SpriteFrames" uid="uid://prqpglpc8vj8" path="res://game/stages/battlefield/smokeLeft.xml" id="7_u45op"]
-[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/funkin_sprite.gd" id="8_ra36k"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="8_ra36k"]
 [ext_resource type="SpriteFrames" uid="uid://cekrqpsvcy5s5" path="res://game/stages/battlefield/smokeRight.xml" id="9_6r1k4"]
 [ext_resource type="SpriteFrames" uid="uid://bd2t1wuat4ca7" path="res://game/stages/battlefield/tankWatchtower.xml" id="10_u45op"]
 [ext_resource type="SpriteFrames" uid="uid://ce4e7u5jjt1l7" path="res://game/stages/battlefield/tankRolling.xml" id="11_ra36k"]

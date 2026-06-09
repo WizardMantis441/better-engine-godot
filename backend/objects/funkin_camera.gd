@@ -12,7 +12,7 @@ func snap_to_point(new_pos:Vector2):
 	position = new_pos
 	var old = position_smoothing_enabled
 	position_smoothing_enabled = false
-	await get_tree().create_timer(0.0001).timeout
+	await get_tree().process_frame
 	position_smoothing_enabled = old
 
 func _process(delta: float) -> void:
