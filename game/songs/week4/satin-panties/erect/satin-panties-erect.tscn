@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://8fiy3s6scvyh"]
+[gd_scene format=3 uid="uid://8fiy3s6scvyh"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_05mph"]
 [ext_resource type="AudioStream" uid="uid://dpnhumef1kxvp" path="res://game/songs/week4/satin-panties/erect/Inst-erect.ogg" id="2_qrwy7"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dknd0s6pgegqs" path="res://game/songs/week4/satin-panties/erect/Voices-mom-car-erect.ogg" id="8_ljws4"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_ekimi"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_nxujc"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_160lu"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_160lu"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_jq2tn"]
 
 [node name="Satin Panties [Erect]" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

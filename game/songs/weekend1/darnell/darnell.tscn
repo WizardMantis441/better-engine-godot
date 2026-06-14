@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://1ghand11g74v"]
+[gd_scene format=3 uid="uid://1ghand11g74v"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_0ucum"]
 [ext_resource type="AudioStream" uid="uid://j54ce8a8s2ky" path="res://game/songs/weekend1/darnell/Inst.ogg" id="2_6sc7u"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ihucutrjd8u7" path="res://game/songs/weekend1/darnell/Voices-darnell.ogg" id="8_4q517"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_j4rag"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_aw2ua"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_5c8ek"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_5c8ek"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_pg6xx"]
 
 [node name="Darnell" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

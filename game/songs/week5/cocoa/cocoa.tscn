@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cx2ovrtjawpkh"]
+[gd_scene format=3 uid="uid://cx2ovrtjawpkh"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_q0jdt"]
 [ext_resource type="AudioStream" uid="uid://co104ajmqq843" path="res://game/songs/week5/cocoa/Inst.ogg" id="2_fi2ad"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://gcpnx6e6dki4" path="res://game/songs/week5/cocoa/Voices-parents-christmas.ogg" id="8_ygf3v"]
 [ext_resource type="PackedScene" path="res://game/stages/mall/mall.tscn" id="9_fi2ad"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_r32ih"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_wrolw"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_wrolw"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_7iym5"]
 
 [node name="Cocoa" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

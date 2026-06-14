@@ -1,0 +1,531 @@
+[gd_scene format=3 uid="uid://dce1gi35xadwb"]
+
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="2_evl7w"]
+[ext_resource type="SpriteFrames" uid="uid://bu6bgjaxau3bq" path="res://game/characters/dad-old/daddyDearest.xml" id="2_qcu0i"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate/animate_symbol.gd" id="5_8570o"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate/animate_atlas.gd" id="5_ywlry"]
+[ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate/sparrow/sparrow_frame.gd" id="6_cs8vu"]
+[ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate/sparrow/sparrow_atlas.gd" id="7_ld0uu"]
+[ext_resource type="Texture2D" uid="uid://cidtcmsh55nkw" path="res://game/characters/dad-old/daddyDearest.png" id="8_3vjcd"]
+
+[sub_resource type="Resource" id="Resource_bg374"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0001"
+region = Rect2i(901, 817, 466, 792)
+offset = Rect2i(0, -1, 466, 793)
+
+[sub_resource type="Resource" id="Resource_61tuv"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0001"
+region = Rect2i(8, 1668, 777, 371)
+offset = Rect2i(0, 0, 382, 777)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_lln6c"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0001"
+region = Rect2i(8, 8, 408, 818)
+offset = Rect2i(-1, 0, 409, 818)
+
+[sub_resource type="Resource" id="Resource_pxj7k"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0001"
+region = Rect2i(2600, 8, 470, 731)
+offset = Rect2i(0, -5, 470, 736)
+
+[sub_resource type="Resource" id="Resource_h8tyd"]
+script = ExtResource("6_cs8vu")
+name = &"idle0001"
+region = Rect2i(1820, 791, 429, 759)
+offset = Rect2i(0, -8, 429, 767)
+
+[sub_resource type="Resource" id="Resource_xlxc3"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0002"
+region = Rect2i(901, 817, 466, 792)
+offset = Rect2i(0, -1, 466, 793)
+
+[sub_resource type="Resource" id="Resource_5pyfe"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0002"
+region = Rect2i(8, 1668, 777, 371)
+offset = Rect2i(0, 0, 382, 777)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_8t3ev"]
+script = ExtResource("6_cs8vu")
+name = &"idle0002"
+region = Rect2i(1820, 791, 429, 759)
+offset = Rect2i(0, -8, 429, 767)
+
+[sub_resource type="Resource" id="Resource_dtnnd"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0002"
+region = Rect2i(8, 8, 408, 818)
+offset = Rect2i(-1, 0, 409, 818)
+
+[sub_resource type="Resource" id="Resource_3xyik"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0002"
+region = Rect2i(2600, 8, 470, 731)
+offset = Rect2i(0, -5, 470, 736)
+
+[sub_resource type="Resource" id="Resource_q5nks"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0003"
+region = Rect2i(856, 8, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_ax15q"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0003"
+region = Rect2i(1325, 8, 382, 777)
+offset = Rect2i(0, 0, 382, 777)
+
+[sub_resource type="Resource" id="Resource_6icfa"]
+script = ExtResource("6_cs8vu")
+name = &"idle0003"
+region = Rect2i(2265, 783, 425, 758)
+offset = Rect2i(-1, -9, 429, 767)
+
+[sub_resource type="Resource" id="Resource_b46n8"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0003"
+region = Rect2i(432, 8, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_ecrd8"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0003"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_14if1"]
+script = ExtResource("6_cs8vu")
+name = &"idle0004"
+region = Rect2i(2265, 783, 425, 758)
+offset = Rect2i(-1, -9, 429, 767)
+
+[sub_resource type="Resource" id="Resource_0krvs"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0004"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_pex7o"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0004"
+region = Rect2i(856, 8, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_2hn6h"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0004"
+region = Rect2i(1325, 8, 382, 777)
+offset = Rect2i(0, 0, 382, 777)
+
+[sub_resource type="Resource" id="Resource_lbtum"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0004"
+region = Rect2i(432, 8, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_dyhod"]
+script = ExtResource("6_cs8vu")
+name = &"idle0005"
+region = Rect2i(2160, 8, 424, 759)
+offset = Rect2i(-2, -8, 429, 767)
+
+[sub_resource type="Resource" id="Resource_f2c0u"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0005"
+region = Rect2i(432, 834, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_a726v"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0005"
+region = Rect2i(801, 1643, 777, 382)
+offset = Rect2i(0, 0, 382, 777)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_lthym"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0005"
+region = Rect2i(8, 842, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_jx0y3"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0005"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_efbqi"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0006"
+region = Rect2i(8, 842, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_3xsub"]
+script = ExtResource("6_cs8vu")
+name = &"idle0006"
+region = Rect2i(2160, 8, 424, 759)
+offset = Rect2i(-2, -8, 429, 767)
+
+[sub_resource type="Resource" id="Resource_yhsjm"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0006"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_j38jg"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0006"
+region = Rect2i(432, 834, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_bc6lg"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0006"
+region = Rect2i(801, 1643, 777, 382)
+offset = Rect2i(0, 0, 382, 777)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_8qfqg"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0007"
+region = Rect2i(432, 8, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_0ato7"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0007"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_fwica"]
+script = ExtResource("6_cs8vu")
+name = &"idle0007"
+region = Rect2i(1594, 1584, 766, 421)
+offset = Rect2i(-4, -1, 429, 767)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_fkomm"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0007"
+region = Rect2i(1325, 8, 382, 777)
+offset = Rect2i(0, 0, 382, 777)
+
+[sub_resource type="Resource" id="Resource_8ikn0"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0007"
+region = Rect2i(856, 8, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_r17s0"]
+script = ExtResource("6_cs8vu")
+name = &"idle0008"
+region = Rect2i(1594, 1584, 766, 421)
+offset = Rect2i(-4, -1, 429, 767)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_ut451"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0008"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_w3vej"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0008"
+region = Rect2i(1325, 8, 382, 777)
+offset = Rect2i(0, 0, 382, 777)
+
+[sub_resource type="Resource" id="Resource_ku31j"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0008"
+region = Rect2i(432, 8, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_fu8uw"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0008"
+region = Rect2i(856, 8, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_1tkjy"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0009"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_6wlhl"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0009"
+region = Rect2i(8, 842, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_cgr67"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0009"
+region = Rect2i(801, 1643, 777, 382)
+offset = Rect2i(0, 0, 382, 777)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_4unyi"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0009"
+region = Rect2i(432, 834, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_wcr1w"]
+script = ExtResource("6_cs8vu")
+name = &"idle0009"
+region = Rect2i(1383, 801, 421, 767)
+offset = Rect2i(-5, 0, 429, 767)
+
+[sub_resource type="Resource" id="Resource_qbydm"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0010"
+region = Rect2i(432, 834, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_epsdd"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0010"
+region = Rect2i(8, 842, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_18604"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0010"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_v0evl"]
+script = ExtResource("6_cs8vu")
+name = &"idle0010"
+region = Rect2i(1383, 801, 421, 767)
+offset = Rect2i(-5, 0, 429, 767)
+
+[sub_resource type="Resource" id="Resource_dbsyd"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0010"
+region = Rect2i(801, 1643, 777, 382)
+offset = Rect2i(0, 0, 382, 777)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_dseic"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0011"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_qfyew"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0011"
+region = Rect2i(856, 8, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_ptljm"]
+script = ExtResource("6_cs8vu")
+name = &"idle0011"
+region = Rect2i(1723, 8, 421, 767)
+offset = Rect2i(-5, 0, 429, 767)
+
+[sub_resource type="Resource" id="Resource_wciv7"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0011"
+region = Rect2i(1325, 8, 382, 777)
+offset = Rect2i(0, 0, 382, 777)
+
+[sub_resource type="Resource" id="Resource_rqa4w"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0011"
+region = Rect2i(432, 8, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_kl6rf"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0012"
+region = Rect2i(1325, 8, 382, 777)
+offset = Rect2i(0, 0, 382, 777)
+
+[sub_resource type="Resource" id="Resource_hibaw"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0012"
+region = Rect2i(856, 8, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_46hnb"]
+script = ExtResource("6_cs8vu")
+name = &"idle0012"
+region = Rect2i(1723, 8, 421, 767)
+offset = Rect2i(-5, 0, 429, 767)
+
+[sub_resource type="Resource" id="Resource_h822u"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0012"
+region = Rect2i(432, 8, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_ves5c"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0012"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_wl6u3"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0013"
+region = Rect2i(801, 1643, 777, 382)
+offset = Rect2i(0, 0, 382, 777)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_nqpdr"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0013"
+region = Rect2i(432, 834, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_j82ed"]
+script = ExtResource("6_cs8vu")
+name = &"idle0013"
+region = Rect2i(1383, 801, 421, 767)
+offset = Rect2i(-5, 0, 429, 767)
+
+[sub_resource type="Resource" id="Resource_3ba8w"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0013"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_7jtit"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0013"
+region = Rect2i(8, 842, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_mdcc5"]
+script = ExtResource("6_cs8vu")
+name = &"idle0014"
+region = Rect2i(1383, 801, 421, 767)
+offset = Rect2i(-5, 0, 429, 767)
+
+[sub_resource type="Resource" id="Resource_tck0x"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0014"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_7k13k"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0014"
+region = Rect2i(8, 842, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_kipp2"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0014"
+region = Rect2i(432, 834, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_uu3vw"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0014"
+region = Rect2i(801, 1643, 777, 382)
+offset = Rect2i(0, 0, 382, 777)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_8yxdx"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0015"
+region = Rect2i(856, 8, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_olnnk"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0015"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_n64ie"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0015"
+region = Rect2i(432, 8, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_q778s"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0015"
+region = Rect2i(1325, 8, 382, 777)
+offset = Rect2i(0, 0, 382, 777)
+
+[sub_resource type="Resource" id="Resource_uvqxn"]
+script = ExtResource("6_cs8vu")
+name = &"singUP0016"
+region = Rect2i(432, 8, 408, 810)
+offset = Rect2i(0, -8, 409, 818)
+
+[sub_resource type="Resource" id="Resource_dvj1k"]
+script = ExtResource("6_cs8vu")
+name = &"singRIGHT0016"
+region = Rect2i(856, 8, 453, 793)
+offset = Rect2i(0, 0, 466, 793)
+
+[sub_resource type="Resource" id="Resource_johxx"]
+script = ExtResource("6_cs8vu")
+name = &"singDOWN0016"
+region = Rect2i(2376, 1557, 736, 464)
+offset = Rect2i(-3, 0, 470, 736)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_w28wb"]
+script = ExtResource("6_cs8vu")
+name = &"singLEFT0016"
+region = Rect2i(1325, 8, 382, 777)
+offset = Rect2i(0, 0, 382, 777)
+
+[sub_resource type="Resource" id="Resource_ll1a3"]
+script = ExtResource("7_ld0uu")
+texture = ExtResource("8_3vjcd")
+sparrow_path = "res://game/characters/dad/daddyDearest.xml"
+frames = Array[ExtResource("6_cs8vu")]([SubResource("Resource_bg374"), SubResource("Resource_61tuv"), SubResource("Resource_lln6c"), SubResource("Resource_pxj7k"), SubResource("Resource_h8tyd"), SubResource("Resource_xlxc3"), SubResource("Resource_5pyfe"), SubResource("Resource_8t3ev"), SubResource("Resource_dtnnd"), SubResource("Resource_3xyik"), SubResource("Resource_q5nks"), SubResource("Resource_ax15q"), SubResource("Resource_6icfa"), SubResource("Resource_b46n8"), SubResource("Resource_ecrd8"), SubResource("Resource_14if1"), SubResource("Resource_0krvs"), SubResource("Resource_pex7o"), SubResource("Resource_2hn6h"), SubResource("Resource_lbtum"), SubResource("Resource_dyhod"), SubResource("Resource_f2c0u"), SubResource("Resource_a726v"), SubResource("Resource_lthym"), SubResource("Resource_jx0y3"), SubResource("Resource_efbqi"), SubResource("Resource_3xsub"), SubResource("Resource_yhsjm"), SubResource("Resource_j38jg"), SubResource("Resource_bc6lg"), SubResource("Resource_8qfqg"), SubResource("Resource_0ato7"), SubResource("Resource_fwica"), SubResource("Resource_fkomm"), SubResource("Resource_8ikn0"), SubResource("Resource_r17s0"), SubResource("Resource_ut451"), SubResource("Resource_w3vej"), SubResource("Resource_ku31j"), SubResource("Resource_fu8uw"), SubResource("Resource_1tkjy"), SubResource("Resource_6wlhl"), SubResource("Resource_cgr67"), SubResource("Resource_4unyi"), SubResource("Resource_wcr1w"), SubResource("Resource_qbydm"), SubResource("Resource_epsdd"), SubResource("Resource_18604"), SubResource("Resource_v0evl"), SubResource("Resource_dbsyd"), SubResource("Resource_dseic"), SubResource("Resource_qfyew"), SubResource("Resource_ptljm"), SubResource("Resource_wciv7"), SubResource("Resource_rqa4w"), SubResource("Resource_kl6rf"), SubResource("Resource_hibaw"), SubResource("Resource_46hnb"), SubResource("Resource_h822u"), SubResource("Resource_ves5c"), SubResource("Resource_wl6u3"), SubResource("Resource_nqpdr"), SubResource("Resource_j82ed"), SubResource("Resource_3ba8w"), SubResource("Resource_7jtit"), SubResource("Resource_mdcc5"), SubResource("Resource_tck0x"), SubResource("Resource_7k13k"), SubResource("Resource_kipp2"), SubResource("Resource_uu3vw"), SubResource("Resource_8yxdx"), SubResource("Resource_olnnk"), SubResource("Resource_n64ie"), SubResource("Resource_q778s"), SubResource("Resource_uvqxn"), SubResource("Resource_dvj1k"), SubResource("Resource_johxx"), SubResource("Resource_w28wb")])
+symbols = PackedStringArray("idle", "singDOWN", "singLEFT", "singRIGHT", "singUP")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[node name="Dad" type="Node2D" unique_id=1620332081]
+
+[node name="FunkinSprite" type="AnimatedSprite2D" parent="." unique_id=212648189]
+visible = false
+position = Vector2(50, -342)
+sprite_frames = ExtResource("2_qcu0i")
+animation = &"idle"
+offset = Vector2(-5, -26)
+script = ExtResource("2_evl7w")
+symbol = "idle"
+playing = true
+offset = Vector2(-5, -26)
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="AnimateSymbol" type="Node2D" parent="." unique_id=588538501]
+script = ExtResource("5_8570o")
+symbol = "idle"
+frame = 13
+atlases = Array[ExtResource("5_ywlry")]([SubResource("Resource_ll1a3")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"

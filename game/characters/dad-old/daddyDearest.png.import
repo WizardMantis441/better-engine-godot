@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k7n0e331t1e3"
-path="res://.godot/imported/icon.png-9275a9b2a726fd2eb9f21c52e1c97b89.ctex"
+uid="uid://cidtcmsh55nkw"
+path="res://.godot/imported/daddyDearest.png-2c8dccc87a32e9a48b290c288e4a0395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/characters/-test-dad/icon.png"
-dest_files=["res://.godot/imported/icon.png-9275a9b2a726fd2eb9f21c52e1c97b89.ctex"]
+source_file="res://game/characters/dad-old/daddyDearest.png"
+dest_files=["res://.godot/imported/daddyDearest.png-2c8dccc87a32e9a48b290c288e4a0395.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://brwukhkcyefd6"]
+[gd_scene format=3 uid="uid://brwukhkcyefd6"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_pa51u"]
 [ext_resource type="AudioStream" uid="uid://ccrjh7copydgy" path="res://game/songs/week4/satin-panties/Inst.ogg" id="2_shebt"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dr2iotpkktyt2" path="res://game/songs/week4/satin-panties/Voices-mom.ogg" id="8_vnhtq"]
 [ext_resource type="PackedScene" uid="uid://bp71t26tq7ngn" path="res://game/stages/limo/limo.tscn" id="9_shebt"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_jk11s"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_0ttd7"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_0ttd7"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_kgy7d"]
 
 [node name="Satin Panties" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

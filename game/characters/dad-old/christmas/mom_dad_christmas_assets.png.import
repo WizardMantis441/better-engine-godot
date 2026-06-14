@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3fpg5g7op2e3"
-path="res://.godot/imported/icon-dad.png-2cb42a782e709c2807f7ea055b29e203.ctex"
+uid="uid://bjgeg1qrw3cbv"
+path="res://.godot/imported/mom_dad_christmas_assets.png-8da8230959cab9028380b3b887190b35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/characters/dad/icon-dad.png"
-dest_files=["res://.godot/imported/icon-dad.png-2cb42a782e709c2807f7ea055b29e203.ctex"]
+source_file="res://game/characters/dad-old/christmas/mom_dad_christmas_assets.png"
+dest_files=["res://.godot/imported/mom_dad_christmas_assets.png-8da8230959cab9028380b3b887190b35.ctex"]
 
 [params]
 

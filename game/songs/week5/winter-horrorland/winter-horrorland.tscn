@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://csdnon0qw6pfs"]
+[gd_scene format=3 uid="uid://csdnon0qw6pfs"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_t2nho"]
 [ext_resource type="AudioStream" uid="uid://b834vrir83rd5" path="res://game/songs/week5/winter-horrorland/Inst.ogg" id="2_x750f"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ch1jaxlg8m8xg" path="res://game/songs/week5/winter-horrorland/Voices-monster.ogg" id="8_al1om"]
 [ext_resource type="PackedScene" path="res://game/stages/mall/evil/mall-evil.tscn" id="9_x750f"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_4l1ba"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_r7brg"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_r7brg"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_evg0s"]
 
 [node name="Winter Horrorland" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://ct55plcbqvr6w"]
+[gd_scene format=3 uid="uid://ct55plcbqvr6w"]
 
 [ext_resource type="Script" uid="uid://b72yjaxky37si" path="res://game/hud/default/default.gd" id="1_206rr"]
 [ext_resource type="Texture2D" uid="uid://ccyqv2dka7qv8" path="res://game/hud/default/healthBar.png" id="1_rf7i1"]
 [ext_resource type="FontFile" uid="uid://b82c3o8gdei1q" path="res://backend/objects/fonts/vcr.ttf" id="3_8j7qc"]
-[ext_resource type="Texture2D" uid="uid://b3fpg5g7op2e3" path="res://game/characters/dad/icon-dad.png" id="4_cw8vr"]
+[ext_resource type="Texture2D" uid="uid://b3fpg5g7op2e3" path="res://game/characters/dad-old/icon-dad.png" id="4_cw8vr"]
 [ext_resource type="Texture2D" uid="uid://bg5xswntoftgi" path="res://game/hud/default/countdown/ready.png" id="4_hkc8k"]
 [ext_resource type="Texture2D" uid="uid://dvklm7lf75v6b" path="res://game/hud/default/countdown/set.png" id="5_acl0w"]
 [ext_resource type="Texture2D" uid="uid://bnctr112dem3e" path="res://game/characters/bf/icon-bf.png" id="6_i61i5"]

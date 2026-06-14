@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2xnwdio7mt5x"]
+[gd_scene format=3 uid="uid://c2xnwdio7mt5x"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_2typv"]
 [ext_resource type="AudioStream" uid="uid://chs1uh53n7tmr" path="res://game/songs/week3/pico/Inst.ogg" id="2_n75ay"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bg0mgfgl0612e" path="res://game/songs/week3/pico/Voices-pico.ogg" id="8_hdkjn"]
 [ext_resource type="PackedScene" uid="uid://bjwevjyw3qvxt" path="res://game/stages/philly/train/philly-train.tscn" id="9_n75ay"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_ok1bt"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_bsl5s"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_bsl5s"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_8e4v4"]
 
 [node name="Pico" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

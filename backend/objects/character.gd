@@ -13,10 +13,14 @@ func _ready() -> void:
 	if !Engine.is_editor_hint():
 		Conductor.step_hit.connect(step_hit)
 
-func _process(_delta: float) -> void:
-	# TODO: stepTime
-	
-	pass
+func step_hit(_step:int):
+	cur_hold_time += 1
+	if cur_hold_time >= hold_time: ## TODO: is this > or >= ? also should i force a dance at the end?
+		sprite.can_dance = true
 
-func step_hit(step:int):
-	pass
+func play_anim(anim_name:StringName = &"", custom_speed:float = 1.0, from_end:bool = false, should_loop:bool = false, context:Enums.AnimContext = Enums.AnimContext.NONE):
+	sprite.play_anim(anim_name, custom_speed, from_end, should_loop, context)
+
+	if context in [Enums.AnimContext.SING, Enums.AnimContext.MISS]:
+		sprite.can_dance = false
+		cur_hold_time = 0

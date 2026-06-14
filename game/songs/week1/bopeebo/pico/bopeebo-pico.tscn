@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4gbxajbfai2i"]
+[gd_scene format=3 uid="uid://4gbxajbfai2i"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_k3ptm"]
 [ext_resource type="AudioStream" uid="uid://bd1c010y5sn23" path="res://game/songs/week1/bopeebo/pico/Voices-pico-playable-pico.ogg" id="2_koryc"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_yxkl6"]
 [ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_ls03d"]
 [ext_resource type="PackedScene" uid="uid://28myhn626d5o" path="res://game/stages/stage/erect/main-stage-erect.tscn" id="9_8fxnt"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="10_i843i"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="10_i843i"]
 [ext_resource type="PackedScene" uid="uid://c0tu8jkbpffge" path="res://game/characters/nene/nene.tscn" id="10_uth2j"]
 [ext_resource type="PackedScene" uid="uid://cvt55gl8uhsb" path="res://game/characters/pico/pico.tscn" id="11_68wxr"]
 

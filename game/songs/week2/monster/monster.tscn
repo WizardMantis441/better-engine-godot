@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ldp55v0th40w"]
+[gd_scene format=3 uid="uid://ldp55v0th40w"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_ccw4s"]
 [ext_resource type="AudioStream" uid="uid://c6wucyfhg5dmf" path="res://game/songs/week2/monster/Inst.ogg" id="2_vp71r"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://c5veqmd4kbkpd" path="res://game/songs/week2/monster/Voices-monster.ogg" id="8_ncy6i"]
 [ext_resource type="PackedScene" path="res://game/stages/mansion/mansion.tscn" id="9_vp71r"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_o4jux"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_xtu2s"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_xtu2s"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_1pc27"]
 
 [node name="Monster" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

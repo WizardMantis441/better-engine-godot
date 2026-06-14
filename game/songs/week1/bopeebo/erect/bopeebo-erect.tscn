@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://crb55em3jj2fe"]
+[gd_scene format=3 uid="uid://crb55em3jj2fe"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_8u4ta"]
 [ext_resource type="AudioStream" uid="uid://brpirhiwjsdei" path="res://game/songs/week1/bopeebo/erect/Inst-erect.ogg" id="2_74j6c"]
@@ -10,47 +10,45 @@
 [ext_resource type="AudioStream" uid="uid://dsgh7pkhrqhhi" path="res://game/songs/week1/bopeebo/erect/Voices-dad-erect.ogg" id="6_5n16c"]
 [ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_awkom"]
 [ext_resource type="PackedScene" uid="uid://28myhn626d5o" path="res://game/stages/stage/erect/main-stage-erect.tscn" id="9_5n16c"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="10_56e2p"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="10_56e2p"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_h33gt"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="11_a62s0"]
 
-[node name="Bopeebo [Erect]" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+[node name="Bopeebo [Erect]" type="Node2D" unique_id=1739640410 node_paths=PackedStringArray("hud", "stage")]
 script = ExtResource("1_8u4ta")
 hud = NodePath("HUD")
-strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
 instrumental = ExtResource("2_74j6c")
 chart = ExtResource("3_2xvor")
 metadata = ExtResource("4_gwxh8")
-camera = NodePath("")
 stage = NodePath("Stage")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=1333289247]
 zoom = Vector2(0.85, 0.85)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 script = ExtResource("5_mj1qs")
 metadata/_custom_type_script = "uid://dhj71furw851k"
 
-[node name="HUD" parent="." instance=ExtResource("5_an2d4")]
+[node name="HUD" parent="." unique_id=1745461208 instance=ExtResource("5_an2d4")]
 
-[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_awkom")]
+[node name="Player Strumline" parent="HUD" unique_id=1134800150 node_paths=PackedStringArray("characters") instance=ExtResource("6_awkom")]
 position = Vector2(960, 125)
 vocal = ExtResource("5_olgvp")
 characters = [NodePath("../../Stage/Boyfriend")]
 
-[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_awkom")]
+[node name="Opponent Strumline" parent="HUD" unique_id=1475272349 node_paths=PackedStringArray("characters") instance=ExtResource("6_awkom")]
 position = Vector2(320, 125)
 vocal = ExtResource("6_5n16c")
-characters = [NodePath("../../Stage/Dad")]
+characters = [null]
 cpu = true
 
-[node name="Stage" parent="." instance=ExtResource("9_5n16c")]
+[node name="Stage" parent="." unique_id=530454641 instance=ExtResource("9_5n16c")]
 
-[node name="Girlfriend" parent="Stage" instance=ExtResource("10_h33gt")]
+[node name="Girlfriend" parent="Stage" unique_id=1121055067 instance=ExtResource("10_h33gt")]
 position = Vector2(501.5, 825)
 
-[node name="Dad" parent="Stage" instance=ExtResource("10_56e2p")]
+[node name="Dad" parent="Stage" unique_id=2078474857 instance=ExtResource("10_56e2p")]
 position = Vector2(40, 850)
 
-[node name="Boyfriend" parent="Stage" instance=ExtResource("11_a62s0")]
+[node name="Boyfriend" parent="Stage" unique_id=572793722 instance=ExtResource("11_a62s0")]
 position = Vector2(977.5, 865)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwg2bhpdf78j4"]
+[gd_scene format=3 uid="uid://cwg2bhpdf78j4"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_y2bww"]
 [ext_resource type="AudioStream" uid="uid://btxm6aefatgmu" path="res://game/songs/week2/spookeez/erect/Inst-erect.ogg" id="2_hjucn"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cydt28dvw5f5i" path="res://game/songs/week2/spookeez/erect/Voices-spooky-dark-erect.ogg" id="8_3b8sd"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_67k41"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_ohh2m"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_jfsmq"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_jfsmq"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_6w6xu"]
 
 [node name="Spookeez [Erect]" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

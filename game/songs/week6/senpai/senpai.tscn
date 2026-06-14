@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbr102cv8q51w"]
+[gd_scene format=3 uid="uid://cbr102cv8q51w"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_87q25"]
 [ext_resource type="AudioStream" uid="uid://6heve4xn5372" path="res://game/songs/week6/senpai/Inst.ogg" id="2_x63kh"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cnacvjgscvsum" path="res://game/songs/week6/senpai/Voices-senpai.ogg" id="8_l4lp6"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_13c6y"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_1aimc"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_k3yg3"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_k3yg3"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_n70nc"]
 
 [node name="Senpai" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

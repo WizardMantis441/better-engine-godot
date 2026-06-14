@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfeydom5hy8cc"]
+[gd_scene format=3 uid="uid://cfeydom5hy8cc"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_ik6n2"]
 [ext_resource type="AudioStream" uid="uid://buohlgnbfvo0u" path="res://game/songs/weekend1/blazin/Inst.ogg" id="2_0xegu"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_f2c2r"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_7h6e5"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_snqxk"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_2pmv2"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_2pmv2"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_h74lf"]
 
 [node name="Blazin" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]

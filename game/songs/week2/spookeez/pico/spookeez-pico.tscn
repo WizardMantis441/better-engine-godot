@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://crptgo241gpw4"]
+[gd_scene format=3 uid="uid://crptgo241gpw4"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_4q6we"]
 [ext_resource type="AudioStream" uid="uid://c3iu7oystnwsj" path="res://game/songs/week2/spookeez/pico/Inst-pico.ogg" id="2_qn56h"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://5xs5toqxr1o6" path="res://game/songs/week2/spookeez/pico/Voices-spooky-pico.ogg" id="8_rlocr"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_gax1h"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_rqvme"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad/dad.tscn" id="11_tw3ob"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_tw3ob"]
 [ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_iukx4"]
 
 [node name="Spookeez [Pico Mix]" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
