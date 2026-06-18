@@ -753,8 +753,9 @@ _data = {
 &"up": SubResource("Animation_rf4lr")
 }
 
-[node name="Dad" type="Node2D" unique_id=76635454 node_paths=PackedStringArray("animation_player", "camera_position_marker")]
+[node name="Dad" type="Node2D" unique_id=76635454 node_paths=PackedStringArray("sprite", "animation_player", "camera_position_marker")]
 script = ExtResource("1_a5gx0")
+sprite = NodePath("Bopper")
 animation_player = NodePath("Bopper/AnimationPlayer")
 camera_position_marker = NodePath("Bopper/CameraPositionMarker2D")
 metadata/_custom_type_script = "uid://b4olm8xjrsa66"
@@ -776,5 +777,4 @@ autoplay = &"idle"
 [node name="CameraPositionMarker2D" type="Marker2D" parent="Bopper" unique_id=699261871]
 position = Vector2(250, -500)
 script = ExtResource("7_l21w4")
-show_bounds = false
 metadata/_custom_type_script = "uid://bkm08smbbvrsh"

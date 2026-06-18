@@ -10,8 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b5338alwqox0l" path="res://game/songs/week1/bopeebo/Voices-dad.ogg" id="7_nnmx0"]
 [ext_resource type="AudioStream" uid="uid://mrfdp6rt2826" path="res://game/songs/week1/bopeebo/Voices-bf.ogg" id="8_wcf3n"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_wcf3n"]
-[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_vun3i"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="11_mq5rn"]
+[ext_resource type="PackedScene" uid="uid://cf7suhflftoqs" path="res://game/characters/bf/Boyfriend.tscn" id="12_vun3i"]
 [ext_resource type="PackedScene" uid="uid://c3aalowko0un8" path="res://game/characters/dad/Dad.tscn" id="14_snher"]
 
 [node name="Bopeebo" type="Node2D" unique_id=1169312412 node_paths=PackedStringArray("hud", "opponent_strumline", "player_strumline", "camera", "stage")]
@@ -37,7 +36,7 @@ metadata/_custom_type_script = "uid://dhj71furw851k"
 [node name="Player Strumline" parent="HUD" unique_id=1872476421 node_paths=PackedStringArray("characters") instance=ExtResource("7_cgfbf")]
 position = Vector2(910, 105)
 vocal = ExtResource("8_wcf3n")
-characters = [NodePath("../../Stage/Boyfriend")]
+characters = [null]
 
 [node name="Opponent Strumline" parent="HUD" unique_id=76783612 node_paths=PackedStringArray("characters") instance=ExtResource("7_cgfbf")]
 position = Vector2(270, 105)
@@ -47,11 +46,9 @@ cpu = true
 
 [node name="Stage" parent="." unique_id=1584997871 instance=ExtResource("9_wcf3n")]
 
-[node name="Girlfriend" parent="Stage" unique_id=1706182425 instance=ExtResource("10_vun3i")]
-position = Vector2(751.5, 787)
-
 [node name="Dad" parent="Stage" unique_id=76635454 instance=ExtResource("14_snher")]
+z_index = 1
 position = Vector2(308, 800)
 
-[node name="Boyfriend" parent="Stage" unique_id=921153487 instance=ExtResource("11_mq5rn")]
-position = Vector2(989.5, 885)
+[node name="Boyfriend" parent="Stage" unique_id=1470991517 instance=ExtResource("12_vun3i")]
+z_index = 100
