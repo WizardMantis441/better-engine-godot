@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://c8s7dqymb6fo0"]
+
+[ext_resource type="Script" uid="uid://g36q2a58t5fs" path="res://menus/freeplay/scenes/freeplay_menu.gd" id="1_fgms4"]
+[ext_resource type="Texture2D" uid="uid://baba7bm3p11i8" path="res://menus/freeplay/backing-cards/bf/cardGlow.png" id="2_00yrm"]
+[ext_resource type="Texture2D" uid="uid://b3qqm24atfugh" path="res://menus/freeplay/backing-cards/bf/confirmGlow.png" id="3_rdnfa"]
+[ext_resource type="Texture2D" uid="uid://ddu0hl6cg1xrx" path="res://menus/freeplay/backing-cards/bf/glowingText.png" id="4_a4jg1"]
+[ext_resource type="Texture2D" uid="uid://dkkkh3syo2t37" path="res://menus/freeplay/backing-cards/bf/pinkBack.png" id="5_wpykf"]
+[ext_resource type="Texture2D" uid="uid://d3bveawq2lsmi" path="res://menus/freeplay/backing-cards/bf/confirmGlow2.png" id="6_2ua0x"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate/animate_symbol.gd" id="7_dchud"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate/animate_atlas.gd" id="8_ljt5y"]
+[ext_resource type="Script" uid="uid://dkyyuwqo0dy7q" path="res://addons/gdanimate/adobe/adobe_atlas.gd" id="9_hbvm8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dchud"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ljt5y"]
+blend_mode = 1
+
+[sub_resource type="Resource" id="Resource_gqiuu"]
+script = ExtResource("9_hbvm8")
+folder_path = "res://menus/freeplay/backing-cards/bf/backing-text-yeah/"
+format = "adobe"
+metadata/_custom_type_script = "uid://dkyyuwqo0dy7q"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hbvm8"]
+blend_mode = 1
+
+[node name="FreeplayMenu" type="Node2D" unique_id=1077622869]
+script = ExtResource("1_fgms4")
+
+[node name="BackingCard" type="Node2D" parent="." unique_id=943856931]
+
+[node name="OrangeBackShit" type="ColorRect" parent="BackingCard" unique_id=2035113171]
+clip_children = 1
+offset_left = 84.0
+offset_top = 440.0
+offset_right = 608.0
+offset_bottom = 515.0
+color = Color(0.99607843, 0.85490197, 0, 1)
+
+[node name="PinkBack" type="Sprite2D" parent="BackingCard/OrangeBackShit" unique_id=234463447]
+modulate = Color(1, 0.83137256, 0.9137255, 1)
+position = Vector2(-84, -440)
+texture = ExtResource("5_wpykf")
+centered = false
+
+[node name="AlsoOrangeLOL" type="ColorRect" parent="BackingCard" unique_id=438336128]
+offset_top = 440.0
+offset_right = 100.0
+offset_bottom = 515.0
+color = Color(1, 0.83137256, 0, 1)
+
+[node name="ConfirmGlow2" type="Sprite2D" parent="BackingCard" unique_id=575974201]
+material = SubResource("CanvasItemMaterial_dchud")
+position = Vector2(199, 240)
+texture = ExtResource("6_2ua0x")
+centered = false
+
+[node name="ConfirmGlow" type="Sprite2D" parent="BackingCard" unique_id=1105427265]
+material = SubResource("CanvasItemMaterial_ljt5y")
+position = Vector2(199, 240)
+texture = ExtResource("3_rdnfa")
+centered = false
+
+[node name="GlowingText" type="Sprite2D" parent="BackingCard" unique_id=2098507017]
+position = Vector2(421, 393)
+texture = ExtResource("4_a4jg1")
+centered = false
+
+[node name="BackingTextYeah" type="Node2D" parent="BackingCard" unique_id=1370270450]
+script = ExtResource("7_dchud")
+symbol = "YES YES YES"
+atlases = Array[ExtResource("8_ljt5y")]([SubResource("Resource_gqiuu")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="CardGlow" type="Sprite2D" parent="BackingCard" unique_id=1628393634]
+material = SubResource("CanvasItemMaterial_hbvm8")
+position = Vector2(-30, -30)
+texture = ExtResource("2_00yrm")
+centered = false

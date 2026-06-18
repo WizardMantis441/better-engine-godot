@@ -11,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://mrfdp6rt2826" path="res://game/songs/week1/bopeebo/Voices-bf.ogg" id="8_wcf3n"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_wcf3n"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_vun3i"]
-[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="10_wcf3n"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="11_mq5rn"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="11_mq5rn"]
+[ext_resource type="PackedScene" uid="uid://c3aalowko0un8" path="res://game/characters/dad/Dad.tscn" id="14_snher"]
 
 [node name="Bopeebo" type="Node2D" unique_id=1169312412 node_paths=PackedStringArray("hud", "opponent_strumline", "player_strumline", "camera", "stage")]
 script = ExtResource("1_ak1r7")
@@ -50,8 +50,8 @@ cpu = true
 [node name="Girlfriend" parent="Stage" unique_id=1706182425 instance=ExtResource("10_vun3i")]
 position = Vector2(751.5, 787)
 
-[node name="Dad" parent="Stage" unique_id=1646587772 instance=ExtResource("10_wcf3n")]
-position = Vector2(339, 493)
+[node name="Dad" parent="Stage" unique_id=76635454 instance=ExtResource("14_snher")]
+position = Vector2(308, 800)
 
 [node name="Boyfriend" parent="Stage" unique_id=921153487 instance=ExtResource("11_mq5rn")]
 position = Vector2(989.5, 885)

@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="better-engine-godot"
 run/main_scene="uid://dxyx7tq2s4pas"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=120
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -34,7 +34,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdanimate/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/gdanimate/plugin.cfg")
 
 [file_customization]
 
@@ -42,7 +42,27 @@ folder_colors={
 "res://addons/": "gray",
 "res://backend/": "purple",
 "res://game/": "blue",
-"res://menus/": "yellow"
+"res://game/characters/bf-old/": "gray",
+"res://game/characters/dad-old/": "gray",
+"res://game/characters/darnell/": "gray",
+"res://game/characters/gf/": "gray",
+"res://game/characters/mom/": "gray",
+"res://game/characters/monster/": "gray",
+"res://game/characters/nene/": "gray",
+"res://game/characters/otis/": "gray",
+"res://game/characters/pico/": "gray",
+"res://game/characters/senpai/": "gray",
+"res://game/characters/spooky/": "gray",
+"res://game/characters/tankman/": "gray",
+"res://menus/": "yellow",
+"res://menus/freeplay/albumRoll/freeplayAlbum/": "teal",
+"res://menus/freeplay/backing-cards/bf/backing-text-yeah/": "teal",
+"res://menus/freeplay/bg/backingCards/pico/pico-confirm/": "teal",
+"res://menus/freeplay/djs/bf/": "teal",
+"res://menus/freeplay/djs/pico/": "teal",
+"res://menus/freeplay/freeplayStars/": "teal",
+"res://menus/freeplay/scenes/": "orange",
+"res://menus/freeplay/sortedLetters/": "teal"
 }
 
 [input]

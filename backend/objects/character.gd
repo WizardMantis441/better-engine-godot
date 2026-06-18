@@ -3,15 +3,23 @@ class_name Character extends Node2D
 
 @export var sprite:Bopper
 @export var animation_player:AnimationPlayer
+@export var swap_left_right_anims:bool = false # used in playstate
 
 ## Amount of time until the character can resume idling.
 @export_custom(PROPERTY_HINT_NONE, "suffix:steps") var hold_time:int = 8
+
+@export var camera_position_marker:CameraPositionMarker2D
 
 var cur_hold_time:int = 0
 
 func _ready() -> void:
 	if !Engine.is_editor_hint():
 		Conductor.step_hit.connect(step_hit)
+
+func _process(_delta:float) -> void:
+	if Engine.is_editor_hint():
+		var sel = Engine.get_singleton("EditorInterface").get_selection().get_selected_nodes()
+		camera_position_marker.show_bounds = self in sel or camera_position_marker in sel
 
 func step_hit(_step:int):
 	cur_hold_time += 1

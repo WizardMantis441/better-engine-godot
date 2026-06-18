@@ -1,0 +1,3225 @@
+[gd_scene format=3 uid="uid://cf7suhflftoqs"]
+
+[ext_resource type="Script" uid="uid://b4olm8xjrsa66" path="res://backend/objects/character.gd" id="1_hqawx"]
+[ext_resource type="Script" uid="uid://cq8cndjj4htcm" path="res://backend/objects/bopper.gd" id="2_qcpbm"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate/animate_atlas.gd" id="3_a2758"]
+[ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate/sparrow/sparrow_frame.gd" id="4_2s8ww"]
+[ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate/sparrow/sparrow_atlas.gd" id="5_vap7o"]
+[ext_resource type="Texture2D" uid="uid://c1t5my8w5ukkh" path="res://game/characters/bf/BOYFRIEND.png" id="6_1qow3"]
+[ext_resource type="Script" uid="uid://bkm08smbbvrsh" path="res://backend/objects/camera_position_marker_2d.gd" id="7_oepnk"]
+
+[sub_resource type="Resource" id="Resource_234fc"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0000"
+region = Rect2i(0, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_lkhjf"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0000"
+region = Rect2i(5082, 988, 433, 415)
+offset = Rect2i(-1, 0, 439, 445)
+
+[sub_resource type="Resource" id="Resource_thenb"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0000"
+region = Rect2i(5388, 509, 395, 416)
+offset = Rect2i(0, 0, 415, 418)
+
+[sub_resource type="Resource" id="Resource_3ekgf"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0000"
+region = Rect2i(4939, 1893, 429, 425)
+offset = Rect2i(0, -16, 451, 441)
+
+[sub_resource type="Resource" id="Resource_x7au0"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0000"
+region = Rect2i(0, 2344, 406, 392)
+offset = Rect2i(-1, -20, 411, 412)
+
+[sub_resource type="Resource" id="Resource_st4pd"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle shaking0000"
+region = Rect2i(2087, 2344, 408, 412)
+offset = Rect2i(-1, -1, 410, 413)
+
+[sub_resource type="Resource" id="Resource_oo5d1"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0000"
+region = Rect2i(6640, 509, 374, 357)
+offset = Rect2i(-1, -35, 375, 362)
+
+[sub_resource type="Resource" id="Resource_73iiw"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0000"
+region = Rect2i(6640, 509, 374, 357)
+offset = Rect2i(-1, -5, 375, 362)
+
+[sub_resource type="Resource" id="Resource_mwv2u"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0000"
+region = Rect2i(777, 988, 383, 406)
+offset = Rect2i(0, -26, 384, 432)
+
+[sub_resource type="Resource" id="Resource_hwspx"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0000"
+region = Rect2i(0, 988, 383, 406)
+offset = Rect2i(0, 0, 385, 406)
+
+[sub_resource type="Resource" id="Resource_wy2kf"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0000"
+region = Rect2i(1929, 988, 408, 405)
+offset = Rect2i(-7, -30, 409, 407)
+
+[sub_resource type="Resource" id="Resource_cqp2n"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0000"
+region = Rect2i(1929, 988, 408, 405)
+offset = Rect2i(-1, -2, 409, 407)
+
+[sub_resource type="Resource" id="Resource_ml68x"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0000"
+region = Rect2i(3580, 988, 369, 446)
+offset = Rect2i(-9, 0, 376, 446)
+
+[sub_resource type="Resource" id="Resource_5b32v"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0000"
+region = Rect2i(3580, 988, 369, 446)
+offset = Rect2i(-5, 0, 376, 446)
+
+[sub_resource type="Resource" id="Resource_1t2ls"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0000"
+region = Rect2i(3761, 2344, 386, 373)
+offset = Rect2i(0, -1, 386, 374)
+
+[sub_resource type="Resource" id="Resource_whnyw"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend attack0000"
+region = Rect2i(4941, 2344, 697, 597)
+offset = Rect2i(0, -87, 708, 685)
+
+[sub_resource type="Resource" id="Resource_i8jem"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0000"
+region = Rect2i(7226, 2344, 375, 404)
+offset = Rect2i(-3, 0, 380, 404)
+
+[sub_resource type="Resource" id="Resource_fr6lu"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0000"
+region = Rect2i(2694, 0, 439, 435)
+offset = Rect2i(0, -64, 439, 499)
+
+[sub_resource type="Resource" id="Resource_h3lwy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0001"
+region = Rect2i(0, 988, 383, 406)
+offset = Rect2i(0, 0, 385, 406)
+
+[sub_resource type="Resource" id="Resource_0wen8"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0001"
+region = Rect2i(449, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_876m8"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0001"
+region = Rect2i(5378, 1893, 418, 441)
+offset = Rect2i(-4, 0, 451, 441)
+
+[sub_resource type="Resource" id="Resource_538r8"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0001"
+region = Rect2i(0, 2344, 406, 392)
+offset = Rect2i(-1, -20, 411, 412)
+
+[sub_resource type="Resource" id="Resource_4iodg"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0001"
+region = Rect2i(5388, 509, 395, 416)
+offset = Rect2i(0, 0, 415, 418)
+
+[sub_resource type="Resource" id="Resource_t5cot"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0001"
+region = Rect2i(7611, 2344, 375, 404)
+offset = Rect2i(-3, 0, 380, 404)
+
+[sub_resource type="Resource" id="Resource_mf4wb"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0001"
+region = Rect2i(3761, 2344, 386, 373)
+offset = Rect2i(0, -1, 386, 374)
+
+[sub_resource type="Resource" id="Resource_sc57j"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0001"
+region = Rect2i(6640, 509, 374, 357)
+offset = Rect2i(-1, -5, 375, 362)
+
+[sub_resource type="Resource" id="Resource_o52qh"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0001"
+region = Rect2i(5525, 988, 433, 415)
+offset = Rect2i(-1, 0, 439, 445)
+
+[sub_resource type="Resource" id="Resource_feg8m"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0001"
+region = Rect2i(4345, 988, 360, 427)
+offset = Rect2i(0, -13, 378, 446)
+
+[sub_resource type="Resource" id="Resource_61efu"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0001"
+region = Rect2i(3143, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_08a3b"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle shaking0001"
+region = Rect2i(2505, 2344, 408, 412)
+offset = Rect2i(-2, -1, 410, 413)
+
+[sub_resource type="Resource" id="Resource_vv5al"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0001"
+region = Rect2i(2765, 988, 395, 432)
+offset = Rect2i(0, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_g35xp"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0001"
+region = Rect2i(1929, 988, 408, 405)
+offset = Rect2i(-1, -2, 409, 407)
+
+[sub_resource type="Resource" id="Resource_svsbg"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend attack0001"
+region = Rect2i(4941, 2344, 697, 597)
+offset = Rect2i(0, -87, 708, 685)
+
+[sub_resource type="Resource" id="Resource_cvx8t"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0001"
+region = Rect2i(7407, 509, 376, 392)
+offset = Rect2i(-1, 0, 378, 392)
+
+[sub_resource type="Resource" id="Resource_1ppy3"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0001"
+region = Rect2i(3580, 988, 369, 446)
+offset = Rect2i(-5, 0, 376, 446)
+
+[sub_resource type="Resource" id="Resource_fwv5o"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0001"
+region = Rect2i(1170, 988, 369, 430)
+offset = Rect2i(-15, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_va11k"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0002"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_pgei6"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0002"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_00pjk"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend attack0002"
+region = Rect2i(5648, 2344, 603, 660)
+offset = Rect2i(-102, -24, 708, 685)
+
+[sub_resource type="Resource" id="Resource_3b8tj"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0002"
+region = Rect2i(5806, 1893, 392, 393)
+offset = Rect2i(-59, -38, 451, 441)
+
+[sub_resource type="Resource" id="Resource_kyvgt"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0002"
+region = Rect2i(4345, 988, 360, 427)
+offset = Rect2i(0, -13, 378, 446)
+
+[sub_resource type="Resource" id="Resource_mk7dx"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0002"
+region = Rect2i(4157, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_7vumn"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0002"
+region = Rect2i(3592, 0, 439, 499)
+
+[sub_resource type="Resource" id="Resource_ekmv0"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0002"
+region = Rect2i(5968, 988, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_vmdkl"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0002"
+region = Rect2i(5793, 509, 413, 410)
+offset = Rect2i(-1, -8, 415, 418)
+
+[sub_resource type="Resource" id="Resource_curob"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle shaking0002"
+region = Rect2i(2923, 2344, 408, 413)
+offset = Rect2i(-1, 0, 410, 413)
+
+[sub_resource type="Resource" id="Resource_45jp5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0002"
+region = Rect2i(7407, 509, 376, 392)
+offset = Rect2i(-1, 0, 378, 392)
+
+[sub_resource type="Resource" id="Resource_bg2cy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0002"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_fawst"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0002"
+region = Rect2i(0, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_pui4f"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0002"
+region = Rect2i(449, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_2spbt"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0002"
+region = Rect2i(416, 2344, 408, 393)
+offset = Rect2i(0, -19, 411, 412)
+
+[sub_resource type="Resource" id="Resource_gypdo"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0002"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_ufb23"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0002"
+region = Rect2i(2765, 988, 395, 432)
+offset = Rect2i(0, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_pufp6"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0002"
+region = Rect2i(1170, 988, 369, 430)
+offset = Rect2i(-15, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_k0ba2"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0003"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_vrq4h"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle shaking0003"
+region = Rect2i(3341, 2344, 410, 413)
+
+[sub_resource type="Resource" id="Resource_y7ql5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0003"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_afgdu"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0003"
+region = Rect2i(5793, 509, 413, 410)
+offset = Rect2i(-1, -8, 415, 418)
+
+[sub_resource type="Resource" id="Resource_qurld"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0003"
+region = Rect2i(6208, 1893, 392, 393)
+offset = Rect2i(-59, -38, 451, 441)
+
+[sub_resource type="Resource" id="Resource_xbfwb"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0003"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_oll34"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0003"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_nmaoe"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0003"
+region = Rect2i(6417, 988, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_j5oru"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0003"
+region = Rect2i(4041, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_6ug05"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0003"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_b8h43"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0003"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_nv0xt"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0003"
+region = Rect2i(390, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_wolp1"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend attack0003"
+region = Rect2i(5648, 2344, 603, 660)
+offset = Rect2i(-102, -24, 708, 685)
+
+[sub_resource type="Resource" id="Resource_dwli8"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0003"
+region = Rect2i(4157, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_ejuc3"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0003"
+region = Rect2i(898, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_0y1ov"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0003"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_pidmq"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0003"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_k5cpl"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0003"
+region = Rect2i(416, 2344, 408, 393)
+offset = Rect2i(0, -19, 411, 412)
+
+[sub_resource type="Resource" id="Resource_bcbv5"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0004"
+region = Rect2i(4490, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_xsab7"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0004"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_cnpwp"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0004"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_rh38v"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0004"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_jfa4k"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0004"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_4748r"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0004"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_ybe6u"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0004"
+region = Rect2i(834, 2344, 405, 398)
+offset = Rect2i(-3, -14, 411, 412)
+
+[sub_resource type="Resource" id="Resource_0od81"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0004"
+region = Rect2i(6610, 1893, 378, 392)
+offset = Rect2i(-58, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_jc7rb"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0004"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_0xuuk"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0004"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_qoeqf"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0004"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_eo032"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0004"
+region = Rect2i(898, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_6wcox"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0004"
+region = Rect2i(6866, 988, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_dg66e"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0004"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_6n3l1"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0004"
+region = Rect2i(780, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_fjllq"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0004"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_mud4c"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend attack0004"
+region = Rect2i(6261, 2344, 444, 684)
+offset = Rect2i(-263, 0, 708, 685)
+
+[sub_resource type="Resource" id="Resource_t1xwm"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0005"
+region = Rect2i(4939, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_2pa82"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0005"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_46l3q"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0005"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_o72l2"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0005"
+region = Rect2i(834, 2344, 405, 398)
+offset = Rect2i(-3, -14, 411, 412)
+
+[sub_resource type="Resource" id="Resource_xteak"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0005"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_kel7q"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0005"
+region = Rect2i(0, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_acn1w"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend attack0005"
+region = Rect2i(6261, 2344, 444, 684)
+offset = Rect2i(-263, 0, 708, 685)
+
+[sub_resource type="Resource" id="Resource_2ojs1"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0005"
+region = Rect2i(1347, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_68req"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0005"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_2qw0v"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0005"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_jj3ui"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0005"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_bvvv2"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0005"
+region = Rect2i(7315, 988, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_ck0sf"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0005"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_6mruo"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0005"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_rm66q"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0005"
+region = Rect2i(6998, 1893, 378, 392)
+offset = Rect2i(-58, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_l2eo8"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0005"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_dx744"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0005"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_a38cm"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0006"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_cfh5a"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0006"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_64sk0"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0006"
+region = Rect2i(390, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_8lx73"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0006"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_lceow"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0006"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_dg8kl"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0006"
+region = Rect2i(7386, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_nji13"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend attack0006"
+region = Rect2i(6715, 2344, 501, 630)
+offset = Rect2i(-207, -55, 708, 685)
+
+[sub_resource type="Resource" id="Resource_tkvj5"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0006"
+region = Rect2i(5388, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_85gc6"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0006"
+region = Rect2i(1347, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_td6x6"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0006"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_7f35d"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0006"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_dse7p"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0006"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_cvpx2"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0006"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_s287j"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0006"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_0xvp2"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0006"
+region = Rect2i(1249, 2344, 410, 411)
+offset = Rect2i(-1, -1, 411, 412)
+
+[sub_resource type="Resource" id="Resource_1qs5t"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0006"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_rbdyc"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0006"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_tqo7p"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0007"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_6r27s"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0007"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_mgo71"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0007"
+region = Rect2i(780, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_3q65e"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0007"
+region = Rect2i(1796, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_s1rmt"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0007"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_xn5j3"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0007"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_4at1e"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0007"
+region = Rect2i(5837, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_ihwsm"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0007"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_ws8dp"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0007"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_85sns"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0007"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_b7wqc"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0007"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_i3gps"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0007"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_clnhm"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0007"
+region = Rect2i(1249, 2344, 410, 411)
+offset = Rect2i(-1, -1, 411, 412)
+
+[sub_resource type="Resource" id="Resource_7q0se"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0007"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_lflh0"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0007"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_a18i6"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0007"
+region = Rect2i(7788, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_j7u64"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0008"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_6btp5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0008"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_fg7p2"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0008"
+region = Rect2i(1669, 2344, 408, 412)
+offset = Rect2i(-2, 0, 411, 412)
+
+[sub_resource type="Resource" id="Resource_n6885"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0008"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_1uood"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0008"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_shkic"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0008"
+region = Rect2i(7386, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_4f4t8"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0008"
+region = Rect2i(6286, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_onqeg"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0008"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_644sv"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0008"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_ipmb5"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0008"
+region = Rect2i(0, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_1bth4"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0008"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_6swe4"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0008"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_gya5g"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0008"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_6uc4u"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0008"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_p7ok3"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0008"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_kq7lg"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0008"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_mk5go"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0009"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_2vv5i"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0009"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_o2dvj"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0009"
+region = Rect2i(6735, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_xhqoe"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0009"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_urxpi"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0009"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_r1vbu"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0009"
+region = Rect2i(1669, 2344, 408, 412)
+offset = Rect2i(-2, 0, 411, 412)
+
+[sub_resource type="Resource" id="Resource_yednj"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0009"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_636cn"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0009"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_4i0tf"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0009"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_8kex5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0009"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_02ods"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0009"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_7molr"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0009"
+region = Rect2i(390, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_07ges"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0009"
+region = Rect2i(7788, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_r3x30"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0009"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_gqrro"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0009"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_eokif"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0009"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_q7las"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0010"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_x5qac"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0010"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_35bks"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0010"
+region = Rect2i(7184, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_wacsi"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0010"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_xkg03"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0010"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_oknb1"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0010"
+region = Rect2i(780, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_ld5xk"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0010"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_aqrwo"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0010"
+region = Rect2i(1669, 2344, 408, 412)
+offset = Rect2i(-2, 0, 411, 412)
+
+[sub_resource type="Resource" id="Resource_yr6ij"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0010"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_gqvaw"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0010"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_4pq4b"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0010"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_v1lv3"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0010"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_d1etq"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0010"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_8sa2k"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0010"
+region = Rect2i(7386, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_e3vhy"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0010"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_jr7qm"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0010"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_tpdny"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0011"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_u82ce"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0011"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_p0qfr"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0011"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_gkqhn"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0011"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_eaird"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0011"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_hwjkd"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0011"
+region = Rect2i(0, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_xqxyx"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0011"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_pai0f"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0011"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_3c2xr"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0011"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_uv1jr"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0011"
+region = Rect2i(7788, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_5vsnv"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0011"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_uielc"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0011"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_ouqdw"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0011"
+region = Rect2i(1669, 2344, 408, 412)
+offset = Rect2i(-2, 0, 411, 412)
+
+[sub_resource type="Resource" id="Resource_bru8w"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0011"
+region = Rect2i(7633, 0, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_uuarp"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0011"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_qt3d7"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0011"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_tj8gq"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0012"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_pexxt"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0012"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_5tu8p"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0012"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_dvn7i"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0012"
+region = Rect2i(7386, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_v7u0n"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0012"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_k618x"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0012"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_lr3vj"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0012"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_0t1en"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0012"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_t76fx"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0012"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_qowbe"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0012"
+region = Rect2i(0, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_2ag25"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0012"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_jsbkx"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0012"
+region = Rect2i(390, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_jcth6"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0012"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_cjv7i"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0012"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_os6a2"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0012"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_wheee"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0012"
+region = Rect2i(1669, 2344, 408, 412)
+offset = Rect2i(-2, 0, 411, 412)
+
+[sub_resource type="Resource" id="Resource_8jwhi"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0013"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_v1adg"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0013"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_ks4m8"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0013"
+region = Rect2i(449, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_okc74"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0013"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_og7sc"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0013"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_tj4vr"]
+script = ExtResource("4_2s8ww")
+name = &"BF idle dance0013"
+region = Rect2i(1669, 2344, 408, 412)
+offset = Rect2i(-2, 0, 411, 412)
+
+[sub_resource type="Resource" id="Resource_7bmuq"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0013"
+region = Rect2i(7788, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_h6v1s"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0013"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_cf181"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0013"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_2qo1q"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0013"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_2magh"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0013"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_trilj"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0013"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_m66sq"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0013"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_ymj1b"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0013"
+region = Rect2i(780, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_svmgb"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0013"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_u5vvg"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0013"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_v65xr"]
+script = ExtResource("4_2s8ww")
+name = &"boyfriend dodge0014"
+region = Rect2i(0, 3038, 380, 403)
+offset = Rect2i(0, -1, 380, 404)
+
+[sub_resource type="Resource" id="Resource_dd01v"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0014"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_1v10r"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT0014"
+region = Rect2i(393, 988, 374, 404)
+offset = Rect2i(-11, -2, 385, 406)
+
+[sub_resource type="Resource" id="Resource_fln1y"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0014"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_r4fyl"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0014"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_hciyy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0014"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_k5g54"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP0014"
+region = Rect2i(3959, 988, 376, 441)
+offset = Rect2i(0, -5, 376, 446)
+
+[sub_resource type="Resource" id="Resource_60rwy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0014"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_1llc1"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0014"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_ogh3y"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0014"
+region = Rect2i(898, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_h2pwf"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0014"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_tqrgg"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0014"
+region = Rect2i(0, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_b8l77"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0014"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_ogipa"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0014"
+region = Rect2i(7386, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_7op2e"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0014"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_fl4ff"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0015"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_3rwbd"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0015"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_ar8r3"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0015"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_b81bg"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0015"
+region = Rect2i(1347, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_47keu"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0015"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_ijode"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0015"
+region = Rect2i(449, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_knbml"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0015"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_58ptf"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0015"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_dugvk"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0015"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_2qe1b"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0015"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_jmpny"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0015"
+region = Rect2i(7788, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_d6qkd"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0015"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_d6q3g"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0016"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_tiacf"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0016"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_pm7au"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0016"
+region = Rect2i(1796, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_hc1rp"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0016"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_4x1x8"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0016"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_5divt"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0016"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_apqwr"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0016"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_rnvlk"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0016"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_17de7"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0016"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_bvc64"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0016"
+region = Rect2i(449, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_vb6hk"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0016"
+region = Rect2i(7386, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_ra06i"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0016"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_0jpfo"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0017"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_bcorm"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0017"
+region = Rect2i(7788, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_kxkpq"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0017"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_2fqkt"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0017"
+region = Rect2i(0, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_lukgg"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0017"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_k5bnn"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0017"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_v7bbc"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0017"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_7rmff"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0017"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_fxbyk"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0017"
+region = Rect2i(449, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_s5r4i"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0017"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_830w7"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0017"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_tvqr5"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0017"
+region = Rect2i(2245, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_mswt5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0018"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_koo3r"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0018"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_8usxu"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0018"
+region = Rect2i(449, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_kmyb3"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0018"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_5ca3c"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0018"
+region = Rect2i(898, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_6f82r"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0018"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_lu1yv"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0018"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_3xl6y"]
+script = ExtResource("4_2s8ww")
+name = &"BF hit0018"
+region = Rect2i(7386, 1893, 392, 392)
+offset = Rect2i(-47, -39, 451, 441)
+
+[sub_resource type="Resource" id="Resource_xtqf5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0018"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_hgdpg"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0018"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_katfa"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0018"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_2r44i"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0018"
+region = Rect2i(2694, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_qiyiy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0019"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_r2pce"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0019"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_2v5wo"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0019"
+region = Rect2i(449, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_5eo77"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0019"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_ugb1o"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0019"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_10ldu"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0019"
+region = Rect2i(898, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_yp7kv"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0019"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_3t4hg"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0019"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_sgma4"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0019"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_ge8ro"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0019"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_wo1ae"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0019"
+region = Rect2i(3143, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_r3ka3"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0020"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_k0ly4"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0020"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_qcyqa"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0020"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_cct3l"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0020"
+region = Rect2i(898, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_l1c7i"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0020"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_dm7qy"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0020"
+region = Rect2i(3592, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_a60d6"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0020"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_5yc73"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0020"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_gqu8v"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0020"
+region = Rect2i(1347, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_mf57a"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0020"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_wcmur"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0020"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_2nnhl"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0021"
+region = Rect2i(898, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_rviw6"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0021"
+region = Rect2i(1347, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_ltvff"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0021"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_qii2l"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0021"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_g8wbl"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0021"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_tvtfn"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0021"
+region = Rect2i(4041, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_ipp6x"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0021"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_4jdei"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0021"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_0bs1f"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0021"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_hqof0"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0021"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_ssjh6"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0021"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_5yjwr"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0022"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_60vje"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0022"
+region = Rect2i(1347, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_wbg4g"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0022"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_h0m6b"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0022"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_1h0yd"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0022"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_q4kwu"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0022"
+region = Rect2i(4490, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_ko43u"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0022"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_wma33"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0022"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_gb2da"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0022"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_g5bl8"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0022"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_j0w3x"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0022"
+region = Rect2i(1796, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_f7dsa"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0023"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_nno1h"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0023"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_xbivi"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0023"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_fvgcx"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE UP MISS0023"
+region = Rect2i(4715, 988, 357, 430)
+offset = Rect2i(-1, -10, 378, 446)
+
+[sub_resource type="Resource" id="Resource_kowlw"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0023"
+region = Rect2i(1796, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_aykqc"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0023"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_hsfud"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0023"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_j6i5o"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0023"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_pw08s"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0023"
+region = Rect2i(1347, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_1s5cc"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0023"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_yvlg5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0023"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_6kpl1"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0024"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_s8j83"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0024"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_jlwhx"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0024"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_kptll"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0024"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_3w67c"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0024"
+region = Rect2i(2245, 1444, 439, 412)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_6g1ph"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0024"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_vlf4x"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0024"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_o05b5"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0024"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_8x02s"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0024"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_v5m5r"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0024"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_vgipy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0025"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_7qml3"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0025"
+region = Rect2i(2694, 1444, 439, 439)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_ys6of"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0025"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_tv67y"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0025"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_irut7"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0025"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_55ybe"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0025"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_4a8c3"]
+script = ExtResource("4_2s8ww")
+name = &"BF HEY!!0025"
+region = Rect2i(6216, 509, 414, 412)
+offset = Rect2i(-1, -6, 415, 418)
+
+[sub_resource type="Resource" id="Resource_s14x3"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0025"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_288xu"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0025"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_wjk1s"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0025"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_kkfhp"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0026"
+region = Rect2i(2694, 1444, 439, 439)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_hoxyi"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0026"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_8b30t"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0026"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_rjr5h"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0026"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_w6pcr"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0026"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_mbako"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0026"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_1e6g6"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0026"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_ahs4q"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0026"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_fdbvi"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0026"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_fupgu"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0027"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_j83ba"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0027"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_e7fhv"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0027"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_wshuw"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0027"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_d6aka"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0027"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_v0osk"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0027"
+region = Rect2i(3143, 1444, 439, 434)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_jvsjw"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0027"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_lssxv"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0027"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_nkc2w"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0027"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_eccjs"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0028"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_6modr"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0028"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_2iuou"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0028"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_8mlgu"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0028"
+region = Rect2i(3143, 1444, 439, 434)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_kpky7"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0028"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_74dca"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN MISS0028"
+region = Rect2i(7793, 509, 378, 388)
+offset = Rect2i(0, -4, 378, 392)
+
+[sub_resource type="Resource" id="Resource_ifn3b"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0028"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_re5ni"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0028"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_lultr"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0028"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_xuuck"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0029"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_keirk"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0029"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_obnuu"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE DOWN0029"
+region = Rect2i(7024, 509, 373, 362)
+offset = Rect2i(0, 0, 375, 362)
+
+[sub_resource type="Resource" id="Resource_2pj6b"]
+script = ExtResource("4_2s8ww")
+name = &"bf pre attack0029"
+region = Rect2i(4549, 2344, 382, 374)
+offset = Rect2i(-2, 0, 386, 374)
+
+[sub_resource type="Resource" id="Resource_nr3kh"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0029"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_uox1p"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0029"
+region = Rect2i(3592, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_v2pqq"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0029"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_iuj8b"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0029"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_3w4no"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0030"
+region = Rect2i(3592, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_lye3l"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0030"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_ktop1"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0030"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_a8ce4"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0030"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_3wsw8"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0030"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_hu651"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0030"
+region = Rect2i(1796, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_rfj0s"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0031"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_2c6qe"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0031"
+region = Rect2i(4041, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_o6e8r"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0031"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_jrmuh"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0031"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_gyd2t"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0031"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_vb88n"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0031"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_7xtd3"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0032"
+region = Rect2i(4041, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_ieneb"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0032"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_u3trg"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0032"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_ptasb"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0032"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_jfpck"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0032"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_grw3f"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0032"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_4rrvy"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead Loop0033"
+region = Rect2i(2245, 0, 439, 435)
+
+[sub_resource type="Resource" id="Resource_1msx7"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0033"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_ygd5m"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0033"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_udgpe"]
+script = ExtResource("4_2s8ww")
+name = &"BF Dead confirm0033"
+region = Rect2i(4939, 509, 439, 469)
+offset = Rect2i(0, -30, 439, 499)
+
+[sub_resource type="Resource" id="Resource_3g0xd"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE LEFT MISS0033"
+region = Rect2i(1549, 988, 370, 430)
+offset = Rect2i(-13, 0, 384, 432)
+
+[sub_resource type="Resource" id="Resource_r233w"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0033"
+region = Rect2i(4041, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_5e431"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0034"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_wckgf"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0034"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_ebl4r"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0034"
+region = Rect2i(4041, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_mpohs"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0035"
+region = Rect2i(4490, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_wd8do"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0035"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_swlg2"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0035"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_x2o8s"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0036"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_6dsip"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0036"
+region = Rect2i(4939, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_byjhy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0036"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_ua0o7"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0037"
+region = Rect2i(5388, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_fg7qr"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0037"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_lrwjl"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0037"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_ao3n6"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0038"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_nxbq3"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0038"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_x50o4"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0038"
+region = Rect2i(5837, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_4xu3w"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0039"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_o7an5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0039"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_h6awf"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0039"
+region = Rect2i(6286, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_ihtud"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0040"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_0oyle"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0040"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_cfonj"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0040"
+region = Rect2i(6735, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_8bfkj"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0041"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_di0i5"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0041"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_t5vvh"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0041"
+region = Rect2i(7184, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_hyb42"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0042"
+region = Rect2i(7633, 1444, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_60xe8"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0042"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_lib6h"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0042"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_jfxsb"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0043"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_vgv70"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0043"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_h11df"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0043"
+region = Rect2i(0, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_00fuf"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0044"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_n254l"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0044"
+region = Rect2i(449, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_1saqk"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0044"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_0nlgk"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0045"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_cgixy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT MISS0045"
+region = Rect2i(3170, 988, 400, 432)
+offset = Rect2i(-1, 0, 415, 435)
+
+[sub_resource type="Resource" id="Resource_l3ihy"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0045"
+region = Rect2i(898, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_msyhy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0046"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_skhp2"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0046"
+region = Rect2i(1347, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_efx08"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0047"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_44iin"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0047"
+region = Rect2i(1796, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_1ejsx"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0048"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_cqefi"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0048"
+region = Rect2i(2245, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_ao0wv"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0049"
+region = Rect2i(2694, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_xrxb8"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0049"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_5e3e0"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0050"
+region = Rect2i(3143, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_38kx7"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0050"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_yylj5"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0051"
+region = Rect2i(3592, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_y3qtj"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0051"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_xa854"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0052"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_byego"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0052"
+region = Rect2i(4041, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_7ck3i"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0053"
+region = Rect2i(0, 0, 439, 435)
+offset = Rect2i(0, -6, 439, 435)
+
+[sub_resource type="Resource" id="Resource_o3yj1"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0053"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_bngte"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0054"
+region = Rect2i(4490, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_prv2q"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0054"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_71aex"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0055"
+region = Rect2i(4490, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_1goin"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0055"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_4cews"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0056"
+region = Rect2i(4490, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_bliio"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0056"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_cnnfy"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0057"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_tylq7"]
+script = ExtResource("4_2s8ww")
+name = &"BF dies0057"
+region = Rect2i(4490, 1893, 439, 435)
+offset = Rect2i(0, -6, 439, 445)
+
+[sub_resource type="Resource" id="Resource_65cjv"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0058"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_iktpe"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0059"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_dp73p"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0060"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_ufo4v"]
+script = ExtResource("4_2s8ww")
+name = &"BF NOTE RIGHT0061"
+region = Rect2i(2347, 988, 408, 407)
+offset = Rect2i(0, 0, 409, 407)
+
+[sub_resource type="Resource" id="Resource_k23cj"]
+script = ExtResource("5_vap7o")
+texture = ExtResource("6_1qow3")
+sparrow_path = "res://game/characters/bf/BOYFRIEND.xml"
+frames = Array[ExtResource("4_2s8ww")]([SubResource("Resource_234fc"), SubResource("Resource_lkhjf"), SubResource("Resource_thenb"), SubResource("Resource_3ekgf"), SubResource("Resource_x7au0"), SubResource("Resource_st4pd"), SubResource("Resource_oo5d1"), SubResource("Resource_73iiw"), SubResource("Resource_mwv2u"), SubResource("Resource_hwspx"), SubResource("Resource_wy2kf"), SubResource("Resource_cqp2n"), SubResource("Resource_ml68x"), SubResource("Resource_5b32v"), SubResource("Resource_1t2ls"), SubResource("Resource_whnyw"), SubResource("Resource_i8jem"), SubResource("Resource_fr6lu"), SubResource("Resource_h3lwy"), SubResource("Resource_0wen8"), SubResource("Resource_876m8"), SubResource("Resource_538r8"), SubResource("Resource_4iodg"), SubResource("Resource_t5cot"), SubResource("Resource_mf4wb"), SubResource("Resource_sc57j"), SubResource("Resource_o52qh"), SubResource("Resource_feg8m"), SubResource("Resource_61efu"), SubResource("Resource_08a3b"), SubResource("Resource_vv5al"), SubResource("Resource_g35xp"), SubResource("Resource_svsbg"), SubResource("Resource_cvx8t"), SubResource("Resource_1ppy3"), SubResource("Resource_fwv5o"), SubResource("Resource_va11k"), SubResource("Resource_pgei6"), SubResource("Resource_00pjk"), SubResource("Resource_3b8tj"), SubResource("Resource_kyvgt"), SubResource("Resource_mk7dx"), SubResource("Resource_7vumn"), SubResource("Resource_ekmv0"), SubResource("Resource_vmdkl"), SubResource("Resource_curob"), SubResource("Resource_45jp5"), SubResource("Resource_bg2cy"), SubResource("Resource_fawst"), SubResource("Resource_pui4f"), SubResource("Resource_2spbt"), SubResource("Resource_gypdo"), SubResource("Resource_ufb23"), SubResource("Resource_pufp6"), SubResource("Resource_k0ba2"), SubResource("Resource_vrq4h"), SubResource("Resource_y7ql5"), SubResource("Resource_afgdu"), SubResource("Resource_qurld"), SubResource("Resource_xbfwb"), SubResource("Resource_oll34"), SubResource("Resource_nmaoe"), SubResource("Resource_j5oru"), SubResource("Resource_6ug05"), SubResource("Resource_b8h43"), SubResource("Resource_nv0xt"), SubResource("Resource_wolp1"), SubResource("Resource_dwli8"), SubResource("Resource_ejuc3"), SubResource("Resource_0y1ov"), SubResource("Resource_pidmq"), SubResource("Resource_k5cpl"), SubResource("Resource_bcbv5"), SubResource("Resource_xsab7"), SubResource("Resource_cnpwp"), SubResource("Resource_rh38v"), SubResource("Resource_jfa4k"), SubResource("Resource_4748r"), SubResource("Resource_ybe6u"), SubResource("Resource_0od81"), SubResource("Resource_jc7rb"), SubResource("Resource_0xuuk"), SubResource("Resource_qoeqf"), SubResource("Resource_eo032"), SubResource("Resource_6wcox"), SubResource("Resource_dg66e"), SubResource("Resource_6n3l1"), SubResource("Resource_fjllq"), SubResource("Resource_mud4c"), SubResource("Resource_t1xwm"), SubResource("Resource_2pa82"), SubResource("Resource_46l3q"), SubResource("Resource_o72l2"), SubResource("Resource_xteak"), SubResource("Resource_kel7q"), SubResource("Resource_acn1w"), SubResource("Resource_2ojs1"), SubResource("Resource_68req"), SubResource("Resource_2qw0v"), SubResource("Resource_jj3ui"), SubResource("Resource_bvvv2"), SubResource("Resource_ck0sf"), SubResource("Resource_6mruo"), SubResource("Resource_rm66q"), SubResource("Resource_l2eo8"), SubResource("Resource_dx744"), SubResource("Resource_a38cm"), SubResource("Resource_cfh5a"), SubResource("Resource_64sk0"), SubResource("Resource_8lx73"), SubResource("Resource_lceow"), SubResource("Resource_dg8kl"), SubResource("Resource_nji13"), SubResource("Resource_tkvj5"), SubResource("Resource_85gc6"), SubResource("Resource_td6x6"), SubResource("Resource_7f35d"), SubResource("Resource_dse7p"), SubResource("Resource_cvpx2"), SubResource("Resource_s287j"), SubResource("Resource_0xvp2"), SubResource("Resource_1qs5t"), SubResource("Resource_rbdyc"), SubResource("Resource_tqo7p"), SubResource("Resource_6r27s"), SubResource("Resource_mgo71"), SubResource("Resource_3q65e"), SubResource("Resource_s1rmt"), SubResource("Resource_xn5j3"), SubResource("Resource_4at1e"), SubResource("Resource_ihwsm"), SubResource("Resource_ws8dp"), SubResource("Resource_85sns"), SubResource("Resource_b7wqc"), SubResource("Resource_i3gps"), SubResource("Resource_clnhm"), SubResource("Resource_7q0se"), SubResource("Resource_lflh0"), SubResource("Resource_a18i6"), SubResource("Resource_j7u64"), SubResource("Resource_6btp5"), SubResource("Resource_fg7p2"), SubResource("Resource_n6885"), SubResource("Resource_1uood"), SubResource("Resource_shkic"), SubResource("Resource_4f4t8"), SubResource("Resource_onqeg"), SubResource("Resource_644sv"), SubResource("Resource_ipmb5"), SubResource("Resource_1bth4"), SubResource("Resource_6swe4"), SubResource("Resource_gya5g"), SubResource("Resource_6uc4u"), SubResource("Resource_p7ok3"), SubResource("Resource_kq7lg"), SubResource("Resource_mk5go"), SubResource("Resource_2vv5i"), SubResource("Resource_o2dvj"), SubResource("Resource_xhqoe"), SubResource("Resource_urxpi"), SubResource("Resource_r1vbu"), SubResource("Resource_yednj"), SubResource("Resource_636cn"), SubResource("Resource_4i0tf"), SubResource("Resource_8kex5"), SubResource("Resource_02ods"), SubResource("Resource_7molr"), SubResource("Resource_07ges"), SubResource("Resource_r3x30"), SubResource("Resource_gqrro"), SubResource("Resource_eokif"), SubResource("Resource_q7las"), SubResource("Resource_x5qac"), SubResource("Resource_35bks"), SubResource("Resource_wacsi"), SubResource("Resource_xkg03"), SubResource("Resource_oknb1"), SubResource("Resource_ld5xk"), SubResource("Resource_aqrwo"), SubResource("Resource_yr6ij"), SubResource("Resource_gqvaw"), SubResource("Resource_4pq4b"), SubResource("Resource_v1lv3"), SubResource("Resource_d1etq"), SubResource("Resource_8sa2k"), SubResource("Resource_e3vhy"), SubResource("Resource_jr7qm"), SubResource("Resource_tpdny"), SubResource("Resource_u82ce"), SubResource("Resource_p0qfr"), SubResource("Resource_gkqhn"), SubResource("Resource_eaird"), SubResource("Resource_hwjkd"), SubResource("Resource_xqxyx"), SubResource("Resource_pai0f"), SubResource("Resource_3c2xr"), SubResource("Resource_uv1jr"), SubResource("Resource_5vsnv"), SubResource("Resource_uielc"), SubResource("Resource_ouqdw"), SubResource("Resource_bru8w"), SubResource("Resource_uuarp"), SubResource("Resource_qt3d7"), SubResource("Resource_tj8gq"), SubResource("Resource_pexxt"), SubResource("Resource_5tu8p"), SubResource("Resource_dvn7i"), SubResource("Resource_v7u0n"), SubResource("Resource_k618x"), SubResource("Resource_lr3vj"), SubResource("Resource_0t1en"), SubResource("Resource_t76fx"), SubResource("Resource_qowbe"), SubResource("Resource_2ag25"), SubResource("Resource_jsbkx"), SubResource("Resource_jcth6"), SubResource("Resource_cjv7i"), SubResource("Resource_os6a2"), SubResource("Resource_wheee"), SubResource("Resource_8jwhi"), SubResource("Resource_v1adg"), SubResource("Resource_ks4m8"), SubResource("Resource_okc74"), SubResource("Resource_og7sc"), SubResource("Resource_tj4vr"), SubResource("Resource_7bmuq"), SubResource("Resource_h6v1s"), SubResource("Resource_cf181"), SubResource("Resource_2qo1q"), SubResource("Resource_2magh"), SubResource("Resource_trilj"), SubResource("Resource_m66sq"), SubResource("Resource_ymj1b"), SubResource("Resource_svmgb"), SubResource("Resource_u5vvg"), SubResource("Resource_v65xr"), SubResource("Resource_dd01v"), SubResource("Resource_1v10r"), SubResource("Resource_fln1y"), SubResource("Resource_r4fyl"), SubResource("Resource_hciyy"), SubResource("Resource_k5g54"), SubResource("Resource_60rwy"), SubResource("Resource_1llc1"), SubResource("Resource_ogh3y"), SubResource("Resource_h2pwf"), SubResource("Resource_tqrgg"), SubResource("Resource_b8l77"), SubResource("Resource_ogipa"), SubResource("Resource_7op2e"), SubResource("Resource_fl4ff"), SubResource("Resource_3rwbd"), SubResource("Resource_ar8r3"), SubResource("Resource_b81bg"), SubResource("Resource_47keu"), SubResource("Resource_ijode"), SubResource("Resource_knbml"), SubResource("Resource_58ptf"), SubResource("Resource_dugvk"), SubResource("Resource_2qe1b"), SubResource("Resource_jmpny"), SubResource("Resource_d6qkd"), SubResource("Resource_d6q3g"), SubResource("Resource_tiacf"), SubResource("Resource_pm7au"), SubResource("Resource_hc1rp"), SubResource("Resource_4x1x8"), SubResource("Resource_5divt"), SubResource("Resource_apqwr"), SubResource("Resource_rnvlk"), SubResource("Resource_17de7"), SubResource("Resource_bvc64"), SubResource("Resource_vb6hk"), SubResource("Resource_ra06i"), SubResource("Resource_0jpfo"), SubResource("Resource_bcorm"), SubResource("Resource_kxkpq"), SubResource("Resource_2fqkt"), SubResource("Resource_lukgg"), SubResource("Resource_k5bnn"), SubResource("Resource_v7bbc"), SubResource("Resource_7rmff"), SubResource("Resource_fxbyk"), SubResource("Resource_s5r4i"), SubResource("Resource_830w7"), SubResource("Resource_tvqr5"), SubResource("Resource_mswt5"), SubResource("Resource_koo3r"), SubResource("Resource_8usxu"), SubResource("Resource_kmyb3"), SubResource("Resource_5ca3c"), SubResource("Resource_6f82r"), SubResource("Resource_lu1yv"), SubResource("Resource_3xl6y"), SubResource("Resource_xtqf5"), SubResource("Resource_hgdpg"), SubResource("Resource_katfa"), SubResource("Resource_2r44i"), SubResource("Resource_qiyiy"), SubResource("Resource_r2pce"), SubResource("Resource_2v5wo"), SubResource("Resource_5eo77"), SubResource("Resource_ugb1o"), SubResource("Resource_10ldu"), SubResource("Resource_yp7kv"), SubResource("Resource_3t4hg"), SubResource("Resource_sgma4"), SubResource("Resource_ge8ro"), SubResource("Resource_wo1ae"), SubResource("Resource_r3ka3"), SubResource("Resource_k0ly4"), SubResource("Resource_qcyqa"), SubResource("Resource_cct3l"), SubResource("Resource_l1c7i"), SubResource("Resource_dm7qy"), SubResource("Resource_a60d6"), SubResource("Resource_5yc73"), SubResource("Resource_gqu8v"), SubResource("Resource_mf57a"), SubResource("Resource_wcmur"), SubResource("Resource_2nnhl"), SubResource("Resource_rviw6"), SubResource("Resource_ltvff"), SubResource("Resource_qii2l"), SubResource("Resource_g8wbl"), SubResource("Resource_tvtfn"), SubResource("Resource_ipp6x"), SubResource("Resource_4jdei"), SubResource("Resource_0bs1f"), SubResource("Resource_hqof0"), SubResource("Resource_ssjh6"), SubResource("Resource_5yjwr"), SubResource("Resource_60vje"), SubResource("Resource_wbg4g"), SubResource("Resource_h0m6b"), SubResource("Resource_1h0yd"), SubResource("Resource_q4kwu"), SubResource("Resource_ko43u"), SubResource("Resource_wma33"), SubResource("Resource_gb2da"), SubResource("Resource_g5bl8"), SubResource("Resource_j0w3x"), SubResource("Resource_f7dsa"), SubResource("Resource_nno1h"), SubResource("Resource_xbivi"), SubResource("Resource_fvgcx"), SubResource("Resource_kowlw"), SubResource("Resource_aykqc"), SubResource("Resource_hsfud"), SubResource("Resource_j6i5o"), SubResource("Resource_pw08s"), SubResource("Resource_1s5cc"), SubResource("Resource_yvlg5"), SubResource("Resource_6kpl1"), SubResource("Resource_s8j83"), SubResource("Resource_jlwhx"), SubResource("Resource_kptll"), SubResource("Resource_3w67c"), SubResource("Resource_6g1ph"), SubResource("Resource_vlf4x"), SubResource("Resource_o05b5"), SubResource("Resource_8x02s"), SubResource("Resource_v5m5r"), SubResource("Resource_vgipy"), SubResource("Resource_7qml3"), SubResource("Resource_ys6of"), SubResource("Resource_tv67y"), SubResource("Resource_irut7"), SubResource("Resource_55ybe"), SubResource("Resource_4a8c3"), SubResource("Resource_s14x3"), SubResource("Resource_288xu"), SubResource("Resource_wjk1s"), SubResource("Resource_kkfhp"), SubResource("Resource_hoxyi"), SubResource("Resource_8b30t"), SubResource("Resource_rjr5h"), SubResource("Resource_w6pcr"), SubResource("Resource_mbako"), SubResource("Resource_1e6g6"), SubResource("Resource_ahs4q"), SubResource("Resource_fdbvi"), SubResource("Resource_fupgu"), SubResource("Resource_j83ba"), SubResource("Resource_e7fhv"), SubResource("Resource_wshuw"), SubResource("Resource_d6aka"), SubResource("Resource_v0osk"), SubResource("Resource_jvsjw"), SubResource("Resource_lssxv"), SubResource("Resource_nkc2w"), SubResource("Resource_eccjs"), SubResource("Resource_6modr"), SubResource("Resource_2iuou"), SubResource("Resource_8mlgu"), SubResource("Resource_kpky7"), SubResource("Resource_74dca"), SubResource("Resource_ifn3b"), SubResource("Resource_re5ni"), SubResource("Resource_lultr"), SubResource("Resource_xuuck"), SubResource("Resource_keirk"), SubResource("Resource_obnuu"), SubResource("Resource_2pj6b"), SubResource("Resource_nr3kh"), SubResource("Resource_uox1p"), SubResource("Resource_v2pqq"), SubResource("Resource_iuj8b"), SubResource("Resource_3w4no"), SubResource("Resource_lye3l"), SubResource("Resource_ktop1"), SubResource("Resource_a8ce4"), SubResource("Resource_3wsw8"), SubResource("Resource_hu651"), SubResource("Resource_rfj0s"), SubResource("Resource_2c6qe"), SubResource("Resource_o6e8r"), SubResource("Resource_jrmuh"), SubResource("Resource_gyd2t"), SubResource("Resource_vb88n"), SubResource("Resource_7xtd3"), SubResource("Resource_ieneb"), SubResource("Resource_u3trg"), SubResource("Resource_ptasb"), SubResource("Resource_jfpck"), SubResource("Resource_grw3f"), SubResource("Resource_4rrvy"), SubResource("Resource_1msx7"), SubResource("Resource_ygd5m"), SubResource("Resource_udgpe"), SubResource("Resource_3g0xd"), SubResource("Resource_r233w"), SubResource("Resource_5e431"), SubResource("Resource_wckgf"), SubResource("Resource_ebl4r"), SubResource("Resource_mpohs"), SubResource("Resource_wd8do"), SubResource("Resource_swlg2"), SubResource("Resource_x2o8s"), SubResource("Resource_6dsip"), SubResource("Resource_byjhy"), SubResource("Resource_ua0o7"), SubResource("Resource_fg7qr"), SubResource("Resource_lrwjl"), SubResource("Resource_ao3n6"), SubResource("Resource_nxbq3"), SubResource("Resource_x50o4"), SubResource("Resource_4xu3w"), SubResource("Resource_o7an5"), SubResource("Resource_h6awf"), SubResource("Resource_ihtud"), SubResource("Resource_0oyle"), SubResource("Resource_cfonj"), SubResource("Resource_8bfkj"), SubResource("Resource_di0i5"), SubResource("Resource_t5vvh"), SubResource("Resource_hyb42"), SubResource("Resource_60xe8"), SubResource("Resource_lib6h"), SubResource("Resource_jfxsb"), SubResource("Resource_vgv70"), SubResource("Resource_h11df"), SubResource("Resource_00fuf"), SubResource("Resource_n254l"), SubResource("Resource_1saqk"), SubResource("Resource_0nlgk"), SubResource("Resource_cgixy"), SubResource("Resource_l3ihy"), SubResource("Resource_msyhy"), SubResource("Resource_skhp2"), SubResource("Resource_efx08"), SubResource("Resource_44iin"), SubResource("Resource_1ejsx"), SubResource("Resource_cqefi"), SubResource("Resource_ao0wv"), SubResource("Resource_xrxb8"), SubResource("Resource_5e3e0"), SubResource("Resource_38kx7"), SubResource("Resource_yylj5"), SubResource("Resource_y3qtj"), SubResource("Resource_xa854"), SubResource("Resource_byego"), SubResource("Resource_7ck3i"), SubResource("Resource_o3yj1"), SubResource("Resource_bngte"), SubResource("Resource_prv2q"), SubResource("Resource_71aex"), SubResource("Resource_1goin"), SubResource("Resource_4cews"), SubResource("Resource_bliio"), SubResource("Resource_cnnfy"), SubResource("Resource_tylq7"), SubResource("Resource_65cjv"), SubResource("Resource_iktpe"), SubResource("Resource_dp73p"), SubResource("Resource_ufo4v")])
+symbols = PackedStringArray("BF Dead Loop", "BF Dead confirm", "BF HEY!!", "BF NOTE DOWN", "BF NOTE DOWN MISS", "BF NOTE LEFT", "BF NOTE LEFT MISS", "BF NOTE RIGHT", "BF NOTE RIGHT MISS", "BF NOTE UP", "BF NOTE UP MISS", "BF dies", "BF hit", "BF idle dance", "BF idle shaking", "bf pre attack", "boyfriend attack", "boyfriend dodge")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Animation" id="Animation_ypfbx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bopper:symbol")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bopper:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bopper:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, -355)]
+}
+
+[sub_resource type="Animation" id="Animation_j54ue"]
+resource_name = "down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bopper:symbol")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["singDOWN"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bopper:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bopper:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(60, -340)]
+}
+
+[sub_resource type="Animation" id="Animation_bu76i"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bopper:symbol")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bopper:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bopper:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, -355)]
+}
+
+[sub_resource type="Animation" id="Animation_e20km"]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bopper:symbol")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["singLEFT"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bopper:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bopper:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(22, -360)]
+}
+
+[sub_resource type="Animation" id="Animation_1yofy"]
+resource_name = "right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bopper:symbol")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["singRIGHT"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bopper:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bopper:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, -368)]
+}
+
+[sub_resource type="Animation" id="Animation_rf4lr"]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bopper:symbol")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["singUP"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bopper:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bopper:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, -380)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w1cwy"]
+_data = {
+&"RESET": SubResource("Animation_ypfbx"),
+&"down": SubResource("Animation_j54ue"),
+&"idle": SubResource("Animation_bu76i"),
+&"left": SubResource("Animation_e20km"),
+&"right": SubResource("Animation_1yofy"),
+&"up": SubResource("Animation_rf4lr")
+}
+
+[node name="Boyfriend" type="Node2D" unique_id=1470991517]
+script = ExtResource("1_hqawx")
+swap_left_right_anims = null
+metadata/_custom_type_script = "uid://b4olm8xjrsa66"
+
+[node name="Bopper" type="Node2D" parent="." unique_id=1399714334]
+script = ExtResource("2_qcpbm")
+symbol = "idle"
+playing = true
+offset = Vector2(40, -355)
+atlases = Array[ExtResource("3_a2758")]([SubResource("Resource_k23cj")])
+metadata/_custom_type_script = "uid://cq8cndjj4htcm"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bopper" unique_id=1899977650]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_w1cwy")
+autoplay = &"idle"
+
+[node name="CameraPositionMarker2D" type="Marker2D" parent="." unique_id=251155821]
+position = Vector2(250, -500)
+script = ExtResource("7_oepnk")
+metadata/_custom_type_script = "uid://bkm08smbbvrsh"

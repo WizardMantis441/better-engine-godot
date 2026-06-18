@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bp71t26tq7ngn" path="res://game/stages/limo/limo.tscn" id="9_shebt"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_jk11s"]
 [ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_0ttd7"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_kgy7d"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_kgy7d"]
 
 [node name="Satin Panties" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
 script = ExtResource("1_pa51u")

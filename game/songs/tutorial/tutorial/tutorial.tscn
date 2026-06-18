@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8824vp3y6w3j"]
+[gd_scene format=3 uid="uid://8824vp3y6w3j"]
 
 [ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/playstate.gd" id="1_q3lcj"]
 [ext_resource type="AudioStream" uid="uid://jt7e2o8vwum" path="res://game/songs/tutorial/tutorial/Inst.ogg" id="2_2bf3c"]
@@ -10,40 +10,39 @@
 [ext_resource type="AudioStream" uid="uid://ycgijs1k33kc" path="res://game/songs/tutorial/tutorial/Voices-gf.ogg" id="8_smcwp"]
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_u58ql"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_hlcq1"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_8fyly"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_8fyly"]
 
-[node name="Tutorial" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+[node name="Tutorial" type="Node2D" unique_id=2053579974 node_paths=PackedStringArray("hud", "camera", "stage")]
 script = ExtResource("1_q3lcj")
 hud = NodePath("HUD")
-strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
 instrumental = ExtResource("2_2bf3c")
 chart = ExtResource("3_gc462")
 metadata = ExtResource("4_cf2xy")
 camera = NodePath("Camera")
 stage = NodePath("Stage")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=18697906]
 zoom = Vector2(0.9, 0.9)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
-[node name="HUD" parent="." instance=ExtResource("5_413ph")]
+[node name="HUD" parent="." unique_id=696260268 instance=ExtResource("5_413ph")]
 
-[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_exk35")]
+[node name="Player Strumline" parent="HUD" unique_id=1704848498 node_paths=PackedStringArray("characters") instance=ExtResource("6_exk35")]
 position = Vector2(960, 125)
 vocal = ExtResource("7_1f62e")
 characters = [NodePath("../../Stage/Boyfriend")]
 
-[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_exk35")]
+[node name="Opponent Strumline" parent="HUD" unique_id=2024873217 node_paths=PackedStringArray("characters") instance=ExtResource("6_exk35")]
 position = Vector2(320, 125)
 vocal = ExtResource("8_smcwp")
 characters = [NodePath("../../Stage/Girlfriend")]
 cpu = true
 
-[node name="Stage" parent="." instance=ExtResource("9_u58ql")]
+[node name="Stage" parent="." unique_id=327063762 instance=ExtResource("9_u58ql")]
 
-[node name="Girlfriend" parent="Stage" instance=ExtResource("10_hlcq1")]
+[node name="Girlfriend" parent="Stage" unique_id=1737972885 instance=ExtResource("10_hlcq1")]
 position = Vector2(751.5, 787)
 
-[node name="Boyfriend" parent="Stage" instance=ExtResource("12_8fyly")]
+[node name="Boyfriend" parent="Stage" unique_id=1557670021 instance=ExtResource("12_8fyly")]
 position = Vector2(989.5, 885)

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_gax1h"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_rqvme"]
 [ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_tw3ob"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_iukx4"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_iukx4"]
 
 [node name="Spookeez [Pico Mix]" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
 script = ExtResource("1_4q6we")

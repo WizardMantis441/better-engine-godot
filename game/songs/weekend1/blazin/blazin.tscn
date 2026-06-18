@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_7h6e5"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_snqxk"]
 [ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_2pmv2"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_h74lf"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_h74lf"]
 
 [node name="Blazin" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
 script = ExtResource("1_ik6n2")

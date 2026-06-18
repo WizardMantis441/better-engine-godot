@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_i43uh"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_6pwr8"]
 [ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_ahaww"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_1cdra"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_1cdra"]
 
 [node name="Thorns" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
 script = ExtResource("1_7ahm6")

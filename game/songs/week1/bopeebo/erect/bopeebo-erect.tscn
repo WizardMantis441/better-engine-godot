@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://28myhn626d5o" path="res://game/stages/stage/erect/main-stage-erect.tscn" id="9_5n16c"]
 [ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="10_56e2p"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_h33gt"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="11_a62s0"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="11_a62s0"]
 
 [node name="Bopeebo [Erect]" type="Node2D" unique_id=1739640410 node_paths=PackedStringArray("hud", "stage")]
 script = ExtResource("1_8u4ta")

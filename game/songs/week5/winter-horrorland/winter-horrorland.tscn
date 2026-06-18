@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://game/stages/mall/evil/mall-evil.tscn" id="9_x750f"]
 [ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_4l1ba"]
 [ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_r7brg"]
-[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf/bf.tscn" id="12_evg0s"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_evg0s"]
 
 [node name="Winter Horrorland" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
 script = ExtResource("1_t2nho")

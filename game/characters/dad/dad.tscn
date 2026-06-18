@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate/sparrow/sparrow_frame.gd" id="4_3geal"]
 [ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate/sparrow/sparrow_atlas.gd" id="5_a52ow"]
 [ext_resource type="Texture2D" uid="uid://c302yjirstsjv" path="res://game/characters/dad/daddyDearest.png" id="6_4ev02"]
+[ext_resource type="Script" uid="uid://bkm08smbbvrsh" path="res://backend/objects/camera_position_marker_2d.gd" id="7_l21w4"]
 
 [sub_resource type="Resource" id="Resource_ymsom"]
 script = ExtResource("4_3geal")
@@ -752,9 +753,10 @@ _data = {
 &"up": SubResource("Animation_rf4lr")
 }
 
-[node name="Dad" type="Node2D" unique_id=76635454 node_paths=PackedStringArray("animation_player")]
+[node name="Dad" type="Node2D" unique_id=76635454 node_paths=PackedStringArray("animation_player", "camera_position_marker")]
 script = ExtResource("1_a5gx0")
-animation_player = NodePath("AnimationPlayer")
+animation_player = NodePath("Bopper/AnimationPlayer")
+camera_position_marker = NodePath("Bopper/CameraPositionMarker2D")
 metadata/_custom_type_script = "uid://b4olm8xjrsa66"
 
 [node name="Bopper" type="Node2D" parent="." unique_id=182802787]
@@ -766,6 +768,13 @@ offset = Vector2(40, -355)
 atlases = Array[ExtResource("3_ymsom")]([SubResource("Resource_ladmt")])
 metadata/_custom_type_script = "uid://cq8cndjj4htcm"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1778028498]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bopper" unique_id=1778028498]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_darmd")
 autoplay = &"idle"
+
+[node name="CameraPositionMarker2D" type="Marker2D" parent="Bopper" unique_id=699261871]
+position = Vector2(250, -500)
+script = ExtResource("7_l21w4")
+show_bounds = false
+metadata/_custom_type_script = "uid://bkm08smbbvrsh"
