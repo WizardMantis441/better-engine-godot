@@ -14,7 +14,7 @@ var cur_hold_time:int = 0
 
 func _ready() -> void:
 	if !Engine.is_editor_hint():
-		Conductor.step_hit.connect(step_hit)
+		SignalBus.connect("step_hit", Callable(self, "step_hit"))
 
 func _process(_delta:float) -> void:
 	if Engine.is_editor_hint():

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dgouqud7k8gyx"]
+
+[ext_resource type="PackedScene" uid="uid://iy3mtw5bgbop" path="res://game/songs/deprecatedFAWK/week3/pico/erect/pico-erect.tscn" id="1_bvmv6"]
+[ext_resource type="AudioStream" uid="uid://dkmab8h7sw7nb" path="res://game/songs/deprecatedFAWK/week3/blammed/Inst.ogg" id="2_5xx88"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week3/blammed/blammed-chart.json" id="3_or2ev"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week3/blammed/blammed-metadata.json" id="4_6sqo2"]
+[ext_resource type="AudioStream" uid="uid://bafufm74bnx7g" path="res://game/songs/deprecatedFAWK/week3/blammed/Voices-bf.ogg" id="5_13ubj"]
+[ext_resource type="AudioStream" uid="uid://bs1i5n47jqh36" path="res://game/songs/deprecatedFAWK/week3/blammed/Voices-pico.ogg" id="6_3rx3w"]
+
+[node name="Blammed [Erect]" instance=ExtResource("1_bvmv6")]
+instrumental = ExtResource("2_5xx88")
+chart = ExtResource("3_or2ev")
+metadata = ExtResource("4_6sqo2")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_13ubj")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_3rx3w")

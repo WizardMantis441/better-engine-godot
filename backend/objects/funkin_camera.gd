@@ -1,4 +1,4 @@
-class_name FunkinCamera
+class_name FunkinCamera2D
 extends Camera2D
 
 @export var lerp_to_target_zoom:bool = true

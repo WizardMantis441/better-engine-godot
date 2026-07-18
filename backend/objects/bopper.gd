@@ -16,7 +16,7 @@ var override_context:bool = false # for debug purposes
 func _ready():
 	dance()
 	if !Engine.is_editor_hint():
-		Conductor.step_hit.connect(step_hit)
+		SignalBus.connect("step_hit", Callable(self, "step_hit"))
 
 func step_hit(step:int):
 	if (step + dance_every_offset) % dance_every == 0 && can_dance:

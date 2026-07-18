@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://boh7k6ppjmi3r"]
+
+[ext_resource type="PackedScene" uid="uid://dxyx7tq2s4pas" path="res://game/songs/deprecatedFAWK/week1/bopeebo/bopeebo.tscn" id="1_3uct3"]
+[ext_resource type="AudioStream" uid="uid://nmihm673snua" path="res://game/songs/deprecatedFAWK/week1/dadbattle/Inst.ogg" id="2_11ons"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week1/dadbattle/dadbattle-chart.json" id="3_3wx4x"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week1/dadbattle/dadbattle-metadata.json" id="4_uar5w"]
+[ext_resource type="AudioStream" uid="uid://be4m3e4afaj7x" path="res://game/songs/deprecatedFAWK/week1/dadbattle/Voices-bf.ogg" id="5_jy0x6"]
+[ext_resource type="AudioStream" uid="uid://bc2xnbi31x57k" path="res://game/songs/deprecatedFAWK/week1/dadbattle/Voices-dad.ogg" id="6_cn2lh"]
+
+[node name="Dad Battle" instance=ExtResource("1_3uct3")]
+instrumental = ExtResource("2_11ons")
+chart = ExtResource("3_3wx4x")
+metadata = ExtResource("4_uar5w")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_jy0x6")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_cn2lh")

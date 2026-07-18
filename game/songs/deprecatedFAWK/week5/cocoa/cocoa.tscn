@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cx2ovrtjawpkh"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/game/playstate.gd" id="1_q0jdt"]
+[ext_resource type="AudioStream" uid="uid://co104ajmqq843" path="res://game/songs/deprecatedFAWK/week5/cocoa/Inst.ogg" id="2_fi2ad"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week5/cocoa/cocoa-chart.json" id="3_ou06o"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week5/cocoa/cocoa-metadata.json" id="4_7w0hw"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_f67te"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_y6nie"]
+[ext_resource type="AudioStream" uid="uid://datwgtwr8rgad" path="res://game/songs/deprecatedFAWK/week5/cocoa/Voices-bf.ogg" id="7_ggqxf"]
+[ext_resource type="AudioStream" uid="uid://gcpnx6e6dki4" path="res://game/songs/deprecatedFAWK/week5/cocoa/Voices-parents-christmas.ogg" id="8_ygf3v"]
+[ext_resource type="PackedScene" path="res://game/stages/mall/mall.tscn" id="9_fi2ad"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_r32ih"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_wrolw"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_7iym5"]
+
+[node name="Cocoa" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_q0jdt")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_fi2ad")
+chart = ExtResource("3_ou06o")
+metadata = ExtResource("4_7w0hw")
+camera = NodePath("Camera")
+stage = NodePath("Christmas Mall (Nice)")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_f67te")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_y6nie")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_ggqxf")
+characters = [NodePath("../../Christmas Mall (Nice)/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_y6nie")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_ygf3v")
+characters = [NodePath("../../Christmas Mall (Nice)/Dad")]
+cpu = true
+
+[node name="Christmas Mall (Nice)" parent="." instance=ExtResource("9_fi2ad")]
+
+[node name="Girlfriend" parent="Christmas Mall (Nice)" instance=ExtResource("10_r32ih")]
+z_index = 100
+position = Vector2(808.5, 854)
+
+[node name="Dad" parent="Christmas Mall (Nice)" instance=ExtResource("11_wrolw")]
+z_index = 200
+position = Vector2(42, 882)
+
+[node name="Boyfriend" parent="Christmas Mall (Nice)" instance=ExtResource("12_7iym5")]
+z_index = 300
+position = Vector2(1177.5, 871)

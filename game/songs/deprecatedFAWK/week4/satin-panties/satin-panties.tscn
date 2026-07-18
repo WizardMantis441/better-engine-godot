@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://brwukhkcyefd6"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/game/playstate.gd" id="1_pa51u"]
+[ext_resource type="AudioStream" uid="uid://ccrjh7copydgy" path="res://game/songs/deprecatedFAWK/week4/satin-panties/Inst.ogg" id="2_shebt"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week4/satin-panties/satin-panties-chart.json" id="3_4m6cp"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week4/satin-panties/satin-panties-metadata.json" id="4_8ji4e"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_5whvt"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_fqbhq"]
+[ext_resource type="AudioStream" uid="uid://dn4lqjnlcb512" path="res://game/songs/deprecatedFAWK/week4/satin-panties/Voices-bf.ogg" id="7_er7xa"]
+[ext_resource type="AudioStream" uid="uid://dr2iotpkktyt2" path="res://game/songs/deprecatedFAWK/week4/satin-panties/Voices-mom.ogg" id="8_vnhtq"]
+[ext_resource type="PackedScene" uid="uid://bp71t26tq7ngn" path="res://game/stages/limo/limo.tscn" id="9_shebt"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_jk11s"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_0ttd7"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_kgy7d"]
+
+[node name="Satin Panties" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_pa51u")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_shebt")
+chart = ExtResource("3_4m6cp")
+metadata = ExtResource("4_8ji4e")
+camera = NodePath("Camera")
+stage = NodePath("")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_5whvt")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_fqbhq")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_er7xa")
+characters = [NodePath("../../Limo Ride/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_fqbhq")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_vnhtq")
+characters = [NodePath("../../Limo Ride/Dad")]
+cpu = true
+
+[node name="Limo Ride" parent="." instance=ExtResource("9_shebt")]
+
+[node name="Girlfriend" parent="Limo Ride" instance=ExtResource("10_jk11s")]
+z_index = 100
+position = Vector2(787, 779)
+
+[node name="Dad" parent="Limo Ride" instance=ExtResource("11_0ttd7")]
+z_index = 200
+position = Vector2(329.5, 913)
+
+[node name="Boyfriend" parent="Limo Ride" instance=ExtResource("12_kgy7d")]
+z_index = 300
+position = Vector2(1217.5, 592)

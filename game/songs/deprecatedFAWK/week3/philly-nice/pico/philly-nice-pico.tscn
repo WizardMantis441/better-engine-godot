@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cyqrui1fwryqw"]
+
+[ext_resource type="PackedScene" uid="uid://jpi63r5035iy" path="res://game/songs/deprecatedFAWK/week3/pico/pico/pico-pico.tscn" id="1_ref0v"]
+[ext_resource type="AudioStream" uid="uid://dx50alcep52t2" path="res://game/songs/deprecatedFAWK/week3/philly-nice/pico/Inst-pico.ogg" id="2_bq0ta"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week3/philly-nice/pico/philly-nice-chart-pico.json" id="3_glxv7"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week3/philly-nice/pico/philly-nice-metadata-pico.json" id="4_w2llc"]
+[ext_resource type="AudioStream" uid="uid://copll5bmue665" path="res://game/songs/deprecatedFAWK/week3/philly-nice/pico/Voices-pico-playable-pico.ogg" id="5_kc64w"]
+[ext_resource type="AudioStream" uid="uid://svijyjbhm85k" path="res://game/songs/deprecatedFAWK/week3/philly-nice/pico/Voices-pico-pico.ogg" id="6_tl10t"]
+
+[node name="Philly Nice [Pico Mix]" instance=ExtResource("1_ref0v")]
+instrumental = ExtResource("2_bq0ta")
+chart = ExtResource("3_glxv7")
+metadata = ExtResource("4_w2llc")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_kc64w")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_tl10t")

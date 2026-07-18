@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b72yjaxky37si" path="res://game/hud/default/default.gd" id="1_206rr"]
 [ext_resource type="Texture2D" uid="uid://ccyqv2dka7qv8" path="res://game/hud/default/healthBar.png" id="1_rf7i1"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="2_hqqo8"]
 [ext_resource type="FontFile" uid="uid://b82c3o8gdei1q" path="res://backend/objects/fonts/vcr.ttf" id="3_8j7qc"]
+[ext_resource type="AudioStream" uid="uid://baxkyohpkso0g" path="res://game/songs/tutorial/tutorial/Voices-bf.ogg" id="3_17fvr"]
 [ext_resource type="Texture2D" uid="uid://b3fpg5g7op2e3" path="res://game/characters/dad-old/icon-dad.png" id="4_cw8vr"]
 [ext_resource type="Texture2D" uid="uid://bg5xswntoftgi" path="res://game/hud/default/countdown/ready.png" id="4_hkc8k"]
+[ext_resource type="AudioStream" uid="uid://ycgijs1k33kc" path="res://game/songs/tutorial/tutorial/Voices-gf.ogg" id="4_ng0d8"]
 [ext_resource type="Texture2D" uid="uid://dvklm7lf75v6b" path="res://game/hud/default/countdown/set.png" id="5_acl0w"]
 [ext_resource type="Texture2D" uid="uid://bnctr112dem3e" path="res://game/characters/bf-old/icon-bf.png" id="6_i61i5"]
 [ext_resource type="Texture2D" uid="uid://b0rtwycajbbu8" path="res://game/hud/default/countdown/go.png" id="6_plovm"]
@@ -27,6 +30,17 @@ shadow_size = 0
 
 [node name="Default HUD" type="CanvasLayer" unique_id=1160917371]
 script = ExtResource("1_206rr")
+
+[node name="Player Strumline" parent="." unique_id=1540979689 node_paths=PackedStringArray("characters") groups=["strumline_player"] instance=ExtResource("2_hqqo8")]
+position = Vector2(960, 125)
+vocal = ExtResource("3_17fvr")
+characters = [null]
+
+[node name="Opponent Strumline" parent="." unique_id=282548676 node_paths=PackedStringArray("characters") groups=["strumline_opponent"] instance=ExtResource("2_hqqo8")]
+position = Vector2(320, 125)
+vocal = ExtResource("4_ng0d8")
+characters = [null]
+cpu = true
 
 [node name="Healthbar BG" type="Sprite2D" parent="." unique_id=1365793633]
 position = Vector2(640, 657)

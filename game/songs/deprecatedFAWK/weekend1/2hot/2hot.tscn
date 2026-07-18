@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://lrlkil3pkojv"]
+
+[ext_resource type="PackedScene" uid="uid://1ghand11g74v" path="res://game/songs/deprecatedFAWK/weekend1/darnell/darnell.tscn" id="1_mhvcd"]
+[ext_resource type="AudioStream" uid="uid://b5vs8pg03ajjl" path="res://game/songs/deprecatedFAWK/weekend1/2hot/Inst.ogg" id="2_tglbk"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/weekend1/2hot/2hot-chart.json" id="3_y6gg7"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/weekend1/2hot/2hot-metadata.json" id="4_t2hhk"]
+[ext_resource type="AudioStream" uid="uid://t00gi8kjyw6r" path="res://game/songs/deprecatedFAWK/weekend1/2hot/Voices-pico.ogg" id="5_c3f1g"]
+[ext_resource type="AudioStream" uid="uid://bqcesnjt8jr0r" path="res://game/songs/deprecatedFAWK/weekend1/2hot/Voices-darnell.ogg" id="6_wgppk"]
+
+[node name="2Hot" instance=ExtResource("1_mhvcd")]
+instrumental = ExtResource("2_tglbk")
+chart = ExtResource("3_y6gg7")
+metadata = ExtResource("4_t2hhk")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_c3f1g")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_wgppk")

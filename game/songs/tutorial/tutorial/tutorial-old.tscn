@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://8824vp3y6w3j"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/game/playstate.gd" id="1_q3lcj"]
+[ext_resource type="JSON" path="res://game/songs/tutorial/tutorial/tutorial-chart.json" id="3_gc462"]
+[ext_resource type="JSON" path="res://game/songs/tutorial/tutorial/tutorial-metadata.json" id="4_cf2xy"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_413ph"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_exk35"]
+[ext_resource type="AudioStream" uid="uid://baxkyohpkso0g" path="res://game/songs/tutorial/tutorial/Voices-bf.ogg" id="7_1f62e"]
+[ext_resource type="AudioStream" uid="uid://ycgijs1k33kc" path="res://game/songs/tutorial/tutorial/Voices-gf.ogg" id="8_smcwp"]
+[ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_u58ql"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_hlcq1"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_8fyly"]
+
+[node name="Tutorial" type="Node2D" unique_id=2053579974 node_paths=PackedStringArray("hud", "camera", "stage")]
+script = ExtResource("1_q3lcj")
+hud = NodePath("HUD")
+chart = ExtResource("3_gc462")
+metadata = ExtResource("4_cf2xy")
+camera = NodePath("Camera")
+stage = NodePath("Stage")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=18697906]
+zoom = Vector2(0.9, 0.9)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." unique_id=696260268 instance=ExtResource("5_413ph")]
+
+[node name="Player Strumline" parent="HUD" unique_id=1704848498 node_paths=PackedStringArray("characters") instance=ExtResource("6_exk35")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_1f62e")
+characters = [NodePath("../../Stage/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" unique_id=2024873217 node_paths=PackedStringArray("characters") instance=ExtResource("6_exk35")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_smcwp")
+characters = [NodePath("../../Stage/Girlfriend")]
+cpu = true
+
+[node name="Stage" parent="." unique_id=327063762 instance=ExtResource("9_u58ql")]
+
+[node name="Girlfriend" parent="Stage" unique_id=1737972885 instance=ExtResource("10_hlcq1")]
+position = Vector2(751.5, 787)
+
+[node name="Boyfriend" parent="Stage" unique_id=1557670021 instance=ExtResource("12_8fyly")]
+position = Vector2(989.5, 885)

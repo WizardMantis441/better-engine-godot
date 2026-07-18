@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dbj77anofkna"]
+
+[ext_resource type="PackedScene" uid="uid://crb55em3jj2fe" path="res://game/songs/deprecatedFAWK/week1/bopeebo/erect/bopeebo-erect.tscn" id="1_qpdjb"]
+[ext_resource type="AudioStream" uid="uid://cn6765ctn7i5g" path="res://game/songs/deprecatedFAWK/week1/fresh/erect/Inst-erect.ogg" id="2_e3bne"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week1/fresh/erect/fresh-chart-erect.json" id="3_cwlb1"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week1/fresh/erect/fresh-metadata-erect.json" id="4_5jgp0"]
+[ext_resource type="AudioStream" uid="uid://bub4kud142sj3" path="res://game/songs/deprecatedFAWK/week1/fresh/erect/Voices-bf-erect.ogg" id="5_7lxrb"]
+[ext_resource type="AudioStream" uid="uid://d23w2niwsjo2" path="res://game/songs/deprecatedFAWK/week1/fresh/erect/Voices-dad-erect.ogg" id="6_h5ab1"]
+
+[node name="Fresh [Erect]" instance=ExtResource("1_qpdjb")]
+instrumental = ExtResource("2_e3bne")
+chart = ExtResource("3_cwlb1")
+metadata = ExtResource("4_5jgp0")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_7lxrb")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_h5ab1")

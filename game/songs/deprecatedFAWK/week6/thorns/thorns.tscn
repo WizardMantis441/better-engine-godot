@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bdwl1jcg8gqsd"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/game/playstate.gd" id="1_7ahm6"]
+[ext_resource type="AudioStream" uid="uid://c1hfd35gta438" path="res://game/songs/deprecatedFAWK/week6/thorns/Inst.ogg" id="2_yy1rw"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week6/thorns/thorns-chart.json" id="3_maota"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week6/thorns/thorns-metadata.json" id="4_dsrsw"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_rt6jn"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_h7ixp"]
+[ext_resource type="AudioStream" uid="uid://xe8gwyxj7rlg" path="res://game/songs/deprecatedFAWK/week6/thorns/Voices-bf.ogg" id="7_cvheu"]
+[ext_resource type="AudioStream" uid="uid://cyoliuhng3brr" path="res://game/songs/deprecatedFAWK/week6/thorns/Voices-spirit.ogg" id="8_f6hkp"]
+[ext_resource type="PackedScene" uid="uid://b5wf605gy68im" path="res://game/stages/stage/main-stage.tscn" id="9_i43uh"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_6pwr8"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_ahaww"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_1cdra"]
+
+[node name="Thorns" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_7ahm6")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_yy1rw")
+chart = ExtResource("3_maota")
+metadata = ExtResource("4_dsrsw")
+camera = NodePath("Camera")
+stage = NodePath("Stage")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_rt6jn")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_h7ixp")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_cvheu")
+characters = [NodePath("../../Stage/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_h7ixp")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_f6hkp")
+characters = [NodePath("../../Stage/Dad")]
+cpu = true
+
+[node name="Stage" parent="." instance=ExtResource("9_i43uh")]
+
+[node name="Girlfriend" parent="Stage" instance=ExtResource("10_6pwr8")]
+position = Vector2(751.5, 787)
+
+[node name="Dad" parent="Stage" instance=ExtResource("11_ahaww")]
+position = Vector2(335, 885)
+
+[node name="Boyfriend" parent="Stage" instance=ExtResource("12_1cdra")]
+position = Vector2(989.5, 885)

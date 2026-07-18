@@ -25,6 +25,8 @@ config/icon="res://icon.svg"
 
 Conductor="*res://backend/conductor.gd"
 Soundtray="*uid://bi1c43h27cd5c"
+SignalBus="*uid://ds6kjnrp1pjbg"
+Utils="*uid://w6oxbj8qo6yv"
 
 [display]
 
@@ -54,6 +56,7 @@ folder_colors={
 "res://game/characters/senpai/": "gray",
 "res://game/characters/spooky/": "gray",
 "res://game/characters/tankman/": "gray",
+"res://game/songs/deprecatedFAWK/": "gray",
 "res://menus/": "yellow",
 "res://menus/freeplay/albumRoll/freeplayAlbum/": "teal",
 "res://menus/freeplay/backing-cards/bf/backing-text-yeah/": "teal",
@@ -62,8 +65,18 @@ folder_colors={
 "res://menus/freeplay/djs/pico/": "teal",
 "res://menus/freeplay/freeplayStars/": "teal",
 "res://menus/freeplay/scenes/": "orange",
-"res://menus/freeplay/sortedLetters/": "teal"
+"res://menus/freeplay/sortedLetters/": "teal",
+"res://resources/": "pink"
 }
+
+[global_group]
+
+char_opponent=""
+char_spectator=""
+char_player=""
+strumline_opponent=""
+strumline_player=""
+camera_position=""
 
 [input]
 

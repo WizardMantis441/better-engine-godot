@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c2xnwdio7mt5x"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/game/playstate.gd" id="1_2typv"]
+[ext_resource type="AudioStream" uid="uid://chs1uh53n7tmr" path="res://game/songs/deprecatedFAWK/week3/pico/Inst.ogg" id="2_n75ay"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week3/pico/pico-chart.json" id="3_taala"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week3/pico/pico-metadata.json" id="4_hy7vs"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_mqgbw"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_jmjkm"]
+[ext_resource type="AudioStream" uid="uid://d3d5u6022e1rl" path="res://game/songs/deprecatedFAWK/week3/pico/Voices-bf.ogg" id="7_535gk"]
+[ext_resource type="AudioStream" uid="uid://bg0mgfgl0612e" path="res://game/songs/deprecatedFAWK/week3/pico/Voices-pico.ogg" id="8_hdkjn"]
+[ext_resource type="PackedScene" uid="uid://bjwevjyw3qvxt" path="res://game/stages/philly/train/philly-train.tscn" id="9_n75ay"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_ok1bt"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_bsl5s"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_8e4v4"]
+
+[node name="Pico" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_2typv")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_n75ay")
+chart = ExtResource("3_taala")
+metadata = ExtResource("4_hy7vs")
+camera = NodePath("Camera")
+stage = NodePath("Philly (Train)")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_mqgbw")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_jmjkm")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_535gk")
+characters = [NodePath("../../Philly (Train)/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_jmjkm")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_hdkjn")
+characters = [NodePath("../../Philly (Train)/Dad")]
+cpu = true
+
+[node name="Philly (Train)" parent="." instance=ExtResource("9_n75ay")]
+
+[node name="Girlfriend" parent="Philly (Train)" instance=ExtResource("10_ok1bt")]
+z_index = 100
+position = Vector2(751.5, 787)
+
+[node name="Dad" parent="Philly (Train)" instance=ExtResource("11_bsl5s")]
+z_index = 200
+position = Vector2(335, 885)
+
+[node name="Boyfriend" parent="Philly (Train)" instance=ExtResource("12_8e4v4")]
+z_index = 300
+position = Vector2(989.5, 885)

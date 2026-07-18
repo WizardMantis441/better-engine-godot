@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dfduxbkaf2fao"]
+
+[ext_resource type="PackedScene" uid="uid://cx2ovrtjawpkh" path="res://game/songs/deprecatedFAWK/week5/cocoa/cocoa.tscn" id="1_dc8gx"]
+[ext_resource type="AudioStream" uid="uid://df4m3gwt3qtwu" path="res://game/songs/deprecatedFAWK/week5/eggnog/Inst.ogg" id="2_a6648"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week5/eggnog/eggnog-chart.json" id="3_phniy"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week5/eggnog/eggnog-metadata.json" id="4_ehpgb"]
+[ext_resource type="AudioStream" uid="uid://cdm88tatled5h" path="res://game/songs/deprecatedFAWK/week5/eggnog/Voices-bf.ogg" id="5_ehpgb"]
+[ext_resource type="AudioStream" uid="uid://de7agehbfikp2" path="res://game/songs/deprecatedFAWK/week5/eggnog/Voices-parents-christmas.ogg" id="6_0cqqk"]
+
+[node name="Eggnog" instance=ExtResource("1_dc8gx")]
+instrumental = ExtResource("2_a6648")
+chart = ExtResource("3_phniy")
+metadata = ExtResource("4_ehpgb")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_ehpgb")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_0cqqk")

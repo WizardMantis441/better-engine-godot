@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://crb55em3jj2fe"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/game/playstate.gd" id="1_obmpr"]
+[ext_resource type="AudioStream" uid="uid://brpirhiwjsdei" path="res://game/songs/deprecatedFAWK/week1/bopeebo/erect/Inst-erect.ogg" id="2_k3vug"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week1/bopeebo/erect/bopeebo-chart-erect.json" id="3_bles5"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week1/bopeebo/erect/bopeebo-metadata-erect.json" id="4_280j3"]
+[ext_resource type="Script" uid="uid://dhj71furw851k" path="res://backend/objects/funkin_camera.gd" id="5_16m8w"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="6_q4gxi"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="7_fvb8u"]
+[ext_resource type="AudioStream" uid="uid://cwyjih33ny058" path="res://game/songs/deprecatedFAWK/week1/bopeebo/erect/Voices-bf-erect.ogg" id="8_1uxw2"]
+[ext_resource type="AudioStream" uid="uid://dsgh7pkhrqhhi" path="res://game/songs/deprecatedFAWK/week1/bopeebo/erect/Voices-dad-erect.ogg" id="9_chcuw"]
+[ext_resource type="PackedScene" uid="uid://28myhn626d5o" path="res://game/stages/stage/erect/main-stage-erect.tscn" id="10_4jo75"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="11_jad4t"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="12_gjebd"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="13_i0yyl"]
+
+[node name="Bopeebo [Erect]" type="Node2D" unique_id=1739640410 node_paths=PackedStringArray("hud", "stage")]
+script = ExtResource("1_obmpr")
+hud = NodePath("HUD")
+instrumental = ExtResource("2_k3vug")
+chart = ExtResource("3_bles5")
+metadata = ExtResource("4_280j3")
+stage = NodePath("Stage")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1333289247]
+zoom = Vector2(0.85, 0.85)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("5_16m8w")
+metadata/_custom_type_script = "uid://dhj71furw851k"
+
+[node name="HUD" parent="." unique_id=1745461208 instance=ExtResource("6_q4gxi")]
+
+[node name="Player Strumline" parent="HUD" unique_id=1134800150 node_paths=PackedStringArray("characters") instance=ExtResource("7_fvb8u")]
+position = Vector2(960, 125)
+vocal = ExtResource("8_1uxw2")
+characters = [NodePath("../../Stage/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" unique_id=1475272349 node_paths=PackedStringArray("characters") instance=ExtResource("7_fvb8u")]
+position = Vector2(320, 125)
+vocal = ExtResource("9_chcuw")
+characters = [null]
+cpu = true
+
+[node name="Stage" parent="." unique_id=530454641 instance=ExtResource("10_4jo75")]
+
+[node name="Girlfriend" parent="Stage" unique_id=1121055067 instance=ExtResource("11_jad4t")]
+position = Vector2(501.5, 825)
+
+[node name="Dad" parent="Stage" unique_id=2078474857 instance=ExtResource("12_gjebd")]
+position = Vector2(40, 850)
+
+[node name="Boyfriend" parent="Stage" unique_id=572793722 instance=ExtResource("13_i0yyl")]
+position = Vector2(977.5, 865)

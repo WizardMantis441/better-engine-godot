@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://pride5f788rb"]
+
+[ext_resource type="PackedScene" uid="uid://8fiy3s6scvyh" path="res://game/songs/deprecatedFAWK/week4/satin-panties/erect/satin-panties-erect.tscn" id="1_nu0se"]
+[ext_resource type="AudioStream" uid="uid://c1oabgvt1pys3" path="res://game/songs/deprecatedFAWK/week4/high/erect/Inst-erect.ogg" id="2_wdxbo"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week4/high/erect/high-chart-erect.json" id="3_y5wht"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week4/high/erect/high-metadata-erect.json" id="4_r6prw"]
+[ext_resource type="AudioStream" uid="uid://dl13oiopk505w" path="res://game/songs/deprecatedFAWK/week4/high/erect/Voices-bf-car-erect.ogg" id="5_fgo8v"]
+[ext_resource type="AudioStream" uid="uid://cw2p8i4hd0thh" path="res://game/songs/deprecatedFAWK/week4/high/erect/Voices-mom-car-erect.ogg" id="6_bxsuo"]
+
+[node name="High [Erect]" instance=ExtResource("1_nu0se")]
+instrumental = ExtResource("2_wdxbo")
+chart = ExtResource("3_y5wht")
+metadata = ExtResource("4_r6prw")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_fgo8v")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_bxsuo")

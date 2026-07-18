@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://do8f0x50xcqdh"]
+
+[ext_resource type="PackedScene" uid="uid://brwukhkcyefd6" path="res://game/songs/deprecatedFAWK/week4/satin-panties/satin-panties.tscn" id="1_yt5bv"]
+[ext_resource type="AudioStream" uid="uid://bx7g8t17xtmq" path="res://game/songs/deprecatedFAWK/week4/milf/Inst.ogg" id="2_uhgq1"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week4/milf/milf-chart.json" id="3_vogdh"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week4/milf/milf-metadata.json" id="4_gfy8k"]
+[ext_resource type="AudioStream" uid="uid://dyomym8dwhv5j" path="res://game/songs/deprecatedFAWK/week4/milf/Voices-bf.ogg" id="5_kmhlc"]
+[ext_resource type="AudioStream" uid="uid://bbyfh0tjusd0q" path="res://game/songs/deprecatedFAWK/week4/milf/Voices-mom.ogg" id="6_nxq0m"]
+
+[node name="MILF" instance=ExtResource("1_yt5bv")]
+instrumental = ExtResource("2_uhgq1")
+chart = ExtResource("3_vogdh")
+metadata = ExtResource("4_gfy8k")
+
+[node name="Player Strumline" parent="HUD" index="2"]
+vocal = ExtResource("5_kmhlc")
+
+[node name="Opponent Strumline" parent="HUD" index="3"]
+vocal = ExtResource("6_nxq0m")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FunkinWeek" format=3 uid="uid://btfhkmccfhrj1"]
+
+[ext_resource type="Script" uid="uid://bliot8h51le3b" path="res://resources/funkin_week.gd" id="1_0tj6t"]
+[ext_resource type="Script" uid="uid://0ff5uftflfhy" path="res://resources/game/funkin_song.gd" id="2_3s7gu"]
+
+[resource]
+script = ExtResource("1_0tj6t")
+title = "TEACHING TIME"
+metadata/_custom_type_script = "uid://bliot8h51le3b"

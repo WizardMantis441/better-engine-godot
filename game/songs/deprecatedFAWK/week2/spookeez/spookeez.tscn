@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ccqy4emggvusc"]
+
+[ext_resource type="Script" uid="uid://d4isjc8jhlo51" path="res://backend/game/playstate.gd" id="1_8imp6"]
+[ext_resource type="AudioStream" uid="uid://l86gqke6lr2x" path="res://game/songs/deprecatedFAWK/week2/spookeez/Inst.ogg" id="2_6ouha"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week2/spookeez/spookeez-chart.json" id="3_t5ics"]
+[ext_resource type="JSON" path="res://game/songs/deprecatedFAWK/week2/spookeez/spookeez-metadata.json" id="4_2ioia"]
+[ext_resource type="PackedScene" uid="uid://ct55plcbqvr6w" path="res://game/hud/default/default.tscn" id="5_dtvhw"]
+[ext_resource type="PackedScene" uid="uid://by7lsxsk376qe" path="res://backend/objects/gameplay/strum_line.tscn" id="6_vgyxt"]
+[ext_resource type="AudioStream" uid="uid://br4txfp3p2ito" path="res://game/songs/deprecatedFAWK/week2/spookeez/Voices-bf.ogg" id="7_dx7x3"]
+[ext_resource type="AudioStream" uid="uid://bw61k8q513yl6" path="res://game/songs/deprecatedFAWK/week2/spookeez/Voices-spooky.ogg" id="8_yfg5a"]
+[ext_resource type="PackedScene" path="res://game/stages/mansion/mansion.tscn" id="9_6ouha"]
+[ext_resource type="PackedScene" uid="uid://dsb8hi3rcm1we" path="res://game/characters/gf/gf.tscn" id="10_8xbdw"]
+[ext_resource type="PackedScene" uid="uid://dce1gi35xadwb" path="res://game/characters/dad-old/dad.tscn" id="11_25e50"]
+[ext_resource type="PackedScene" uid="uid://b5dhcukcytfuy" path="res://game/characters/bf-old/bf.tscn" id="12_apt8j"]
+
+[node name="Spookeez" type="Node2D" node_paths=PackedStringArray("hud", "strum_lines", "camera", "stage")]
+script = ExtResource("1_8imp6")
+hud = NodePath("HUD")
+strum_lines = [NodePath("HUD/Player Strumline"), NodePath("HUD/Opponent Strumline")]
+instrumental = ExtResource("2_6ouha")
+chart = ExtResource("3_t5ics")
+metadata = ExtResource("4_2ioia")
+camera = NodePath("Camera")
+stage = NodePath("")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("5_dtvhw")]
+
+[node name="Player Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_vgyxt")]
+position = Vector2(960, 125)
+vocal = ExtResource("7_dx7x3")
+characters = [NodePath("../../Spooky Mansion/Boyfriend")]
+
+[node name="Opponent Strumline" parent="HUD" node_paths=PackedStringArray("characters") instance=ExtResource("6_vgyxt")]
+position = Vector2(320, 125)
+vocal = ExtResource("8_yfg5a")
+characters = [NodePath("../../Spooky Mansion/Dad")]
+cpu = true
+
+[node name="Spooky Mansion" parent="." instance=ExtResource("9_6ouha")]
+
+[node name="Girlfriend" parent="Spooky Mansion" instance=ExtResource("10_8xbdw")]
+position = Vector2(751.5, 787)
+
+[node name="Dad" parent="Spooky Mansion" instance=ExtResource("11_25e50")]
+position = Vector2(382, 865)
+
+[node name="Boyfriend" parent="Spooky Mansion" instance=ExtResource("12_apt8j")]
+position = Vector2(989.5, 885)

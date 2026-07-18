@@ -21,7 +21,7 @@ var score:int = 0:
 		$"Healthbar BG/Label".text = "Score: " + str(score)
 
 func _ready() -> void:
-	Conductor.step_hit.connect(step_hit)
+	SignalBus.connect("step_hit", Callable(self, "step_hit"))
 
 func display_rating(rating_name:String = "good"):
 	if rating_name == null: rating_name = "good"

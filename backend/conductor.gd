@@ -1,9 +1,5 @@
 extends Node
 
-signal step_hit(step:int)
-signal beat_hit(beat:int)
-signal measure_hit(measure:int)
-
 var bpm:float = 100.0
 var bpm_changes:Array = [] # { "time": float, "step": int, "new_bpm": float }
 var cur_bpm_change:int = 0

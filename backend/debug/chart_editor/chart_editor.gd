@@ -63,10 +63,11 @@ func load_song(scene:PackedScene):
 	assert(metadata != null, "No metadata!")
 	
 	Conductor.load_bpm_changes(metadata.timeChanges)
-	Conductor.step_hit.connect(step_hit)
-	Conductor.beat_hit.connect(beat_hit)
-	Conductor.measure_hit.connect(measure_hit)
 	Conductor.song_position = 0
+	
+	SignalBus.connect("step_hit", Callable(self, "step_hit"))
+	SignalBus.connect("beat_hit", Callable(self, "beat_hit"))
+	SignalBus.connect("measure_hit", Callable(self, "measure_hit"))
 	
 	for event in chart.events:
 		events.append({"name": event.e, "value": event.v, "time": event.t})
